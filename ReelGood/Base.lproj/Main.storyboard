@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="aCF-CW-cg9">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
@@ -93,7 +93,7 @@
                                                     <rect key="frame" x="15" y="11" width="33" height="21"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Y9x-fd-bTQ">
@@ -261,7 +261,7 @@
                                                     <rect key="frame" x="15" y="0.0" width="290" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -421,7 +421,7 @@
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Back" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nFg-5g-ALu">
                                 <rect key="frame" x="20" y="65" width="39" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Save" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WKS-sK-sZ5">
@@ -448,6 +448,50 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9GK-jL-2LB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1071" y="-667"/>
+        </scene>
+        <!--Set Username View Controller-->
+        <scene sceneID="BK8-XZ-g5g">
+            <objects>
+                <viewController id="xuL-4G-feR" customClass="setUsernameViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ypN-tx-esr"/>
+                        <viewControllerLayoutGuide type="bottom" id="FZ3-FM-l45"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fDl-D7-I1x">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" fixedFrame="YES" bounces="NO" bouncesZoom="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S6w-kP-SxI">
+                                <rect key="frame" x="33" y="36" width="246" height="149"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">This is the first time you have logged into Reel Good. You need to create a username before you can continue using the app. Pick wisely, your username cannot be changed once it has been set.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username:" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lhk-Yz-IWb">
+                                <rect key="frame" x="88" y="203" width="136" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v2C-LC-7Rz">
+                                <rect key="frame" x="101" y="263" width="111" height="30"/>
+                                <state key="normal" title="Save Username">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveUsername:" destination="xuL-4G-feR" eventType="touchUpInside" id="XE5-NO-DLv"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="usernameTextField" destination="lhk-Yz-IWb" id="YgN-vT-grX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kdw-IL-ej4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-477" y="-1128"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="l0H-GA-r2v">
@@ -592,6 +636,9 @@ Begin by add a friend to your account. Ask your friend for their username or inv
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="lblAbout" destination="1G5-sZ-NmU" id="F6N-1h-zJs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ulG-z0-IHL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -608,8 +655,38 @@ Begin by add a friend to your account. Ask your friend for their username or inv
                     <view key="view" contentMode="scaleToFill" id="a42-1A-4Vr">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jgE-ew-ip1" customClass="FBSDKLoginButton">
+                                <rect key="frame" x="80" y="249" width="160" height="41"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Reed Good Large.png" translatesAutoresizingMaskIntoConstraints="NO" id="kq2-Bc-yqX">
+                                <rect key="frame" x="40" y="76" width="240" height="128"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xWq-uB-PEo">
+                                <rect key="frame" x="127" y="310" width="46" height="30"/>
+                                <state key="normal" title="About">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="toAboutPage:" destination="aCF-CW-cg9" eventType="touchUpInside" id="kYj-Br-hYQ"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Version #" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9VE-ue-RIp">
+                                <rect key="frame" x="120" y="348" width="81" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.77647058820000003" green="0.7843137255" blue="0.79215686269999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="lblVersion" destination="9VE-ue-RIp" id="3R9-fK-o09"/>
+                        <outlet property="loginButton" destination="jgE-ew-ip1" id="7gF-sW-8ME"/>
+                        <segue destination="6ai-4h-tGv" kind="modal" identifier="toMain" id="D8t-CC-3zg"/>
+                        <segue destination="7OI-kJ-Gxe" kind="modal" identifier="goToAboutPage" id="VoW-5c-R75"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zYy-47-Cfb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -693,14 +770,11 @@ Begin by add a friend to your account. Ask your friend for their username or inv
                     <connections>
                         <outlet property="passwordField" destination="o40-Fm-cv6" id="oOr-IJ-9dY"/>
                         <outlet property="usernameField" destination="Y2a-ok-eaq" id="kGt-t5-f0K"/>
-                        <segue destination="6ai-4h-tGv" kind="modal" identifier="toMain" id="jOG-YK-anH"/>
-                        <segue destination="08b-mO-Hop" kind="modal" identifier="toRegister" id="vFu-5x-uSz"/>
-                        <segue destination="7OI-kJ-Gxe" kind="modal" identifier="goToAboutPage" id="4Jq-eC-wcy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-84" y="-257"/>
+            <point key="canvasLocation" x="-466" y="223"/>
         </scene>
         <!--search-->
         <scene sceneID="7Rb-v8-7Dt">
@@ -972,15 +1046,16 @@ Begin by add a friend to your account. Ask your friend for their username or inv
                         <segue destination="KCr-7S-eLW" kind="modal" identifier="toProfile" id="VwW-bf-7x4"/>
                         <segue destination="2Ob-Xq-dwV" kind="modal" identifier="toSearch" id="NQg-v2-NMh"/>
                         <segue destination="Q1v-xJ-Zrw" kind="modal" identifier="toFriend" id="MzR-3i-qhI"/>
-                        <segue destination="vXZ-lx-hvc" kind="modal" identifier="toLogOut" id="CHz-W7-KNi"/>
                         <segue destination="9ed-Pz-zj3" kind="modal" identifier="toMovieInfo" id="kDk-Q6-lKQ"/>
                         <segue destination="eOZ-9p-zyN" kind="modal" identifier="ToRateMovie" id="qcl-xf-uqe"/>
                         <segue destination="7OI-kJ-Gxe" kind="modal" identifier="toAboutFromMain" id="Xu7-ZC-4AG"/>
+                        <segue destination="aCF-CW-cg9" kind="modal" identifier="toLogOut" id="Xsi-SF-6lC"/>
+                        <segue destination="xuL-4G-feR" kind="modal" identifier="toCreateUsername" id="74W-lp-6VF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kkh-m3-FHf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="111" y="577"/>
+            <point key="canvasLocation" x="81" y="485"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="3OM-a0-mtK">
@@ -1138,9 +1213,9 @@ Begin by add a friend to your account. Ask your friend for their username or inv
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="D8t-CC-3zg"/>
+        <segue reference="VoW-5c-R75"/>
         <segue reference="kDk-Q6-lKQ"/>
-        <segue reference="jOG-YK-anH"/>
-        <segue reference="4Jq-eC-wcy"/>
-        <segue reference="OH0-V9-jyd"/>
+        <segue reference="qcl-xf-uqe"/>
     </inferredMetricsTieBreakers>
 </document>

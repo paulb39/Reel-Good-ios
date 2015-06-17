@@ -26,6 +26,8 @@
 		48A45DE91B2E37890051B428 /* loginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A45DE81B2E37890051B428 /* loginViewController.m */; };
 		48A45DEC1B2E388C0051B428 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48A45DEA1B2E388C0051B428 /* FBSDKCoreKit.framework */; };
 		48A45DED1B2E388C0051B428 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48A45DEB1B2E388C0051B428 /* FBSDKLoginKit.framework */; };
+		48A45DF01B2E6CA60051B428 /* WSHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A45DEF1B2E6CA60051B428 /* WSHelper.m */; };
+		48A45DF31B2F38970051B428 /* setUsernameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A45DF21B2F38970051B428 /* setUsernameViewController.m */; };
 		48C32F281A1529E5003D5393 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48C32F271A1529E5003D5393 /* Foundation.framework */; };
 		48C32F2A1A1529E5003D5393 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48C32F291A1529E5003D5393 /* CoreGraphics.framework */; };
 		48C32F2C1A1529E5003D5393 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48C32F2B1A1529E5003D5393 /* UIKit.framework */; };
@@ -103,6 +105,10 @@
 		48A45DE81B2E37890051B428 /* loginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = loginViewController.m; sourceTree = "<group>"; };
 		48A45DEA1B2E388C0051B428 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		48A45DEB1B2E388C0051B428 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		48A45DEE1B2E6CA60051B428 /* WSHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSHelper.h; sourceTree = "<group>"; };
+		48A45DEF1B2E6CA60051B428 /* WSHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSHelper.m; sourceTree = "<group>"; };
+		48A45DF11B2F38970051B428 /* setUsernameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = setUsernameViewController.h; sourceTree = "<group>"; };
+		48A45DF21B2F38970051B428 /* setUsernameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = setUsernameViewController.m; sourceTree = "<group>"; };
 		48C32F241A1529E5003D5393 /* ReelGood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReelGood.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48C32F271A1529E5003D5393 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		48C32F291A1529E5003D5393 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -226,8 +232,12 @@
 				48C32F361A1529E5003D5393 /* AppDelegate.h */,
 				48C32F371A1529E5003D5393 /* AppDelegate.m */,
 				48C32F391A1529E6003D5393 /* Main.storyboard */,
+				48A45DF11B2F38970051B428 /* setUsernameViewController.h */,
+				48A45DF21B2F38970051B428 /* setUsernameViewController.m */,
 				48A45DE71B2E37890051B428 /* loginViewController.h */,
 				48A45DE81B2E37890051B428 /* loginViewController.m */,
+				48A45DEE1B2E6CA60051B428 /* WSHelper.h */,
+				48A45DEF1B2E6CA60051B428 /* WSHelper.m */,
 				489DEAD51ACDB8BC00048129 /* Reachability.h */,
 				489DEAD61ACDB8BC00048129 /* Reachability.m */,
 				484D9DF11AA7902400786A6F /* aboutViewController.h */,
@@ -476,11 +486,13 @@
 				48C32F381A1529E5003D5393 /* AppDelegate.m in Sources */,
 				48582DF81A66F77100C0D300 /* addFriendViewController.m in Sources */,
 				48A45DE91B2E37890051B428 /* loginViewController.m in Sources */,
+				48A45DF31B2F38970051B428 /* setUsernameViewController.m in Sources */,
 				48582DFB1A6DBD1C00C0D300 /* mainViewController.m in Sources */,
 				48582DF51A66E4A000C0D300 /* profileViewController.m in Sources */,
 				487A69E91AB0A972004A6412 /* searchCell.m in Sources */,
 				48C32F5E1A152A87003D5393 /* searchViewController.m in Sources */,
 				48582DF21A61C7FC00C0D300 /* infoViewController.m in Sources */,
+				48A45DF01B2E6CA60051B428 /* WSHelper.m in Sources */,
 				48C32F341A1529E5003D5393 /* main.m in Sources */,
 				48582DFE1A70248700C0D300 /* CustomCell.m in Sources */,
 			);

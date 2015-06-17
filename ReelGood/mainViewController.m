@@ -10,6 +10,7 @@
 #import "ViewController.h"
 #import "CustomCell.h"
 #import <ILMovieDBClient.h>
+#import "WSHelper.h"
 
 @interface mainViewController ()
 - (IBAction)logOutButton:(id)sender;
@@ -39,7 +40,26 @@
     [ILMovieDBClient sharedClient].apiKey = @"beea29b97e50a0194d538ddace065f95";
     
     NSUserDefaults *settings = [NSUserDefaults new];
-    NSString* addedOrRemovedFriend = [settings stringForKey:kaddedOrRemovedFriend];
+    NSString* addedOrRemovedFriend = [settings stringForKey:kaddedOrRemovedFriend]; //Using a NSNOTIFICATION is a much better idea!
+    
+    
+    //if userdefaults username is nil
+    //get username for facebook ID,
+    //if returned username is nil. do segue to create username
+    // else facebook account has a username, set username in userdefaults
+    
+    if ([WSHelper getCurrentUser] == nil) {
+        NSString* userNameForID = [WSHelper getUserNameFromServer:@"9asdaadsad"];
+        NSLog(@"usernameforid is %@", userNameForID);
+        
+        if (userNameForID == nil) {
+            NSLog(@"DOING THE SEGUE TO CREATE A USERNAME"); // will set userdefaults there
+            [self performSegueWithIdentifier: @"toCreateUsername" sender: self];
+        } else {
+            [WSHelper setUserName:userNameForID];
+        }
+    }
+    //
     
     
     if (didFirstLoad == YES){
@@ -90,7 +110,8 @@
     firstUserLoad = [settings stringForKey:kInstructions];
     NSLog(@"first instructions are %@", firstUserLoad);
     
-    if (firstUserLoad == NULL){ // tell user how to use app
+    /* not needed, done in dismiss view controller via a block
+    if (firstUserLoad == NULL && [WSHelper getCurrentUser] != nil){ // tell user how to use app
         NSString* firstLoadMessage = @"Welcome to reelGood! \nOnce you add a friend a list of movies your friend's rated will be shown here\nYou can rate moves by clicking the search button\nA list of movies you rated is listed in your profile\nAdd a friend to get started!";
         
         UIAlertView *alertDialog;
@@ -104,7 +125,7 @@
         
         [settings setObject:@"YES" forKey:kInstructions];
         [settings synchronize];
-    }
+    } */
     
     NSLog(@"did first load is %d", didFirstLoad);
     
@@ -310,6 +331,11 @@
     [settings setObject:@"1" forKey:kaddedOrRemovedFriend]; // only reload main page if needed
     [settings setObject:@"1" forKey:ksegueFromMain];
     [settings synchronize];
+    
+    FBSDKLoginManager *loginManager = [[FBSDKLoginManager alloc] init];
+    [loginManager logOut];
+    
+    [[WSHelper getDefaults] setObject:nil forKey:PREFERENCE_KEY_USERNAME];
     
     [self performSegueWithIdentifier:@"toLogOut" sender:self];
 }

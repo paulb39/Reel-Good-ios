@@ -10,6 +10,7 @@
 
 @interface aboutViewController ()
 - (IBAction)goBackToMain:(id)sender;
+@property (weak, nonatomic) IBOutlet UITextView *lblAbout;
 
 @end
 
@@ -28,6 +29,15 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    NSDictionary *info = [[NSBundle mainBundle] infoDictionary];
+    NSString *version =  [info objectForKey:@"CFBundleShortVersionString"]; // set version from xCode, instead of manually
+    NSString* Version = [NSString stringWithFormat:@"Version: %@", version];
+    
+    NSString* txtInfo = [NSString stringWithFormat:@"%@\n\n%@", self.lblAbout.text, Version];
+    
+    self.lblAbout.text = txtInfo;
+    self.lblAbout.textColor = [UIColor whiteColor];
 }
 
 - (void)didReceiveMemoryWarning

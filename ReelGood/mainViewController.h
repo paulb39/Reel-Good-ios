@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "MBProgressHUD.h"
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
+
 NSMutableArray* friendMovieTitles;
 NSMutableArray* friendMovieRating;
 NSMutableArray* friendFriend;
