@@ -1076,7 +1076,7 @@ Begin by add a friend to your account. Ask your friend for their username or inv
                                 <rect key="frame" x="0.0" y="20" width="320" height="57"/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="My Ratings" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bXo-On-Cc1">
-                                <rect key="frame" x="109" y="91" width="102" height="21"/>
+                                <rect key="frame" x="7" y="91" width="204" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -1163,7 +1163,7 @@ Begin by add a friend to your account. Ask your friend for their username or inv
                                 <nil key="highlightedColor"/>
                             </label>
                             <webView hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lCJ-xS-Stb">
-                                <rect key="frame" x="100" y="500" width="100" height="44"/>
+                                <rect key="frame" x="246" y="493" width="64" height="55"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </webView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kvl-NE-kwB">
@@ -1180,7 +1180,8 @@ Begin by add a friend to your account. Ask your friend for their username or inv
                         <color key="backgroundColor" red="0.69444444439999997" green="0.027905436879999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
-                        <outlet property="profileView" destination="lCJ-xS-Stb" id="KdR-LG-SIm"/>
+                        <outlet property="lblProfileTitle" destination="bXo-On-Cc1" id="uTn-NF-gRY"/>
+                        <outlet property="profileDataView" destination="lCJ-xS-Stb" id="7pE-yK-ZH5"/>
                         <outlet property="profileWebView" destination="jbP-RH-N3Y" id="QfR-ZA-9Qt"/>
                         <segue destination="9ed-Pz-zj3" kind="modal" identifier="toInfoFromProfile" id="cSv-vk-yMq"/>
                         <segue destination="eOZ-9p-zyN" kind="modal" identifier="toUpdateRating" id="uSU-df-cYC"/>
@@ -1215,7 +1216,7 @@ Begin by add a friend to your account. Ask your friend for their username or inv
     <inferredMetricsTieBreakers>
         <segue reference="D8t-CC-3zg"/>
         <segue reference="VoW-5c-R75"/>
-        <segue reference="kDk-Q6-lKQ"/>
-        <segue reference="qcl-xf-uqe"/>
+        <segue reference="cSv-vk-yMq"/>
+        <segue reference="uSU-df-cYC"/>
     </inferredMetricsTieBreakers>
 </document>

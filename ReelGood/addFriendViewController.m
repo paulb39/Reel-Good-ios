@@ -8,6 +8,7 @@
 
 #import "addFriendViewController.h"
 #import "ViewController.h"
+#import "WSHelper.h"
 
 @interface addFriendViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *friendTextField;
@@ -149,14 +150,15 @@
 
 	
 	friendDetailURLString=[NSString stringWithFormat:
-                     @"http://148.166.200.55/brennerp/phptest/data/pushfrienddata.php?username=%@&friend=%@"
-                     ,currentLoggedInUser,lowercaseFriend];
+                     @"http://www.brennerbrothersbrewery.com/phpdata/reelgood/pushfrienddata.php?username=%@&friend=%@"
+                     ,[WSHelper getCurrentUser],lowercaseFriend];
+    
     
 	friendDetailURL=[[NSURL alloc] initWithString:friendDetailURLString];
     
     otherFriendDetailURLString=[NSString stringWithFormat:
-                           @"http://148.166.200.55/brennerp/phptest/data/pushfrienddata.php?username=%@&friend=%@"
-                           ,lowercaseFriend, currentLoggedInUser];
+                                @"http://www.brennerbrothersbrewery.com/phpdata/reelgood/pushfrienddata.php?username=%@&friend=%@"
+                                ,lowercaseFriend, [WSHelper getCurrentUser]];
     
 	otherFriendDetailURL=[[NSURL alloc] initWithString:otherFriendDetailURLString];
     
@@ -178,6 +180,39 @@
 }
 
 - (BOOL)checkForUsernameExists:(NSString *)nameOfUser sender:(id)sender{
+    
+    NSString* urlString=[NSString stringWithFormat:
+                         @"http://www.brennerbrothersbrewery.com/phpdata/reelgood/checkifuserexists.php?username=%@"
+                         ,nameOfUser];
+    
+    NSLog(@"urlString is %@", urlString);
+    
+    NSError *error;
+    
+    NSData *data = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString:urlString]];
+    
+    NSArray* dataJSON = [NSJSONSerialization
+                         JSONObjectWithData:data
+                         options:NSJSONReadingMutableContainers|NSJSONReadingAllowFragments
+                         error:&error];
+    
+    
+    NSLog(@"dataJSON is %@", dataJSON);
+    
+    
+    if (!error) {
+        if (![dataJSON count]) {
+            NSLog(@"USERNAME IS NIL, try again");
+            return NO;
+        }
+    } else {
+        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Error!" message:@"Can not connect to server, try again later" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil]; [alert show];
+    }
+    
+    return YES;
+    
+    /*
+     NSLog(@"USERS ARE %@", userNames);
 
     for (j = 0; j<[userNames count]; j++) //check if username already exists
     {
@@ -191,6 +226,7 @@
         }
     }
     return NO;
+     */
 }
 
 
@@ -199,8 +235,8 @@
     NSString *friendDetailURLString;
     
     friendDetailURLString=[NSString stringWithFormat:
-                           @"http://148.166.200.55/brennerp/phptest/data/friendData.php?username=%@"
-                           ,currentLoggedInUser];
+                           @"http://www.brennerbrothersbrewery.com/phpdata/reelgood/friendData.php?username=%@"
+                           ,[WSHelper getCurrentUser]];
     
     NSData *friendDataPHP = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString:friendDetailURLString]];
     
@@ -236,8 +272,9 @@
     NSString *detailURLString;
 
     detailURLString=[NSString stringWithFormat:
-                     @"http://148.166.200.55/brennerp/phptest/data/removeFriend.php?username=%@&friend=%@"
-                     ,currentLoggedInUser,friendToRemove];
+                     @"http://www.brennerbrothersbrewery.com/phpdata/reelgood/removeFriend.php?username=%@&friend=%@"
+                     ,[WSHelper getCurrentUser],friendToRemove];
+    
     
     detailURL=[[NSURL alloc] initWithString:detailURLString];
     

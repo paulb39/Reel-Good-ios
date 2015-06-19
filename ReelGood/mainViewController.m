@@ -49,7 +49,7 @@
     // else facebook account has a username, set username in userdefaults
     
     if ([WSHelper getCurrentUser] == nil) {
-        NSString* userNameForID = [WSHelper getUserNameFromServer:@"9asdaadsad"];
+        NSString* userNameForID = [WSHelper getUserNameFromServer:[FBSDKAccessToken currentAccessToken].userID];
         NSLog(@"usernameforid is %@", userNameForID);
         
         if (userNameForID == nil) {
@@ -207,8 +207,8 @@
     NSString *friendDetailURLString;
     
     friendDetailURLString=[NSString stringWithFormat:
-                            @"http://148.166.200.55/brennerp/phptest/data/mainData.php?username=%@"
-                            ,userCurrent];
+                            @"http://www.brennerbrothersbrewery.com/phpdata/reelgood/mainData.php?username=%@"
+                            ,[WSHelper getCurrentUser]];
     
     NSData *friendDataPHP = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString:friendDetailURLString]];
     

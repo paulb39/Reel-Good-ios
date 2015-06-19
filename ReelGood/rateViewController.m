@@ -9,6 +9,7 @@
 #import "rateViewController.h"
 #import "ViewController.h"
 #import "searchViewController.h"
+#import "WSHelper.h"
 
 @interface rateViewController ()
 - (IBAction)saveButton:(id)sender;
@@ -172,8 +173,8 @@
     NSString *alreadyMovieDetailURLString;
     
     alreadyMovieDetailURLString=[NSString stringWithFormat:
-                                 @"http://148.166.200.55/brennerp/phptest/data/checkifalreadyrated.php?username=%@&movieid=%@"
-                                 ,currentUser, ID_of_movie];
+                                 @"http://www.brennerbrothersbrewery.com/phpdata/reelgood/checkifalreadyrated.php?username=%@&movieid=%@"
+                                 ,[WSHelper getCurrentUser], ID_of_movie];
     
     NSData *alreadyMovieDataPHP = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString:alreadyMovieDetailURLString]];
     
@@ -240,7 +241,7 @@
 - (void) pushMovieInfo{
     NSError *movieInfoError;
     
-    NSData *dataPHPInfo = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString:@"http://148.166.200.55/brennerp/phptest/data/movieData.php"]];
+    NSData *dataPHPInfo = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString:@"http://www.brennerbrothersbrewery.com/phpdata/reelgood/movieData.php"]];
     
     NSArray *movieInfoJSON = [NSJSONSerialization
                               JSONObjectWithData:dataPHPInfo
@@ -285,7 +286,7 @@
     if (foundMovieID == NO){ // add to database
         
         detailedURLString=[NSString stringWithFormat:
-                           @"http://148.166.200.55/brennerp/phptest/data/pushmovieinfo.php?movid=%@&title=%@"
+                           @"http://www.brennerbrothersbrewery.com/phpdata/reelgood/pushmovieinfo.php?movid=%@&title=%@"
                            ,ID_of_movie, title_of_movie];
         
         detailedURLString = [detailedURLString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
@@ -314,8 +315,8 @@
     }
     
     aDetailedURLString=[NSString stringWithFormat:
-                        @"http://148.166.200.55/brennerp/phptest/data/pushratingdata.php?username=%@&movid=%@&rating=%@&comments=%@"
-                        ,currentUser,ID_of_movie, userRating, usersComments];
+                        @"http://www.brennerbrothersbrewery.com/phpdata/reelgood/pushratingdata.php?username=%@&movid=%@&rating=%@&comments=%@"
+                        ,[WSHelper getCurrentUser],ID_of_movie, userRating, usersComments];
     
     aDetailedURLString = [aDetailedURLString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]; // for special characters, need to add mysql_string function to php file
     
@@ -341,8 +342,8 @@
     }
     
     modifyDetailedURLString=[NSString stringWithFormat:
-                             @"http://148.166.200.55/brennerp/phptest/data/pushratingdatamodify.php?username=%@&movid=%@&rating=%@&comments=%@"
-                             ,currentUser,ID_of_movie, userRating, usersComments];
+                             @"www.brennerbrothersbrewery.com/phpdata/reelgood/pushratingdatamodify.php?username=%@&movid=%@&rating=%@&comments=%@"
+                             ,[WSHelper getCurrentUser],ID_of_movie, userRating, usersComments];
     
     
     modifyDetailedURLString = [modifyDetailedURLString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]; // to allow speical characters in comments section

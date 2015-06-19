@@ -10,12 +10,14 @@
 #import "ViewController.h"
 #import "searchViewController.h"
 #import "profileCustomCell.h"
+#import "WSHelper.h"
 
 @interface profileViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *profileWebView;
 - (IBAction)profileGoBack:(id)sender;
-@property (weak, nonatomic) IBOutlet UIWebView *profileView;
 - (IBAction)enableEditing:(id)sender;
+@property (weak, nonatomic) IBOutlet UIWebView *profileDataView;
+@property (weak, nonatomic) IBOutlet UILabel *lblProfileTitle;
 
 @end
 
@@ -51,6 +53,11 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    NSString* userTitle = [NSString stringWithFormat:@"%@'s Profile", [WSHelper getCurrentUser]];
+    self.lblProfileTitle.text = userTitle;
+    self.lblProfileTitle.textColor = [UIColor whiteColor];
+    
     self.profileWebView.allowsMultipleSelectionDuringEditing = NO; // for deleting from tableview
     NSUserDefaults *settings = [NSUserDefaults new]; // get info from userDefaults
     
@@ -181,8 +188,8 @@
     NSString *profileDetailURLString;
     
     profileDetailURLString=[NSString stringWithFormat:
-                            @"http://148.166.200.55/brennerp/phptest/data/profileData.php?username=%@"
-                            ,theCurrentUser];
+                            @"http://www.brennerbrothersbrewery.com/phpdata/reelgood/profileData.php?username=%@"
+                            ,[WSHelper getCurrentUser]];
     
     NSData *profileDataPHP = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString:profileDetailURLString]];
     
@@ -247,22 +254,20 @@
 
 
 - (void)deleteMovie:(NSString *)movieToRemove sender:(id)sender{
+    NSString* detailedURLString;
+    NSURL* detailedURL;
     
-    NSLog(@"movie to remove is %@", movieToRemove);
+    detailedURLString=[NSString stringWithFormat:
+                       @"http://www.brennerbrothersbrewery.com/phpdata/reelgood/removeMovie.php?username=%@&movieID=%@"
+                       ,[WSHelper getCurrentUser], movieToRemove];
     
-    NSURL *detailURL;
-    NSString *detailURLString;
     
-    detailURLString=[NSString stringWithFormat:
-                     @"http://148.166.200.55/brennerp/phptest/data/removeMovie.php?username=%@&movieID=%@"
-                     ,theCurrentUser,movieToRemove];
+    detailedURL=[[NSURL alloc] initWithString:detailedURLString];
     
-    detailURL=[[NSURL alloc] initWithString:detailURLString];
+    //NSLog(@"detailed URl is: %@", detailedURL);
     
-    NSLog(@"detail url is %@", detailURL);
-    
-    [self.profileView loadRequest:[NSURLRequest requestWithURL:detailURL]]; // send website to view, which will delete friend
-    self.profileView.delegate = self;
+    [self.profileDataView loadRequest:[NSURLRequest requestWithURL:detailedURL]]; // send website to view, which will create info in database
+    self.profileDataView.delegate = self;
 }
 
 

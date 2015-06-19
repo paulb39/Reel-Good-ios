@@ -196,6 +196,8 @@
             
             for ( NSDictionary *movieTest in resultDictionary) // if empty, say no info, otherwise add info to arrays
             {
+                NSLog(@"DEBUG - > %@", movieTest[@"title"]);
+                
                 if (movieTest[@"id"] != NULL){
                     movieIDs[movieCounter] = movieTest[@"id"];
                 }
@@ -203,14 +205,14 @@
                     movieIDs[movieCounter] = @"No Data in DB";
                 }
                 
-                if ([movieTest[@"title"] isEqualToString:@""]){
+                if ([movieTest[@"title"] isKindOfClass:[NSNull class]]){
                     movieTitles[movieCounter] = @"No Data in DB";
                 }
                 else{
                     movieTitles[movieCounter] = movieTest[@"title"];
                 }
                 
-                if ([movieTest[@"release_date"] isEqualToString:@""]){
+                if ([movieTest[@"release_date"] isKindOfClass:[NSNull class]]){
                     releaseDates[movieCounter] = @"No Data in DB";
                 }
                 else{
@@ -229,6 +231,7 @@
                 [self.dataItems setObject:movieTitles[movieCounter] forKey:releaseDates[movieCounter]]; // may not be needed
                 self.keys = self.dataItems.allKeys;
                 
+                NSLog(@"DEBUG - > %@", movieTitles[movieCounter]);
                 NSLog(@"movie test is %@", movieTest[@"poster_path"]);
                 
                 movieCounter++;

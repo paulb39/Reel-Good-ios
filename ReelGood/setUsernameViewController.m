@@ -60,7 +60,7 @@
      NSString* userName = [self.usernameTextField.text lowercaseString];
      
      NSString* urlString=[NSString stringWithFormat:
-     @"http://148.166.200.55/brennerp/phptest/data/checkifuserexists?username=%@"
+     @"http://www.brennerbrothersbrewery.com/phpdata/reelgood/checkifuserexists.php?username=%@"
      ,userName];
      
      NSLog(@"urlString is %@", urlString);
@@ -95,8 +95,9 @@
     NSString* strUsername = [self.usernameTextField.text lowercaseString];
     
     NSString* url=[NSString stringWithFormat:
-                   @"http://148.166.200.55/brennerp/phptest/data/pushdatagettest.php?username=%@&password=PLACEHOLDER"
-                   ,strUsername];
+                   @"http://www.brennerbrothersbrewery.com/phpdata/reelgood/pushdatagettest.php?fbid=%@&username=%@"
+                   ,[FBSDKAccessToken currentAccessToken].userID, strUsername];
+    
     
     // Create the request.
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];

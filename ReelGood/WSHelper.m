@@ -27,7 +27,7 @@
     NSString* userName = @"username";
     
     NSString* urlString=[NSString stringWithFormat:
-                         @"http://148.166.200.55/brennerp/phptest/data/checkFBID?FBID=%@"
+                         @"http://www.brennerbrothersbrewery.com/phpdata/reelgood/checkFBID.php?FBID=%@"
                          ,FB_ID];
     
     NSLog(@"urlString is %@", urlString);

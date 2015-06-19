@@ -9,6 +9,7 @@
 #import "infoViewController.h"
 #import "searchViewController.h"
 #import "ViewController.h"
+#import "WSHelper.h"
 #import <ILMovieDBClient.h>
 
 @interface infoViewController ()
@@ -213,8 +214,8 @@
     NSString *friendMovieDetailURLString;
     
     friendMovieDetailURLString=[NSString stringWithFormat:
-                           @"http://148.166.200.55/brennerp/phptest/data/mainData.php?username=%@"
-                           ,currentUser];
+                           @"http://www.brennerbrothersbrewery.com/phpdata/reelgood/mainData.php?username=%@"
+                           ,[WSHelper getCurrentUser]];
     
     NSData *friendMovieDataPHP = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString:friendMovieDetailURLString]];
     
