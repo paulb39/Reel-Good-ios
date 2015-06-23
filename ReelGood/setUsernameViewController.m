@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
 
 - (IBAction)saveUsername:(id)sender;
+- (IBAction)dismissKeyboard:(id)sender;
 
 @property NSMutableData* recievedData;
 @end
@@ -53,6 +54,10 @@
          UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Error!" message:@"Please enter a username first" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil]; [alert show];        
     }
     
+}
+
+- (IBAction)dismissKeyboard:(id)sender {
+    [self.usernameTextField resignFirstResponder];
 }
 
 - (BOOL)checkIfUserNameExists
