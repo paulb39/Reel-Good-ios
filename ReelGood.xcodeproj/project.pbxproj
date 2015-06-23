@@ -24,8 +24,6 @@
 		489DEAD71ACDB8BC00048129 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 489DEAD61ACDB8BC00048129 /* Reachability.m */; };
 		489DEAD91ACDB8F800048129 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 489DEAD81ACDB8F800048129 /* SystemConfiguration.framework */; };
 		48A45DE91B2E37890051B428 /* loginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A45DE81B2E37890051B428 /* loginViewController.m */; };
-		48A45DEC1B2E388C0051B428 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48A45DEA1B2E388C0051B428 /* FBSDKCoreKit.framework */; };
-		48A45DED1B2E388C0051B428 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48A45DEB1B2E388C0051B428 /* FBSDKLoginKit.framework */; };
 		48A45DF01B2E6CA60051B428 /* WSHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A45DEF1B2E6CA60051B428 /* WSHelper.m */; };
 		48A45DF31B2F38970051B428 /* setUsernameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A45DF21B2F38970051B428 /* setUsernameViewController.m */; };
 		48C32F281A1529E5003D5393 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48C32F271A1529E5003D5393 /* Foundation.framework */; };
@@ -43,6 +41,8 @@
 		48C32F511A1529E6003D5393 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 48C32F4F1A1529E6003D5393 /* InfoPlist.strings */; };
 		48C32F531A1529E6003D5393 /* ReelGoodTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 48C32F521A1529E6003D5393 /* ReelGoodTests.m */; };
 		48C32F5E1A152A87003D5393 /* searchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48C32F5D1A152A87003D5393 /* searchViewController.m */; };
+		48D4BA6A1B38E0B400457E4E /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48D4BA681B38E0B400457E4E /* FBSDKCoreKit.framework */; };
+		48D4BA6B1B38E0B400457E4E /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48D4BA691B38E0B400457E4E /* FBSDKLoginKit.framework */; };
 		6631EA571A82CBCB002DF453 /* Reed Good Large.png in Resources */ = {isa = PBXBuildFile; fileRef = 6631EA561A82CBCB002DF453 /* Reed Good Large.png */; };
 		6631EA591A82CC1B002DF453 /* backGround.png in Resources */ = {isa = PBXBuildFile; fileRef = 6631EA581A82CC1B002DF453 /* backGround.png */; };
 		6631EA5B1A82CC27002DF453 /* barGradient.png in Resources */ = {isa = PBXBuildFile; fileRef = 6631EA5A1A82CC27002DF453 /* barGradient.png */; };
@@ -103,8 +103,6 @@
 		489DEAD81ACDB8F800048129 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		48A45DE71B2E37890051B428 /* loginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = loginViewController.h; sourceTree = "<group>"; };
 		48A45DE81B2E37890051B428 /* loginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = loginViewController.m; sourceTree = "<group>"; };
-		48A45DEA1B2E388C0051B428 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
-		48A45DEB1B2E388C0051B428 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		48A45DEE1B2E6CA60051B428 /* WSHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSHelper.h; sourceTree = "<group>"; };
 		48A45DEF1B2E6CA60051B428 /* WSHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSHelper.m; sourceTree = "<group>"; };
 		48A45DF11B2F38970051B428 /* setUsernameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = setUsernameViewController.h; sourceTree = "<group>"; };
@@ -130,6 +128,8 @@
 		48C32F521A1529E6003D5393 /* ReelGoodTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReelGoodTests.m; sourceTree = "<group>"; };
 		48C32F5C1A152A87003D5393 /* searchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = searchViewController.h; sourceTree = "<group>"; };
 		48C32F5D1A152A87003D5393 /* searchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = searchViewController.m; sourceTree = "<group>"; };
+		48D4BA681B38E0B400457E4E /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../../FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		48D4BA691B38E0B400457E4E /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../../FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		6631EA561A82CBCB002DF453 /* Reed Good Large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Reed Good Large.png"; sourceTree = "<group>"; };
 		6631EA581A82CC1B002DF453 /* backGround.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backGround.png; sourceTree = "<group>"; };
 		6631EA5A1A82CC27002DF453 /* barGradient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = barGradient.png; sourceTree = "<group>"; };
@@ -160,9 +160,9 @@
 				48582E601A73FCA400C0D300 /* MessageUI.framework in Frameworks */,
 				48C32F2A1A1529E5003D5393 /* CoreGraphics.framework in Frameworks */,
 				48C32F2C1A1529E5003D5393 /* UIKit.framework in Frameworks */,
-				48A45DEC1B2E388C0051B428 /* FBSDKCoreKit.framework in Frameworks */,
+				48D4BA6A1B38E0B400457E4E /* FBSDKCoreKit.framework in Frameworks */,
 				48C32F281A1529E5003D5393 /* Foundation.framework in Frameworks */,
-				48A45DED1B2E388C0051B428 /* FBSDKLoginKit.framework in Frameworks */,
+				48D4BA6B1B38E0B400457E4E /* FBSDKLoginKit.framework in Frameworks */,
 				D5B1BDBD9899BE30A52FB7CD /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -213,8 +213,8 @@
 		48C32F261A1529E5003D5393 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				48A45DEA1B2E388C0051B428 /* FBSDKCoreKit.framework */,
-				48A45DEB1B2E388C0051B428 /* FBSDKLoginKit.framework */,
+				48D4BA681B38E0B400457E4E /* FBSDKCoreKit.framework */,
+				48D4BA691B38E0B400457E4E /* FBSDKLoginKit.framework */,
 				489DEAD81ACDB8F800048129 /* SystemConfiguration.framework */,
 				48582E5F1A73FCA400C0D300 /* MessageUI.framework */,
 				48C32F271A1529E5003D5393 /* Foundation.framework */,
@@ -375,6 +375,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = reelGoodApps;
 				TargetAttributes = {
+					48C32F231A1529E5003D5393 = {
+						DevelopmentTeam = 9BM4HW3T77;
+					};
 					48C32F441A1529E6003D5393 = {
 						TestTargetID = 48C32F231A1529E5003D5393;
 					};
@@ -620,15 +623,22 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CLANG_ENABLE_MODULES = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					/Users/paulbrenner/Documents/FacebookSDK,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ReelGood/ReelGood-Prefix.pch";
 				INFOPLIST_FILE = "ReelGood/ReelGood-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SDKROOT = iphoneos8.3;
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -640,15 +650,22 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CLANG_ENABLE_MODULES = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					/Users/paulbrenner/Documents/FacebookSDK,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ReelGood/ReelGood-Prefix.pch";
 				INFOPLIST_FILE = "ReelGood/ReelGood-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SDKROOT = iphoneos8.3;
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
