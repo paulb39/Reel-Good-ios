@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import "MBProgressHUD.h"
 
 @interface loginViewController : UIViewController <FBSDKLoginButtonDelegate>
 

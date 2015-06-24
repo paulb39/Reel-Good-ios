@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Reachability.h"
 
 static NSString* PREFERENCE_KEY_USERNAME = @"username";
 
@@ -19,6 +20,8 @@ static NSString* PREFERENCE_KEY_USERNAME = @"username";
 + (NSUserDefaults*) getDefaults;
 
 + (void) setUserName:(NSString*) userName;
+
++ (BOOL) hasNetworkConnection;
 
 @end
 

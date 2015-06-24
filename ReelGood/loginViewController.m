@@ -7,6 +7,7 @@
 //
 
 #import "loginViewController.h"
+#import "WSHelper.h"
 
 @interface loginViewController ()
 
@@ -23,12 +24,24 @@
 {
     [super viewDidAppear:animated];
     
-
-    if ([FBSDKAccessToken currentAccessToken]) {
-
-         NSLog(@"already loged in");
-        [self performSegueWithIdentifier: @"toMain" sender: self]; // load main view controller
+    if ([WSHelper hasNetworkConnection]) {
+        if ([FBSDKAccessToken currentAccessToken]) {
+            // spinner
+            MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES]; // show loading screen
+            hud.labelText = @"Loading...";
+            dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 0.01 * NSEC_PER_SEC);
+            dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+                [self performSegueWithIdentifier: @"toMain" sender: self]; // load main view controller
+                [MBProgressHUD hideHUDForView:self.view animated:YES];
+            });
+            // spinner
+        }
+    } else { // No network!
+        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"No Network!" message:@"Please connect to a network before using the app!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil]; [alert show];
     }
+    
+
+
     
 }
 - (void)viewDidLoad {

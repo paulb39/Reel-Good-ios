@@ -75,4 +75,17 @@
     [[self getDefaults] synchronize];
 }
 
++ (BOOL) hasNetworkConnection
+{
+    Reachability *reachability = [Reachability reachabilityForInternetConnection];
+    [reachability startNotifier];
+    NetworkStatus status = [reachability currentReachabilityStatus];
+    
+    if (status == NotReachable) {
+        return NO;
+    }
+    
+    return YES;
+}
+
 @end
