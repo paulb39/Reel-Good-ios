@@ -26,3 +26,11 @@ Pods/AFNetworking/AFNetworking/AFNetworkReachabilityManager.m
 Pods/AFNetworking/AFNetworking/AFHTTPSessionManager.m
 
 Pods/AFNetworking/AFNetworking/AFHTTPRequestOperationManager.h
+
+Pods/AFNetworking/UIKit+AFNetworking/AFNetworkActivityIndicatorManager.m
+
+Pods/AFNetworking/AFNetworking/AFURLSessionManager.m
+
+Pods/AFNetworking/AFNetworking/AFURLResponseSerialization.m
+
+Pods/AFNetworking/AFNetworking/AFHTTPRequestOperation.m
