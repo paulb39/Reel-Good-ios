@@ -34,3 +34,19 @@ Pods/AFNetworking/AFNetworking/AFURLSessionManager.m
 Pods/AFNetworking/AFNetworking/AFURLResponseSerialization.m
 
 Pods/AFNetworking/AFNetworking/AFHTTPRequestOperation.m
+
+Pods/AFNetworking/AFNetworking/AFHTTPRequestOperation.m
+
+Pods/AFNetworking/AFNetworking/AFHTTPRequestOperation.m
+
+Pods/AFNetworking/AFNetworking/AFHTTPRequestOperationManager.h
+
+Pods/AFNetworking/AFNetworking/AFHTTPSessionManager.m
+
+Pods/AFNetworking/AFNetworking/AFSecurityPolicy.m
+
+Pods/AFNetworking/AFNetworking/AFURLRequestSerialization.m
+
+Pods/AFNetworking/AFNetworking/AFURLConnectionOperation.h
+
+Pods/AFNetworking/AFNetworking/AFURLSessionManager.h
