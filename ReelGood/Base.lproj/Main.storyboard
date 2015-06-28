@@ -473,10 +473,9 @@
                                     <action selector="dismissKeyboard:" destination="xuL-4G-feR" eventType="touchUpInside" id="wJx-IH-tRm"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" fixedFrame="YES" bounces="NO" bouncesZoom="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S6w-kP-SxI">
-                                <rect key="frame" x="33" y="36" width="246" height="152"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" fixedFrame="YES" bounces="NO" bouncesZoom="NO" editable="NO" text="Before using Reel Good you will need to create a username.  This username will  be used to invite and find friends." selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S6w-kP-SxI">
+                                <rect key="frame" x="37" y="61" width="246" height="126"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <string key="text">This is the first time you have logged into Reel Good. You need to create a username before you can continue using the app. Pick wisely, your username cannot be changed once it has been set.</string>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -499,6 +498,12 @@
                                     <action selector="saveUsername:" destination="xuL-4G-feR" eventType="touchUpInside" id="XE5-NO-DLv"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome to Reel Good" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yN4-By-KfB">
+                                <rect key="frame" x="76" y="32" width="178" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -678,12 +683,7 @@ Begin by add a friend to your account. Ask your friend for their username or inv
                             </imageView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jgE-ew-ip1" customClass="FBSDKLoginButton">
                                 <rect key="frame" x="80" y="249" width="160" height="41"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="About BTN.png" translatesAutoresizingMaskIntoConstraints="NO" id="aul-3m-hMJ">
-                                        <rect key="frame" x="-2" y="-7" width="165" height="14"/>
-                                    </imageView>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Reed Good Large.png" translatesAutoresizingMaskIntoConstraints="NO" id="kq2-Bc-yqX">
                                 <rect key="frame" x="40" y="76" width="240" height="128"/>
@@ -695,7 +695,7 @@ Begin by add a friend to your account. Ask your friend for their username or inv
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xWq-uB-PEo">
-                                <rect key="frame" x="78" y="291" width="165" height="58"/>
+                                <rect key="frame" x="78" y="291" width="165" height="69"/>
                                 <state key="normal" title="About" backgroundImage="About BTN.png">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -704,9 +704,6 @@ Begin by add a friend to your account. Ask your friend for their username or inv
                                     <action selector="toAboutPage:" destination="aCF-CW-cg9" eventType="touchUpInside" id="kYj-Br-hYQ"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="About BTN.png" translatesAutoresizingMaskIntoConstraints="NO" id="Jx6-k2-8Ka">
-                                <rect key="frame" x="78" y="283" width="165" height="14"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>

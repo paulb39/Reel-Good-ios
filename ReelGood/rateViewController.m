@@ -224,12 +224,12 @@
             }
                          
             self.ratingCommentsBox.text = userComments;
-            //Crap below this does nothing apparently......
+            /*//Crap below this does nothing apparently......
             self.ratingCommentsBox.layer.cornerRadius=8.0f;
             self.ratingCommentsBox.layer.masksToBounds=YES;
             self.ratingCommentsBox.layer.borderColor=[[UIColor redColor]CGColor];
             self.ratingCommentsBox.layer.borderWidth= 1.0f;
-            // end crap
+            // end crap*/
         }
         
         NSLog(@"temp string is %@ bool is %d", tempString, alreadyRatedMovie);
