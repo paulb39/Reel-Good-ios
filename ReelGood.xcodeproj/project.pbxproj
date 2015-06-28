@@ -59,6 +59,7 @@
 		66A4EC091A79A0790041EA9B /* Reel Good Logo 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 66A4EBFF1A79A0790041EA9B /* Reel Good Logo 2.png */; };
 		66A4EC531A79CAD90041EA9B /* StarPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 66A4EC521A79CAD90041EA9B /* StarPressed.png */; };
 		66A4EC551A79CADD0041EA9B /* Star.png in Resources */ = {isa = PBXBuildFile; fileRef = 66A4EC541A79CADD0041EA9B /* Star.png */; };
+		66C39B891B409BC800630D60 /* About BTN.png in Resources */ = {isa = PBXBuildFile; fileRef = 66C39B881B409BC800630D60 /* About BTN.png */; };
 		D5B1BDBD9899BE30A52FB7CD /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 840CD6F527B3E43072951550 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -146,6 +147,7 @@
 		66A4EBFF1A79A0790041EA9B /* Reel Good Logo 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Reel Good Logo 2.png"; sourceTree = "<group>"; };
 		66A4EC521A79CAD90041EA9B /* StarPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StarPressed.png; sourceTree = "<group>"; };
 		66A4EC541A79CADD0041EA9B /* Star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Star.png; sourceTree = "<group>"; };
+		66C39B881B409BC800630D60 /* About BTN.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "About BTN.png"; sourceTree = "<group>"; };
 		840CD6F527B3E43072951550 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A369BE38E6017885873E60B1 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		EA85E312E8656862DA3EE079 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -303,6 +305,7 @@
 		66A4EBF51A79A0790041EA9B /* Image Assets */ = {
 			isa = PBXGroup;
 			children = (
+				66C39B881B409BC800630D60 /* About BTN.png */,
 				484D9DF41AAA4BFF00786A6F /* info_button.png */,
 				6631EA5C1A82CC33002DF453 /* backGround_Cover.png */,
 				4840D5641A82D2F40002A699 /* Gradient.png */,
@@ -428,6 +431,7 @@
 				6631EA5D1A82CC33002DF453 /* backGround_Cover.png in Resources */,
 				484D9DF51AAA4BFF00786A6F /* info_button.png in Resources */,
 				66A4EC001A79A0790041EA9B /* 1421991754_add_user.png in Resources */,
+				66C39B891B409BC800630D60 /* About BTN.png in Resources */,
 				66A4EC041A79A0790041EA9B /* 1421992164_common_search_lookup_-128.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
