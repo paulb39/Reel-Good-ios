@@ -20,6 +20,8 @@
 @property (weak, nonatomic) IBOutlet UITableView *mainWebView;
 - (IBAction)GoToAbout:(id)sender;
 
+@property BOOL bannerIsVisible;
+@property ADBannerView *adBanner;
 
 @end
 
@@ -38,6 +40,9 @@
     [super viewDidAppear:animated];
     
     [ILMovieDBClient sharedClient].apiKey = @"beea29b97e50a0194d538ddace065f95";
+    
+    _adBanner = [[ADBannerView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height, 320, 50)];
+    _adBanner.delegate = self;
     
     NSUserDefaults *settings = [NSUserDefaults new];
     NSString* addedOrRemovedFriend = [settings stringForKey:kaddedOrRemovedFriend]; //Using a NSNOTIFICATION is a much better idea!
@@ -150,6 +155,44 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)bannerViewDidLoadAd:(ADBannerView *)banner
+{
+    if (!_bannerIsVisible)
+    {
+        // If banner isn't part of view hierarchy, add it
+        if (_adBanner.superview == nil)
+        {
+            [self.view addSubview:_adBanner];
+        }
+        
+        [UIView beginAnimations:@"animateAdBannerOn" context:NULL];
+        
+        // Assumes the banner view is just off the bottom of the screen.
+        banner.frame = CGRectOffset(banner.frame, 0, -banner.frame.size.height);
+        
+        [UIView commitAnimations];
+        
+        _bannerIsVisible = YES;
+    }
+}
+
+- (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error
+{
+    NSLog(@"Failed to retrieve ad");
+    
+    if (_bannerIsVisible)
+    {
+        [UIView beginAnimations:@"animateAdBannerOff" context:NULL];
+        
+        // Assumes the banner view is placed at the bottom of the screen.
+        banner.frame = CGRectOffset(banner.frame, 0, banner.frame.size.height);
+        
+        [UIView commitAnimations];
+        
+        _bannerIsVisible = NO;
+    }
 }
 
 /*

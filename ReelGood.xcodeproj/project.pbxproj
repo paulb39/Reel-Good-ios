@@ -43,6 +43,7 @@
 		48C32F5E1A152A87003D5393 /* searchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48C32F5D1A152A87003D5393 /* searchViewController.m */; };
 		48D4BA6A1B38E0B400457E4E /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48D4BA681B38E0B400457E4E /* FBSDKCoreKit.framework */; };
 		48D4BA6B1B38E0B400457E4E /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48D4BA691B38E0B400457E4E /* FBSDKLoginKit.framework */; };
+		48EA5BF11B41AEC700A0C639 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48EA5BF01B41AEC700A0C639 /* iAd.framework */; };
 		6631EA571A82CBCB002DF453 /* Reed Good Large.png in Resources */ = {isa = PBXBuildFile; fileRef = 6631EA561A82CBCB002DF453 /* Reed Good Large.png */; };
 		6631EA591A82CC1B002DF453 /* backGround.png in Resources */ = {isa = PBXBuildFile; fileRef = 6631EA581A82CC1B002DF453 /* backGround.png */; };
 		6631EA5B1A82CC27002DF453 /* barGradient.png in Resources */ = {isa = PBXBuildFile; fileRef = 6631EA5A1A82CC27002DF453 /* barGradient.png */; };
@@ -131,6 +132,7 @@
 		48C32F5D1A152A87003D5393 /* searchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = searchViewController.m; sourceTree = "<group>"; };
 		48D4BA681B38E0B400457E4E /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../../FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		48D4BA691B38E0B400457E4E /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../../FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		48EA5BF01B41AEC700A0C639 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		6631EA561A82CBCB002DF453 /* Reed Good Large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Reed Good Large.png"; sourceTree = "<group>"; };
 		6631EA581A82CC1B002DF453 /* backGround.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backGround.png; sourceTree = "<group>"; };
 		6631EA5A1A82CC27002DF453 /* barGradient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = barGradient.png; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48EA5BF11B41AEC700A0C639 /* iAd.framework in Frameworks */,
 				489DEAD91ACDB8F800048129 /* SystemConfiguration.framework in Frameworks */,
 				48582E601A73FCA400C0D300 /* MessageUI.framework in Frameworks */,
 				48C32F2A1A1529E5003D5393 /* CoreGraphics.framework in Frameworks */,
@@ -215,6 +218,7 @@
 		48C32F261A1529E5003D5393 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				48EA5BF01B41AEC700A0C639 /* iAd.framework */,
 				48D4BA681B38E0B400457E4E /* FBSDKCoreKit.framework */,
 				48D4BA691B38E0B400457E4E /* FBSDKLoginKit.framework */,
 				489DEAD81ACDB8F800048129 /* SystemConfiguration.framework */,
@@ -629,8 +633,8 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ENABLE_MODULES = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Adam Salwocki (7FZ8T88NEU)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Adam Salwocki (7FZ8T88NEU)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -657,8 +661,8 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ENABLE_MODULES = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Adam Salwocki (7FZ8T88NEU)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Adam Salwocki (7FZ8T88NEU)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",

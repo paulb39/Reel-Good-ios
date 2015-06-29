@@ -10,6 +10,7 @@
 #import "MBProgressHUD.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import <iAd/iAd.h>
 
 NSMutableArray* friendMovieTitles;
 NSMutableArray* friendMovieRating;
@@ -36,6 +37,6 @@ bool didFirstLoad = NO;
 #define kNewUserr @""
 
 
-@interface mainViewController : UIViewController <UIAlertViewDelegate, UITableViewDataSource, UITableViewDelegate, MBProgressHUDDelegate>
+@interface mainViewController : UIViewController <UIAlertViewDelegate, UITableViewDataSource, UITableViewDelegate, MBProgressHUDDelegate, ADBannerViewDelegate>
 
 @end
