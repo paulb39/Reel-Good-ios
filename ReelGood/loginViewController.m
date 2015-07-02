@@ -63,14 +63,14 @@
 - (void)loginButton:(FBSDKLoginButton *)loginButton didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result error:(NSError *)error;
 {
     if (![result isCancelled]) {
-    NSLog(@"you logged in");
+    //NSLog(@"you logged in");
     [self performSegueWithIdentifier: @"toMain" sender: self]; // load main view controller
     }
 }
 
 - (void) loginButtonDidLogOut:(FBSDKLoginButton *)loginButton;
 {
-    NSLog(@"you loged out");
+    //NSLog(@"you loged out");
 }
 
 

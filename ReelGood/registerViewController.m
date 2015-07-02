@@ -62,10 +62,10 @@
     
     NSString* innerWebView = [self.registerWebView stringByEvaluatingJavaScriptFromString:@"document.documentElement.innerHTML"];
     
-    NSLog(@"Inner%@",[self.registerWebView stringByEvaluatingJavaScriptFromString:
-                      @"document.documentElement.innerHTML"]);
+    //NSLog(@"Inner%@",[self.registerWebView stringByEvaluatingJavaScriptFromString:
+                    //  @"document.documentElement.innerHTML"]);
     
-    NSLog(@"inner: %@", innerWebView);
+    //NSLog(@"inner: %@", innerWebView);
     
     NSUserDefaults* settings = [NSUserDefaults new];
     

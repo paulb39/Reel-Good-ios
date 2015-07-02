@@ -34,8 +34,8 @@
         [settings synchronize];
     }
     
-    NSLog(@"userCheck is %@", userCheck);
-    NSLog(@"segue check is %@", segueCheck);
+    //NSLog(@"userCheck is %@", userCheck);
+    //NSLog(@"segue check is %@", segueCheck);
     
     Reachability *reachability = [Reachability reachabilityForInternetConnection];
     [reachability startNotifier];
@@ -43,7 +43,7 @@
     
     
     if (status == NotReachable) {
-        NSLog(@"NO INTERNET");
+        //NSLog(@"NO INTERNET");
         UIAlertView *alertDialog;
         alertDialog = [[UIAlertView alloc]
                        initWithTitle: @"Error"
@@ -53,7 +53,7 @@
                        otherButtonTitles: nil];
         [alertDialog show];
     } else {
-        NSLog(@"Internet connection exists");
+        //NSLog(@"Internet connection exists");
         
         
         if (userCheck != NULL && [segueCheck isEqualToString:@"0"]) {
@@ -83,7 +83,7 @@
     NetworkStatus status = [reachability currentReachabilityStatus];
     
     if (status == NotReachable) {
-        NSLog(@"NO INTERNET"); // check for internet connection first
+        //NSLog(@"NO INTERNET"); // check for internet connection first
         UIAlertView *alertDialog;
         alertDialog = [[UIAlertView alloc]
                        initWithTitle: @"Error"
@@ -93,7 +93,7 @@
                        otherButtonTitles: nil];
         [alertDialog show];
     } else {
-        NSLog(@"Internet connection exists");
+        //NSLog(@"Internet connection exists");
         [self getUserData];  // get all username and passwords, put into arrays
     }
     
@@ -131,7 +131,7 @@
         }
     }
     
-    NSLog(@"Username: %d Password: %d fieldsEmpty %d", foundUsername, passwordCorrect, fieldsAreEmpty);
+    //NSLog(@"Username: %d Password: %d fieldsEmpty %d", foundUsername, passwordCorrect, fieldsAreEmpty);
     
     if (foundUsername == NO && fieldsAreEmpty == NO)
     {
@@ -223,7 +223,7 @@
 
     if (dataError)
     {
-        NSLog(@"%@", [dataError localizedDescription]);
+        //NSLog(@"%@", [dataError localizedDescription]);
     }
     else {
         for ( NSDictionary *theInfo in dataJSON )

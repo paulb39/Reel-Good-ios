@@ -41,8 +41,10 @@
     
     [ILMovieDBClient sharedClient].apiKey = @"beea29b97e50a0194d538ddace065f95";
     
+    if (_adBanner == nil){
     _adBanner = [[ADBannerView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height, 320, 50)];
     _adBanner.delegate = self;
+    }
     
     NSUserDefaults *settings = [NSUserDefaults new];
     NSString* addedOrRemovedFriend = [settings stringForKey:kaddedOrRemovedFriend]; //Using a NSNOTIFICATION is a much better idea!
@@ -55,10 +57,10 @@
     
     if ([WSHelper getCurrentUser] == nil) {
         NSString* userNameForID = [WSHelper getUserNameFromServer:[FBSDKAccessToken currentAccessToken].userID];
-        NSLog(@"usernameforid is %@", userNameForID);
+        //NSLog(@"usernameforid is %@", userNameForID);
         
         if (userNameForID == nil) {
-            NSLog(@"DOING THE SEGUE TO CREATE A USERNAME"); // will set userdefaults there
+            //NSLog(@"DOING THE SEGUE TO CREATE A USERNAME"); // will set userdefaults there
             [self performSegueWithIdentifier: @"toCreateUsername" sender: self];
         } else {
             [WSHelper setUserName:userNameForID];
@@ -97,6 +99,9 @@
     
     NSUserDefaults *settings = [NSUserDefaults new]; // get info from userDefaults
     
+    _adBanner = [[ADBannerView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height, 320, 50)];
+    _adBanner.delegate = self;
+    
     userCurrent = [settings stringForKey:kcurrentUser];
     
     friendMovieTitles = [[NSMutableArray alloc] init];
@@ -110,10 +115,10 @@
     image = [[UIImage alloc] initWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:@"https://d3a8mw37cqal2z.cloudfront.net/assets/f996aa2014d2ffddfda8463c479898a3/images/no-poster-w185.jpg"]]]; // default poster
     
     //firstUserLoad = [settings stringForKey:kNewUserr];
-    //NSLog(@"knewuser is %@", firstUserLoad);
+    ////NSLog(@"knewuser is %@", firstUserLoad);
     
     firstUserLoad = [settings stringForKey:kInstructions];
-    NSLog(@"first instructions are %@", firstUserLoad);
+    //NSLog(@"first instructions are %@", firstUserLoad);
     
     /* not needed, done in dismiss view controller via a block
     if (firstUserLoad == NULL && [WSHelper getCurrentUser] != nil){ // tell user how to use app
@@ -132,7 +137,7 @@
         [settings synchronize];
     } */
     
-    NSLog(@"did first load is %d", didFirstLoad);
+    //NSLog(@"did first load is %d", didFirstLoad);
     
     if (didFirstLoad == NO){
         didFirstLoad = YES;
@@ -146,7 +151,7 @@
             [self.mainWebView reloadData];
             [MBProgressHUD hideHUDForView:self.view animated:YES];
         });
-        NSLog(@"did first load2 is %d", didFirstLoad);
+        //NSLog(@"did first load2 is %d", didFirstLoad);
         
     }
 }
@@ -180,7 +185,8 @@
 
 - (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error
 {
-    NSLog(@"Failed to retrieve ad");
+    //NSLog(@"Failed to retrieve ad");
+    _adBanner = nil;
     
     if (_bannerIsVisible)
     {
@@ -234,7 +240,7 @@
     image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[friendMoviePosters objectAtIndex:indexPath.row]]]]; // put posters in tableview
     cell.posterCellImage.image = image;
     
-    //NSLog(@"cell posters are %@", friendMoviePosters);
+    ////NSLog(@"cell posters are %@", friendMoviePosters);
    
     return cell;
     
@@ -244,7 +250,7 @@
     [friendMoviePosters removeAllObjects];
     [friendMovieIDs removeAllObjects]; // for updating table if deleting friends
     
-    //NSLog(@"updated posters are %@", friendMoviePosters);
+    ////NSLog(@"updated posters are %@", friendMoviePosters);
     
     NSError *friendDataError;
     NSString *friendDetailURLString;
@@ -265,7 +271,7 @@
     
     if (friendDataError)
     {
-        NSLog(@"%@", [friendDataError localizedDescription]);
+        //NSLog(@"%@", [friendDataError localizedDescription]);
     }
     else {
         for ( NSDictionary *theFriendInfo in friendDataJSON )
@@ -279,7 +285,7 @@
         }
     }
     
-   // NSLog(@"ID IS %@", friendMovieIDs);
+   // //NSLog(@"ID IS %@", friendMovieIDs);
     
 }
 
@@ -347,7 +353,7 @@
 
     if (dataError)
     {
-        NSLog(@"%@", [dataError localizedDescription]);
+        //NSLog(@"%@", [dataError localizedDescription]);
     }
     else {
         if (apiJSON[@"poster_path"] == (id)[NSNull null]) {
@@ -362,7 +368,7 @@
         posterCount++;
     }
 } // end for
-  //  NSLog(@"check posters are %@", friendMoviePosters);
+  //  //NSLog(@"check posters are %@", friendMoviePosters);
     //[self.mainWebView reloadData]; //update tableview // needed?
 }
 
