@@ -202,7 +202,7 @@
     
     if (profileDataError)
     {
-        NSLog(@"%@", [profileDataError localizedDescription]);
+        //NSLog(@"%@", [profileDataError localizedDescription]);
     }
     else {
         for ( NSDictionary *theProfileInfo in profileDataJSON )
@@ -214,9 +214,9 @@
         }
   }
     
-    NSLog(@"tesst");
+    //NSLog(@"tesst");
     profileCounter=0;
-    NSLog(@"IDS %@", profileMovieIDs);
+    //NSLog(@"IDS %@", profileMovieIDs);
     
     //
      NSString* apiKey = @"beea29b97e50a0194d538ddace065f95";
@@ -230,7 +230,7 @@
         NSDictionary* profileJSON = [NSJSONSerialization JSONObjectWithData:profileDataPHP options:NSJSONReadingMutableContainers|NSJSONReadingAllowFragments error:&profileDataError];
         
         if (profileDataError) {
-            NSLog(@"%@", [profileDataError localizedDescription]);
+            //NSLog(@"%@", [profileDataError localizedDescription]);
         }
         else {
             if (profileJSON[@"poster_path"] == (id)[NSNull null]) {
@@ -246,7 +246,7 @@
         
     } //end for
     
-    NSLog(@"posters %@", profileMoviePosters);
+    //NSLog(@"posters %@", profileMoviePosters);
     
     [self.profileWebView reloadData];
 }
@@ -264,7 +264,7 @@
     
     detailedURL=[[NSURL alloc] initWithString:detailedURLString];
     
-    //NSLog(@"detailed URl is: %@", detailedURL);
+    ////NSLog(@"detailed URl is: %@", detailedURL);
     
     [self.profileDataView loadRequest:[NSURLRequest requestWithURL:detailedURL]]; // send website to view, which will create info in database
     self.profileDataView.delegate = self;
@@ -294,7 +294,7 @@
  
  if (dataError)
  {
- NSLog(@"%@", [dataError localizedDescription]);
+ //NSLog(@"%@", [dataError localizedDescription]);
  }
  else {
  if (apiJSON[@"poster_path"] == (id)[NSNull null]) {

@@ -126,7 +126,7 @@
             [settings setObject:movieIDs[l] forKey:kmovieID];
             [settings setObject:moviePosters[l] forKey:kmoviePoster];
             
-            NSLog(@"title isL %@ release date is %@ movieId is %@",movieTitles[l], releaseDates[l], movieIDs[l]);
+            //NSLog(@"title isL %@ release date is %@ movieId is %@",movieTitles[l], releaseDates[l], movieIDs[l]);
    
             [settings synchronize];
             break;
@@ -135,7 +135,7 @@
     
     testTest = [settings stringForKey:kreleaseDate];
     
-    NSLog(@"releasei is %@ title is %@ movieId is %@",[settings stringForKey:kreleaseDate], [settings stringForKey:kmovieTitle], [settings stringForKey:kmovieID]);
+    //NSLog(@"releasei is %@ title is %@ movieId is %@",[settings stringForKey:kreleaseDate], [settings stringForKey:kmovieTitle], [settings stringForKey:kmovieID]);
     
     UIAlertView *alertDialog;
     alertDialog = [[UIAlertView alloc]
@@ -192,11 +192,11 @@
         if (!error) {
             NSArray *resultDictionary = responseObject[@"results"];
            
-            NSLog(@"result is: %@",resultDictionary);
+            //NSLog(@"result is: %@",resultDictionary);
             
             for ( NSDictionary *movieTest in resultDictionary) // if empty, say no info, otherwise add info to arrays
             {
-                NSLog(@"DEBUG - > %@", movieTest[@"title"]);
+                //NSLog(@"DEBUG - > %@", movieTest[@"title"]);
                 
                 if (movieTest[@"id"] != NULL){
                     movieIDs[movieCounter] = movieTest[@"id"];
@@ -231,15 +231,15 @@
                 [self.dataItems setObject:movieTitles[movieCounter] forKey:releaseDates[movieCounter]]; // may not be needed
                 self.keys = self.dataItems.allKeys;
                 
-                NSLog(@"DEBUG - > %@", movieTitles[movieCounter]);
-                NSLog(@"movie test is %@", movieTest[@"poster_path"]);
+                //NSLog(@"DEBUG - > %@", movieTitles[movieCounter]);
+                //NSLog(@"movie test is %@", movieTest[@"poster_path"]);
                 
                 movieCounter++;
             }
         }
         else
         {
-            NSLog(@"ERROR %@", error); // do as alert view
+            //NSLog(@"ERROR %@", error); // do as alert view
         }
         
         MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES]; // show loading screen

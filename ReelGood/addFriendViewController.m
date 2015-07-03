@@ -47,7 +47,7 @@
     
     [self getFriendInfo];
     
-    NSLog(@"friend friend is %@", arrayOfFriends);
+    //NSLog(@"friend friend is %@", arrayOfFriends);
 }
 
 - (void)didReceiveMemoryWarning
@@ -129,7 +129,7 @@
         }
         else{
             friendExists = NO;
-            NSLog(@"NEED TO SEND EMAIL");
+            //NSLog(@"NEED TO SEND EMAIL");
             
             UIAlertView *alertDialog;
             alertDialog = [[UIAlertView alloc]
@@ -163,7 +163,7 @@
 	otherFriendDetailURL=[[NSURL alloc] initWithString:otherFriendDetailURLString];
     
     
-    NSLog(@"fieldisempty and friend exists %d, %d", fieldIsEmpty, friendExists);
+    //NSLog(@"fieldisempty and friend exists %d, %d", fieldIsEmpty, friendExists);
    
     if (fieldIsEmpty == NO && friendExists == YES){ // if not empty and friend username exists, push to database
         NSUserDefaults* settings = [NSUserDefaults new];
@@ -175,7 +175,7 @@
         
         [self.otherFriendWebView loadRequest:[NSURLRequest requestWithURL:otherFriendDetailURL]]; // send website to view, which will send data and add friend - person 2 -> person 1
         self.otherFriendWebView.delegate = self;
-        NSLog(@"friend added");
+        //NSLog(@"friend added");
     }
 }
 
@@ -185,7 +185,7 @@
                          @"http://www.brennerbrothersbrewery.com/phpdata/reelgood/checkifuserexists.php?username=%@"
                          ,nameOfUser];
     
-    NSLog(@"urlString is %@", urlString);
+    //NSLog(@"urlString is %@", urlString);
     
     NSError *error;
     
@@ -197,12 +197,12 @@
                          error:&error];
     
     
-    NSLog(@"dataJSON is %@", dataJSON);
+    //NSLog(@"dataJSON is %@", dataJSON);
     
     
     if (!error) {
         if (![dataJSON count]) {
-            NSLog(@"USERNAME IS NIL, try again");
+            //NSLog(@"USERNAME IS NIL, try again");
             return NO;
         }
     } else {
@@ -212,7 +212,7 @@
     return YES;
     
     /*
-     NSLog(@"USERS ARE %@", userNames);
+     //NSLog(@"USERS ARE %@", userNames);
 
     for (j = 0; j<[userNames count]; j++) //check if username already exists
     {
@@ -220,7 +220,7 @@
         
         if ([nameOfUser isEqualToString:tempUsernameString]) //username exists
         {
-            NSLog(@"USERNAME FOUND");
+            //NSLog(@"USERNAME FOUND");
             return YES;
             break;
         }
@@ -246,11 +246,11 @@
                                error:&friendDataError];
     friendCounter = 0;
     
-    NSLog(@"JSON  is %@", friendDataJSON);
+    //NSLog(@"JSON  is %@", friendDataJSON);
     
     if (friendDataError)
     {
-        NSLog(@"%@", [friendDataError localizedDescription]);
+        //NSLog(@"%@", [friendDataError localizedDescription]);
     }
     else {
         for ( NSDictionary *theFriendInfo in friendDataJSON )
@@ -266,7 +266,7 @@
 
 - (void)deleteFriend:(NSString *)friendToRemove sender:(id)sender{
    
-    NSLog(@"friend to remove is %@", friendToRemove);
+    //NSLog(@"friend to remove is %@", friendToRemove);
     
     NSURL *detailURL;
     NSString *detailURLString;
@@ -278,7 +278,7 @@
     
     detailURL=[[NSURL alloc] initWithString:detailURLString];
     
-    NSLog(@"detail url is %@", detailURL);
+    //NSLog(@"detail url is %@", detailURL);
     
     NSUserDefaults* settings = [NSUserDefaults new];
     [settings setObject:@"1" forKey:kaddedOrRemovedFriend]; // only reload main page if needed
@@ -294,7 +294,7 @@
     
     NSString* removeString = [self.removeFriendWebView stringByEvaluatingJavaScriptFromString:@"document.documentElement.innerHTML"];
     
-    NSLog(@"remove string is %@", removeString);
+    //NSLog(@"remove string is %@", removeString);
 
     if (webView == self.friendWebView){ // then check if was successful
         NSString* innerWebView = [self.friendWebView stringByEvaluatingJavaScriptFromString:@"document.documentElement.innerHTML"];
@@ -310,7 +310,7 @@
             [alertDialog show];
         }
         else{
-            NSLog(@"string exists, adding rating was successful"); // change to alert view?
+            //NSLog(@"string exists, adding rating was successful"); // change to alert view?
             UIAlertView *alertDialog;
             alertDialog = [[UIAlertView alloc]
                            initWithTitle: @"Added Friend"
@@ -323,7 +323,7 @@
             //[self.friendsTableView reloadData];
         }
         
-        NSLog(@"inner: %@", innerWebView);
+        //NSLog(@"inner: %@", innerWebView);
     }
     
 }

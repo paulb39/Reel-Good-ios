@@ -68,7 +68,7 @@
      @"http://www.brennerbrothersbrewery.com/phpdata/reelgood/checkifuserexists.php?username=%@"
      ,userName];
      
-     NSLog(@"urlString is %@", urlString);
+     //NSLog(@"urlString is %@", urlString);
      
      NSError *error;
      
@@ -80,12 +80,12 @@
      error:&error];
      
      
-     NSLog(@"dataJSON is %@", dataJSON);
+     //NSLog(@"dataJSON is %@", dataJSON);
      
      
      if (!error) {
          if (![dataJSON count]) {
-             NSLog(@"USERNAME IS NIL, try again");
+             //NSLog(@"USERNAME IS NIL, try again");
              return NO;
          }
      } else {
@@ -129,7 +129,7 @@
     
     NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
     
-    NSLog(@"response code is %ld", (long)httpResponse.statusCode);
+    //NSLog(@"response code is %ld", (long)httpResponse.statusCode);
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
@@ -142,13 +142,13 @@
     // The request is complete and data has been received
     // You can parse the stuff in your instance variable now
     
-    NSLog(@"done");
+    //NSLog(@"done");
     NSString* insideResponse =[[NSString alloc] initWithData:_recievedData encoding:NSUTF8StringEncoding];
     
     //NSString* errMsg = @"Error:";
     NSString *firstWord = [[insideResponse componentsSeparatedByString:@" "] objectAtIndex:0];
     
-    NSLog(@"inside is %@", firstWord);
+    //NSLog(@"inside is %@", firstWord);
     
    if ([insideResponse rangeOfString:@"Error:"].location == NSNotFound) { // if error is NOT FOUND
        
@@ -165,7 +165,7 @@
        [WSHelper setUserName:usernameLowercase]; //set username in userdefaults
        
     } else {
-        NSLog(@"already exists");
+        //NSLog(@"already exists");
          UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Error!" message:@"Username already taken, try again" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil]; [alert show];
     }
     
@@ -174,7 +174,7 @@
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
     // The request has failed for some reason!
     // Check the error var
-    NSLog(@"nsurl error is %@", error.localizedDescription);
+    //NSLog(@"nsurl error is %@", error.localizedDescription);
     NSString* errorMsg = error.localizedDescription;
         UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Error!" message:errorMsg delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil]; [alert show];
 }

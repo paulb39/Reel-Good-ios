@@ -81,7 +81,7 @@
     
     [self pushMovieInfo]; // if movie is not in database, add it
     
-    NSLog(@"rating is %@", userRating);
+    //NSLog(@"rating is %@", userRating);
     
     //ADD IF fields are empty
     if (alreadyRatedMovie == NO){
@@ -189,7 +189,7 @@
     
     if (alreadyDataError)
     {
-        NSLog(@"%@", [alreadyDataError localizedDescription]);
+        //NSLog(@"%@", [alreadyDataError localizedDescription]);
     }
     else {
         for ( NSDictionary *alreadyInfo in alreadyMovieDataJSON )
@@ -232,7 +232,7 @@
             // end crap*/
         }
         
-        NSLog(@"temp string is %@ bool is %d", tempString, alreadyRatedMovie);
+        //NSLog(@"temp string is %@ bool is %d", tempString, alreadyRatedMovie);
     }
     
 }
@@ -254,7 +254,7 @@
     
     if (movieInfoError)
     {
-        NSLog(@"%@", [movieInfoError localizedDescription]); // prob should do alert view
+        //NSLog(@"%@", [movieInfoError localizedDescription]); // prob should do alert view
     }
     else {
         for (NSDictionary *theIDInfo in movieInfoJSON) // get movie IDs in movie_info first
@@ -264,7 +264,7 @@
         }
     }
     
-    //NSLog(@"tempIDstring is: %@", movieIDsInSql);
+    ////NSLog(@"tempIDstring is: %@", movieIDsInSql);
     
     for (int g = 0; g<[movieIDsInSql count]; g++) //check if current movie is in database
     {
@@ -281,7 +281,7 @@
     NSURL *detailedURL;
     NSString *detailedURLString;
     
-    // NSLog(@"FOUNDMOVIEID is %d", foundMovieID); // debugging
+    // //NSLog(@"FOUNDMOVIEID is %d", foundMovieID); // debugging
     
     if (foundMovieID == NO){ // add to database
         
@@ -293,7 +293,7 @@
         
         detailedURL=[[NSURL alloc] initWithString:detailedURLString];
         
-        //NSLog(@"detailed URl is: %@", detailedURL);
+        ////NSLog(@"detailed URl is: %@", detailedURL);
         
         [self.infoWebView loadRequest:[NSURLRequest requestWithURL:detailedURL]]; // send website to view, which will create info in database
         self.infoWebView.delegate = self;
@@ -326,7 +326,7 @@
     [self.friendInfoWebView loadRequest:[NSURLRequest requestWithURL:aDetailedURL]]; // send website to view, which will create info in database
     self.friendInfoWebView.delegate = self;
     
-    NSLog(@"push rating info happened");
+    //NSLog(@"push rating info happened");
 }
 
 - (void) pushRatingInfoModify{
@@ -364,7 +364,7 @@
         NSString* innerWebView = [self.friendInfoWebView stringByEvaluatingJavaScriptFromString:@"document.documentElement.innerHTML"];
         
         if ([innerWebView rangeOfString:finishedSuccessfullyMessage].location == NSNotFound){
-            NSLog(@"PlaceHolder"); // error message?
+            //NSLog(@"PlaceHolder"); // error message?
         }
         else{
             UIAlertView *alertDialog;
@@ -377,13 +377,13 @@
             [alertDialog show];
         }
         
-        NSLog(@"inner: %@", innerWebView);
+        //NSLog(@"inner: %@", innerWebView);
     }
     else if (webView == self.modifyWebView){
         NSString* innerWebView = [self.modifyWebView stringByEvaluatingJavaScriptFromString:@"document.documentElement.innerHTML"];
         
         if ([innerWebView rangeOfString:finishedSuccessfullyMessage].location == NSNotFound){
-            NSLog(@"PlaceHolder"); //error message?
+            //NSLog(@"PlaceHolder"); //error message?
         }
         else{
             UIAlertView *alertDialog;

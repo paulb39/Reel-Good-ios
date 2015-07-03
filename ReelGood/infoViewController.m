@@ -53,7 +53,7 @@
     currentUser = [settings stringForKey:kcurrentUser];
     poster_of_movie = [settings stringForKey:kmoviePoster];
     
-    NSLog(@"poster is %@", poster_of_movie);
+    //NSLog(@"poster is %@", poster_of_movie);
     
     
     friendInfoFriend = [[NSMutableArray alloc] init];
@@ -70,7 +70,7 @@
     
     /*UIBezierPath * imgRect = [UIBezierPath bezierPathWithRect:CGRectMake(0, 0, 100, 100)];
     self.overviewBox.textContainer.exclusionPaths = @[imgRect]; //wrap text?*/
-    //NSLog(@"test %@ %@ %@ %@", title_of_movie, releasedate_of_movie, ID_of_movie, currentUser);
+    ////NSLog(@"test %@ %@ %@ %@", title_of_movie, releasedate_of_movie, ID_of_movie, currentUser);
     //releasedate_of_movie = [settings stringForKey:kreleaseDate]; // not neeed, keeping just in case
     //self.releaseLabel.text = releasedate_of_movie;
     
@@ -169,7 +169,7 @@
             [self setFontColor];
         }
         else{
-            NSLog(@"Error: %@", Error.localizedDescription); // change to alertview?
+            //NSLog(@"Error: %@", Error.localizedDescription); // change to alertview?
         }
     }];
 }
@@ -198,7 +198,7 @@
 - (IBAction)hideKey:(id)sender {
    // [self.ratingBox resignFirstResponder];
     //[self.commentsBox resignFirstResponder];
-    NSLog(@"test");
+    //NSLog(@"test");
 }
 
 - (void) setFontColor {
@@ -229,7 +229,7 @@
     
     if (friendMovieDataError)
     {
-        NSLog(@"%@", [friendMovieDataError localizedDescription]);
+        //NSLog(@"%@", [friendMovieDataError localizedDescription]);
     }
     else {
         for ( NSDictionary *theFriendMovieInfo in friendMovieDataJSON )
@@ -242,14 +242,14 @@
                 friendInfoComments[friendMovieDataCounter] = theFriendMovieInfo[@"comments"];
             
                 friendInfoMovieID[friendMovieDataCounter] = theFriendMovieInfo[@"movie_id"];
-                NSLog(@"tesst1");
+                //NSLog(@"tesst1");
                 friendMovieDataCounter++;
             }
 
         }
     }
     
-    NSLog(@"friend is THIS %@", friendInfoMovieID);
+    //NSLog(@"friend is THIS %@", friendInfoMovieID);
     
     [self.friendInfoWebView reloadData];
 }

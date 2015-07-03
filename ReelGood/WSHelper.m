@@ -30,7 +30,7 @@
                          @"http://www.brennerbrothersbrewery.com/phpdata/reelgood/checkFBID.php?FBID=%@"
                          ,FB_ID];
     
-    NSLog(@"urlString is %@", urlString);
+    //NSLog(@"urlString is %@", urlString);
     
     NSError *error;
     
@@ -42,12 +42,12 @@
                          error:&error];
     
     
-    NSLog(@"dataJSON is %@", dataJSON);
+    //NSLog(@"dataJSON is %@", dataJSON);
     
     
     if (!error) {
         if (![dataJSON count]) {
-            // NSLog(@"USERNAME IS NIL, DO SEGUE TO CREATE USERNAME");
+            // //NSLog(@"USERNAME IS NIL, DO SEGUE TO CREATE USERNAME");
             return nil;
         } else {
             @try {
@@ -56,12 +56,12 @@
                 }
             }
             @catch (NSException *exception) {
-                NSLog(@"JSON ERROR %@", exception.description); // change to alert view
+                //NSLog(@"JSON ERROR %@", exception.description); // change to alert view
             }
             
         }
     } else {
-        NSLog(@"ERROR getting username %@", error.description); // change to alert view
+        //NSLog(@"ERROR getting username %@", error.description); // change to alert view
     }
     
     
