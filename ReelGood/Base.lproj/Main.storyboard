@@ -649,8 +649,8 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1G5-sZ-NmU">
                                 <rect key="frame" x="9" y="118" width="303" height="325"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
-                                <mutableString key="text">Reel Good is a unique way to share your movie ratings and comments with your friends and family. 
-Begin by adding a friend to your account. Ask your friend for their username or invite them to join you by pressing the "Add Friend" button on the main page  Then add movies as you watch them!  Use the "Search" button on the main page to find movies.  Once you have found the movie you were looking for choose either "View info" or "Rate Movie" to view a summary or to add your rating.   Once you submit your rating, all of the friends that you are connected to will see your rating and comments.  You will also be able to view your friends ratings right from the main page.  If you ever want to update something that you have previously rated visit the "Profile" page and press on the movie title.  If you would like to delete one of your ratings, swipe left on the title and tap the "delete" button that appears.  This app was created by Paul Brenner and Adam Salwocki.   Movie data was pulled from The Movie Database.</mutableString>
+                                <string key="text">Reel Good is a unique way to share your movie ratings and comments with your friends and family. 
+Begin by adding a friend to your account. Ask your friend for their username or invite them to join you by pressing the "Add Friend" button on the main page  Then add movies as you watch them!  Use the "Search" button on the main page to find movies.  Once you have found the movie you were looking for choose either "View info" or "Rate Movie" to view a summary or to add your rating.   Once you submit your rating, all of the friends that you are connected to will see your rating and comments.  You will also be able to view your friends ratings right from the main page.  If you ever want to update something that you have previously rated visit the "Profile" page and press on the movie title.  If you would like to delete one of your ratings, swipe left on the title and tap the "delete" button that appears.  This app was created by Paul Brenner and Adam Salwocki.   Movie data was pulled from The Movie Database.</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -1128,46 +1128,23 @@ Begin by adding a friend to your account. Ask your friend for their username or 
                                             <rect key="frame" x="0.0" y="0.0" width="334" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="9" preferredMaxLayoutWidth="166" translatesAutoresizingMaskIntoConstraints="NO" id="E6N-nA-YGw">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="9" preferredMaxLayoutWidth="166" translatesAutoresizingMaskIntoConstraints="NO" id="E6N-nA-YGw">
                                                     <rect key="frame" x="68" y="2" width="166" height="39"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dKz-Aw-DsE">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dKz-Aw-DsE">
                                                     <rect key="frame" x="242" y="11" width="42" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="42" id="n6k-CW-9jk"/>
-                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="StarPressed.png" translatesAutoresizingMaskIntoConstraints="NO" id="JS2-Ra-LBP">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="StarPressed.png" translatesAutoresizingMaskIntoConstraints="NO" id="JS2-Ra-LBP">
                                                     <rect key="frame" x="290" y="2" width="42" height="39"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="42" id="pJH-DH-4Hh"/>
-                                                    </constraints>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1422506351_Floopy.png" translatesAutoresizingMaskIntoConstraints="NO" id="ZPE-L3-hsg">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="1422506351_Floopy.png" translatesAutoresizingMaskIntoConstraints="NO" id="ZPE-L3-hsg">
                                                     <rect key="frame" x="15" y="2" width="48" height="39"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="48" id="d4V-Bl-Qe1"/>
-                                                    </constraints>
                                                 </imageView>
                                             </subviews>
-                                            <constraints>
-                                                <constraint firstItem="ZPE-L3-hsg" firstAttribute="top" secondItem="E6N-nA-YGw" secondAttribute="top" id="2Ed-7h-glL"/>
-                                                <constraint firstItem="E6N-nA-YGw" firstAttribute="bottom" secondItem="JS2-Ra-LBP" secondAttribute="bottom" id="9fE-NP-Aee"/>
-                                                <constraint firstItem="ZPE-L3-hsg" firstAttribute="top" secondItem="8Ce-Lk-qzO" secondAttribute="top" constant="2" id="FxF-Uy-PSt"/>
-                                                <constraint firstItem="E6N-nA-YGw" firstAttribute="leading" secondItem="ZPE-L3-hsg" secondAttribute="trailing" constant="5" id="Gbv-u7-z3O"/>
-                                                <constraint firstAttribute="trailing" secondItem="JS2-Ra-LBP" secondAttribute="trailing" constant="2" id="LZW-xS-zkB"/>
-                                                <constraint firstItem="ZPE-L3-hsg" firstAttribute="leading" secondItem="8Ce-Lk-qzO" secondAttribute="leading" constant="15" id="WYO-4j-VYI"/>
-                                                <constraint firstItem="JS2-Ra-LBP" firstAttribute="leading" secondItem="dKz-Aw-DsE" secondAttribute="trailing" constant="6" id="YJC-bo-uPP"/>
-                                                <constraint firstItem="E6N-nA-YGw" firstAttribute="top" secondItem="JS2-Ra-LBP" secondAttribute="top" id="Z2R-dQ-o39"/>
-                                                <constraint firstItem="ZPE-L3-hsg" firstAttribute="bottom" secondItem="E6N-nA-YGw" secondAttribute="bottom" id="h9r-IC-zTl"/>
-                                                <constraint firstItem="dKz-Aw-DsE" firstAttribute="leading" secondItem="E6N-nA-YGw" secondAttribute="trailing" constant="8" symbolic="YES" id="kJF-pu-fJb"/>
-                                                <constraint firstItem="JS2-Ra-LBP" firstAttribute="centerY" secondItem="8Ce-Lk-qzO" secondAttribute="centerY" id="ocK-U0-WCF"/>
-                                                <constraint firstItem="dKz-Aw-DsE" firstAttribute="centerY" secondItem="JS2-Ra-LBP" secondAttribute="centerY" id="uHF-Ul-dY9"/>
-                                            </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.77647058820000003" green="0.7843137255" blue="0.79215686269999996" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
@@ -1241,9 +1218,9 @@ Begin by adding a friend to your account. Ask your friend for their username or 
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="qcl-xf-uqe"/>
         <segue reference="D8t-CC-3zg"/>
+        <segue reference="cSv-vk-yMq"/>
+        <segue reference="uSU-df-cYC"/>
         <segue reference="VoW-5c-R75"/>
-        <segue reference="kDk-Q6-lKQ"/>
     </inferredMetricsTieBreakers>
 </document>
