@@ -53,7 +53,10 @@
     self.lblVersion.text = [NSString stringWithFormat:@"Version: %@", version];
     
     self.loginButton.delegate = self;
-    self.loginButton.readPermissions = @[@"public_profile", @"email"];}
+    self.loginButton.readPermissions = @[@"public_profile", @"email"];
+   // self.loginButton.publishPermissions = @[@"publish_actions"];
+    
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

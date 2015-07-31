@@ -10,6 +10,8 @@
 		480D26361A7D5D01008FE6C8 /* rateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 480D26351A7D5D01008FE6C8 /* rateViewController.m */; };
 		4840D5651A82D2F40002A699 /* Gradient.png in Resources */ = {isa = PBXBuildFile; fileRef = 4840D5641A82D2F40002A699 /* Gradient.png */; };
 		484B72E41A79B96E00B7523E /* Reel Bar.png in Resources */ = {isa = PBXBuildFile; fileRef = 484B72E31A79B96E00B7523E /* Reel Bar.png */; };
+		484D78561B6939BC00F33D2B /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 484D78551B6939BC00F33D2B /* FBSDKShareKit.framework */; };
+		484D78581B6B0D0500F33D2B /* fbshare.png in Resources */ = {isa = PBXBuildFile; fileRef = 484D78571B6B0D0500F33D2B /* fbshare.png */; };
 		484D9DF31AA7902500786A6F /* aboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 484D9DF21AA7902500786A6F /* aboutViewController.m */; };
 		484D9DF51AAA4BFF00786A6F /* info_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 484D9DF41AAA4BFF00786A6F /* info_button.png */; };
 		4851976B1A9D04D500DB3733 /* profileCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4851976A1A9D04D500DB3733 /* profileCustomCell.m */; };
@@ -79,6 +81,8 @@
 		483BDF0B1A45EB51003B45EA /* JSONDictionaryExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONDictionaryExtensions.h; sourceTree = "<group>"; };
 		4840D5641A82D2F40002A699 /* Gradient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Gradient.png; sourceTree = "<group>"; };
 		484B72E31A79B96E00B7523E /* Reel Bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Reel Bar.png"; sourceTree = "<group>"; };
+		484D78551B6939BC00F33D2B /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = ../../../FacebookSDK/FBSDKShareKit.framework; sourceTree = "<group>"; };
+		484D78571B6B0D0500F33D2B /* fbshare.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fbshare.png; sourceTree = "<group>"; };
 		484D9DF11AA7902400786A6F /* aboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = aboutViewController.h; path = ReelGood/aboutViewController.h; sourceTree = SOURCE_ROOT; };
 		484D9DF21AA7902500786A6F /* aboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = aboutViewController.m; path = ReelGood/aboutViewController.m; sourceTree = SOURCE_ROOT; };
 		484D9DF41AAA4BFF00786A6F /* info_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info_button.png; sourceTree = "<group>"; };
@@ -163,6 +167,7 @@
 				48C32F2A1A1529E5003D5393 /* CoreGraphics.framework in Frameworks */,
 				48C32F2C1A1529E5003D5393 /* UIKit.framework in Frameworks */,
 				48D4BA6A1B38E0B400457E4E /* FBSDKCoreKit.framework in Frameworks */,
+				484D78561B6939BC00F33D2B /* FBSDKShareKit.framework in Frameworks */,
 				48C32F281A1529E5003D5393 /* Foundation.framework in Frameworks */,
 				48D4BA6B1B38E0B400457E4E /* FBSDKLoginKit.framework in Frameworks */,
 				D5B1BDBD9899BE30A52FB7CD /* libPods.a in Frameworks */,
@@ -215,6 +220,7 @@
 		48C32F261A1529E5003D5393 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				484D78551B6939BC00F33D2B /* FBSDKShareKit.framework */,
 				48D4BA681B38E0B400457E4E /* FBSDKCoreKit.framework */,
 				48D4BA691B38E0B400457E4E /* FBSDKLoginKit.framework */,
 				489DEAD81ACDB8F800048129 /* SystemConfiguration.framework */,
@@ -305,6 +311,7 @@
 		66A4EBF51A79A0790041EA9B /* Image Assets */ = {
 			isa = PBXGroup;
 			children = (
+				484D78571B6B0D0500F33D2B /* fbshare.png */,
 				66C39B881B409BC800630D60 /* About BTN.png */,
 				484D9DF41AAA4BFF00786A6F /* info_button.png */,
 				6631EA5C1A82CC33002DF453 /* backGround_Cover.png */,
@@ -411,6 +418,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6631EA5B1A82CC27002DF453 /* barGradient.png in Resources */,
+				484D78581B6B0D0500F33D2B /* fbshare.png in Resources */,
 				48C32F401A1529E6003D5393 /* Images.xcassets in Resources */,
 				6631EA571A82CBCB002DF453 /* Reed Good Large.png in Resources */,
 				66A4EC531A79CAD90041EA9B /* StarPressed.png in Resources */,
@@ -629,8 +637,8 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ENABLE_MODULES = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Adam Salwocki (7FZ8T88NEU)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Adam Salwocki (7FZ8T88NEU)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -657,8 +665,8 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ENABLE_MODULES = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Adam Salwocki (7FZ8T88NEU)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Adam Salwocki (7FZ8T88NEU)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",

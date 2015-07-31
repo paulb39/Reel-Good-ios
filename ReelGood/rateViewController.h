@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <FBSDKShareKit/FBSDKShareKit.h>
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
 NSString* userRating;
 NSString* userComments;
 NSString* currentUser;
