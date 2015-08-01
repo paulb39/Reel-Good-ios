@@ -13,6 +13,7 @@ NSMutableArray* movieTitles;
 NSMutableArray* releaseDates;
 NSMutableArray* movieIDs;
 NSMutableArray* moviePosters;
+NSMutableArray* moviePostersImage;
 int movieCounter;
 
 //#define kmovieTitle @"kmovietitle"

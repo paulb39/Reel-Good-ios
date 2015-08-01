@@ -49,6 +49,7 @@
     self.dataItems = nil; // not needed?
     self.dataItems = [NSMutableDictionary new];
     self.keys = self.dataItems.allKeys;
+    moviePostersImage = [NSMutableArray new];
 }
 
 - (void)didReceiveMemoryWarning
@@ -96,9 +97,9 @@
     cell.movieTitleLabel.text = [movieTitles objectAtIndex:indexPath.row];
     cell.dateLabel.text = [releaseDates objectAtIndex:indexPath.row];
     
-    UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[moviePosters objectAtIndex:indexPath.row]]]]; // put posters in tableview
+    //UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[moviePosters objectAtIndex:indexPath.row]]]]; // put posters in tableview
     
-    cell.imageView.image=image;
+    cell.imageView.image=[moviePostersImage objectAtIndex:indexPath.row];
     
     CGSize itemSize = CGSizeMake(154, 154); // make poster images bigger
     UIGraphicsBeginImageContextWithOptions(itemSize, NO, UIScreen.mainScreen.scale); //UIGraphicsBeginImageContext
@@ -221,12 +222,15 @@
                 
                 if (movieTest[@"poster_path"] == (id)[NSNull null]){
                     moviePosters[movieCounter] = @"https://d3a8mw37cqal2z.cloudfront.net/assets/f996aa2014d2ffddfda8463c479898a3/images/no-poster-w185.jpg"; // set to default poster
+                    UIImage* tempI = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:@"https://d3a8mw37cqal2z.cloudfront.net/assets/f996aa2014d2ffddfda8463c479898a3/images/no-poster-w185.jpg"]]];
+                    moviePostersImage[movieCounter] = tempI;
                 }
                 else{
                     NSString* tempPosterAddress = movieTest[@"poster_path"];
                     NSString* tempPoster = [NSString stringWithFormat:@"http://image.tmdb.org/t/p/w154%@",tempPosterAddress];
                     moviePosters[movieCounter] = tempPoster;
-                }
+                    UIImage* tempI = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:tempPoster]]];
+                    moviePostersImage[movieCounter] = tempI;                }
                 
                 [self.dataItems setObject:movieTitles[movieCounter] forKey:releaseDates[movieCounter]]; // may not be needed
                 self.keys = self.dataItems.allKeys;

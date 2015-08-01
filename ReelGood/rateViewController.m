@@ -20,6 +20,7 @@
 - (IBAction)starRatingFive:(id)sender;
 - (IBAction)hideKeyboard:(id)sender;
 - (IBAction)backButton:(id)sender;
+- (IBAction)fbShareTap:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UITextView *ratingCommentsBox;
 @property (weak, nonatomic) IBOutlet UIButton *starOne;
@@ -31,6 +32,8 @@
 @property (weak, nonatomic) IBOutlet UIWebView *modifyWebView;
 @property (weak, nonatomic) IBOutlet UIWebView *infoWebView;
 @property (weak, nonatomic) IBOutlet UILabel *lblRating;
+@property (weak, nonatomic) IBOutlet UILabel *lblFBShare;
+@property (weak, nonatomic) IBOutlet UIButton *fbShareOutlet;
 
 @end
 
@@ -50,14 +53,17 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    
     NSUserDefaults *settings = [NSUserDefaults new]; // get info from userDefaults
+    
+    self.lblFBShare.hidden = YES;
+    self.fbShareOutlet.hidden = YES;
     
     title_of_movie = [settings stringForKey:kmovieTitle];
     ID_of_movie = [settings stringForKey:kmovieID];
     currentUser = [settings stringForKey:kcurrentUser];
     
-    [self checkIfAlreadyRated]; // check if user has already rated the movie
+   [self checkIfAlreadyRated]; // check if user has already rated the movie
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -121,6 +127,26 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+- (IBAction)fbShareTap:(id)sender {
+    NSUserDefaults* settings = [NSUserDefaults standardUserDefaults];
+    
+    NSString* poster_of_movie = [settings stringForKey:kmoviePoster];
+    NSString* contentInfo = [[NSString alloc] initWithFormat:@"%@ %@ stars!", self.ratingCommentsBox.text, userRating];
+    NSString* contentTitle = [[NSString alloc] initWithFormat:@"%@ Review",title_of_movie];
+    
+    NSURL* urlTest = [[NSURL alloc] initWithString:poster_of_movie];
+    
+    FBSDKShareLinkContent *shareContent = [[FBSDKShareLinkContent alloc] init];
+    shareContent.contentTitle = contentTitle;
+    shareContent.contentDescription = contentInfo;
+    shareContent.contentURL = urlTest;
+    
+     FBSDKShareDialog *dialog = [[FBSDKShareDialog alloc] init];
+     dialog.fromViewController = self;
+     dialog.shareContent = shareContent;
+     dialog.mode = FBSDKShareDialogModeAutomatic;
+     [dialog show];
+}
 
 -(void)setRatingToOne{
     userRating = @"1";
@@ -205,6 +231,9 @@
         }
         else{
             alreadyRatedMovie = YES;
+            self.lblFBShare.hidden = NO;
+            self.fbShareOutlet.hidden = NO;
+            
             //self.ratingBox.text = userRating;
             
             if ([userRating isEqualToString:@"1"]) {
@@ -375,6 +404,8 @@
                            cancelButtonTitle: @"OK"
                            otherButtonTitles: nil];
             [alertDialog show];
+            self.lblFBShare.hidden = NO;
+            self.fbShareOutlet.hidden = NO;
         }
         
         //NSLog(@"inner: %@", innerWebView);

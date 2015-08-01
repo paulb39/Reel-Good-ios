@@ -23,6 +23,8 @@
 		487A69E91AB0A972004A6412 /* searchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 487A69E81AB0A972004A6412 /* searchCell.m */; };
 		489DEAD71ACDB8BC00048129 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 489DEAD61ACDB8BC00048129 /* Reachability.m */; };
 		489DEAD91ACDB8F800048129 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 489DEAD81ACDB8F800048129 /* SystemConfiguration.framework */; };
+		48A0216B1B6D3F2F002B0107 /* fbshare.png in Resources */ = {isa = PBXBuildFile; fileRef = 48A0216A1B6D3F2F002B0107 /* fbshare.png */; };
+		48A0216D1B6D3F71002B0107 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48A0216C1B6D3F71002B0107 /* FBSDKShareKit.framework */; };
 		48A45DE91B2E37890051B428 /* loginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A45DE81B2E37890051B428 /* loginViewController.m */; };
 		48A45DF01B2E6CA60051B428 /* WSHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A45DEF1B2E6CA60051B428 /* WSHelper.m */; };
 		48A45DF31B2F38970051B428 /* setUsernameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A45DF21B2F38970051B428 /* setUsernameViewController.m */; };
@@ -103,6 +105,8 @@
 		489DEAD51ACDB8BC00048129 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		489DEAD61ACDB8BC00048129 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = Reachability.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		489DEAD81ACDB8F800048129 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		48A0216A1B6D3F2F002B0107 /* fbshare.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fbshare.png; path = "../../../../../Dropbox/Senior Project/Project Iterations/bup before merge/master/Reel-Good-ios/Image Assets/fbshare.png"; sourceTree = "<group>"; };
+		48A0216C1B6D3F71002B0107 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = ../../../FacebookSDK/FBSDKShareKit.framework; sourceTree = "<group>"; };
 		48A45DE71B2E37890051B428 /* loginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = loginViewController.h; sourceTree = "<group>"; };
 		48A45DE81B2E37890051B428 /* loginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = loginViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		48A45DEE1B2E6CA60051B428 /* WSHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSHelper.h; sourceTree = "<group>"; };
@@ -162,6 +166,7 @@
 			files = (
 				48EA5BF11B41AEC700A0C639 /* iAd.framework in Frameworks */,
 				489DEAD91ACDB8F800048129 /* SystemConfiguration.framework in Frameworks */,
+				48A0216D1B6D3F71002B0107 /* FBSDKShareKit.framework in Frameworks */,
 				48582E601A73FCA400C0D300 /* MessageUI.framework in Frameworks */,
 				48C32F2A1A1529E5003D5393 /* CoreGraphics.framework in Frameworks */,
 				48C32F2C1A1529E5003D5393 /* UIKit.framework in Frameworks */,
@@ -218,6 +223,7 @@
 		48C32F261A1529E5003D5393 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				48A0216C1B6D3F71002B0107 /* FBSDKShareKit.framework */,
 				48EA5BF01B41AEC700A0C639 /* iAd.framework */,
 				48D4BA681B38E0B400457E4E /* FBSDKCoreKit.framework */,
 				48D4BA691B38E0B400457E4E /* FBSDKLoginKit.framework */,
@@ -309,6 +315,7 @@
 		66A4EBF51A79A0790041EA9B /* Image Assets */ = {
 			isa = PBXGroup;
 			children = (
+				48A0216A1B6D3F2F002B0107 /* fbshare.png */,
 				66C39B881B409BC800630D60 /* About BTN.png */,
 				484D9DF41AAA4BFF00786A6F /* info_button.png */,
 				6631EA5C1A82CC33002DF453 /* backGround_Cover.png */,
@@ -415,6 +422,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6631EA5B1A82CC27002DF453 /* barGradient.png in Resources */,
+				48A0216B1B6D3F2F002B0107 /* fbshare.png in Resources */,
 				48C32F401A1529E6003D5393 /* Images.xcassets in Resources */,
 				6631EA571A82CBCB002DF453 /* Reed Good Large.png in Resources */,
 				66A4EC531A79CAD90041EA9B /* StarPressed.png in Resources */,
