@@ -67,7 +67,7 @@
     profileMovieTitles = [[NSMutableArray alloc] init];
     profileMovieRating = [[NSMutableArray alloc] init];
     profileMoviePosters = [[NSMutableArray alloc] init];
-    friendMoviePostersImage = [[NSMutableArray alloc] init];
+    profileMoviePostersImage = [[NSMutableArray alloc] init];
     
     if (didProfileFirstLoad == NO){
        // [self getProfileInfo];
@@ -119,6 +119,7 @@
         [self deleteMovie:[profileMovieIDs objectAtIndex:indexPath.row] sender:nil];
         [profileMovieIDs removeObjectAtIndex:indexPath.row]; // remove from arrays
         [profileMoviePosters removeObjectAtIndex:indexPath.row];
+        [profileMoviePostersImage removeObjectAtIndex:indexPath.row];
         [self.profileWebView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
 
@@ -137,7 +138,7 @@
     cell.ratingLabel.text = [profileMovieRating objectAtIndex:indexPath.row];
  
     //image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[profileMoviePosters objectAtIndex:indexPath.row]]]]; // put posters in tableview
-    cell.posterView.image = [friendMoviePostersImage objectAtIndex:indexPath.row];
+    cell.posterView.image = [profileMoviePostersImage objectAtIndex:indexPath.row];
     
     return cell;
 }
@@ -237,7 +238,7 @@
             if (profileJSON[@"poster_path"] == (id)[NSNull null]) {
               profileMoviePosters[profileCounter] = @"https://d3a8mw37cqal2z.cloudfront.net/assets/f996aa2014d2ffddfda8463c479898a3/images/no-poster-w185.jpg"; // default poster
                 UIImage* tempI = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:@"https://d3a8mw37cqal2z.cloudfront.net/assets/f996aa2014d2ffddfda8463c479898a3/images/no-poster-w185.jpg"]]];
-                friendMoviePostersImage[profileCounter] = tempI;
+                profileMoviePostersImage[profileCounter] = tempI;
             
             }
             else {
@@ -245,7 +246,7 @@
                 NSString* posterTemp = [NSString stringWithFormat:@"http://image.tmdb.org/t/p/w154%@",tempAddress];
                 profileMoviePosters[profileCounter] = posterTemp;
                 UIImage* tempI = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:posterTemp]]];
-                friendMoviePostersImage[profileCounter] = tempI;
+                profileMoviePostersImage[profileCounter] = tempI;
                 
             }
             profileCounter++;

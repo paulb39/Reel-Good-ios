@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "-[mainViewController viewDidAppear:]:mainViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "friendMoviePostersImage">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[mainViewController tableView:cellForRowAtIndexPath:]:mainViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "friendMoviePostersImage">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

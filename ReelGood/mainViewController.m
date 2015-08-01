@@ -255,6 +255,9 @@
     cell.posterCellImage.image = [friendMoviePostersImage objectAtIndex:indexPath.row];
     
     ////NSLog(@"cell posters are %@", friendMoviePosters);
+   
+
+    
    return cell;
 
     
@@ -263,6 +266,7 @@
 - (void) getFriendInfo{
     [friendMoviePosters removeAllObjects];
     [friendMovieIDs removeAllObjects]; // for updating table if deleting friends
+    [friendMoviePostersImage removeAllObjects];
     
     ////NSLog(@"updated posters are %@", friendMoviePosters);
     

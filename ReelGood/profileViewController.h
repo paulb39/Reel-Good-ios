@@ -13,7 +13,7 @@ NSMutableArray* profileMovieTitles;
 NSMutableArray* profileMovieIDs;
 NSMutableArray* profileMovieRating;
 NSMutableArray* profileMoviePosters;
-NSMutableArray* friendMoviePostersImage;
+NSMutableArray* profileMoviePostersImage;
 
 NSString* theCurrentUser;
 
