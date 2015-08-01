@@ -214,6 +214,7 @@
 - (void) getFriendInfo{
     [friendMoviePosters removeAllObjects];
     [friendMovieIDs removeAllObjects]; // for updating table if deleting friends
+    [friendMoviePostersImage removeAllObjects];
     
     ////NSLog(@"updated posters are %@", friendMoviePosters);
     

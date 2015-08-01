@@ -49,7 +49,7 @@
     self.dataItems = nil; // not needed?
     self.dataItems = [NSMutableDictionary new];
     self.keys = self.dataItems.allKeys;
-    moviePostersImage = [NSMutableArray new];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -169,6 +169,7 @@
     movieTitles = [[NSMutableArray alloc] init];
     releaseDates = [[NSMutableArray alloc] init];
     moviePosters = [[NSMutableArray alloc] init];
+    moviePostersImage = [NSMutableArray new];
     
     [self hideKeyboard:nil];
     
