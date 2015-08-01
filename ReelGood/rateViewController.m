@@ -131,13 +131,14 @@
     NSUserDefaults* settings = [NSUserDefaults standardUserDefaults];
     
     NSString* poster_of_movie = [settings stringForKey:kmoviePoster];
-    NSString* contenInfo = [[NSString alloc] initWithFormat:@"%@ %@ stars!", self.ratingCommentsBox.text, userRating];
+    NSString* contentInfo = [[NSString alloc] initWithFormat:@"%@ %@ stars!", self.ratingCommentsBox.text, userRating];
+    NSString* contentTitle = [[NSString alloc] initWithFormat:@"%@ Review",title_of_movie];
     
     NSURL* urlTest = [[NSURL alloc] initWithString:poster_of_movie];
     
     FBSDKShareLinkContent *shareContent = [[FBSDKShareLinkContent alloc] init];
-    shareContent.contentTitle = @"Reel Good Movie rating";
-    shareContent.contentDescription = contenInfo;
+    shareContent.contentTitle = contentTitle;
+    shareContent.contentDescription = contentInfo;
     shareContent.contentURL = urlTest;
     
      FBSDKShareDialog *dialog = [[FBSDKShareDialog alloc] init];

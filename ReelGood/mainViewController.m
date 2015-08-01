@@ -101,6 +101,7 @@
     friendMovieIDs = [[NSMutableArray alloc] init];
     
     friendMoviePosters = [[NSMutableArray alloc] init];
+    friendMoviePostersImage = [[NSMutableArray alloc] init]; // uiimage
     
     image = [[UIImage alloc] initWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:@"https://d3a8mw37cqal2z.cloudfront.net/assets/f996aa2014d2ffddfda8463c479898a3/images/no-poster-w185.jpg"]]]; // default poster
     
@@ -172,6 +173,10 @@
 {
     CustomCell *cell = [self.mainWebView dequeueReusableCellWithIdentifier:@"mainProto"];
     
+    if (cell == nil) {
+        cell = [[CustomCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"mainProto"];
+    }
+    
     
     cell.backgroundColor =  [UIColor colorWithPatternImage:[UIImage imageNamed:@"Gradient.png"]];
     
@@ -187,13 +192,22 @@
     cell.friendNameLabel.text = [friendFriend objectAtIndex:indexPath.row];
     cell.friendScore.text = [friendMovieRating objectAtIndex:indexPath.row];
     
+    //[self performSelectorInBackground:@selector(requestImg:) withObject:containter];
+   // dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+      //image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[friendMoviePosters objectAtIndex:indexPath.row]]]]; // put posters in tableview
+        //cell.posterCellImage.image = image;
+    //});
     
-    image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[friendMoviePosters objectAtIndex:indexPath.row]]]]; // put posters in tableview
-    cell.posterCellImage.image = image;
+    //image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[friendMoviePosters objectAtIndex:indexPath.row]]]]; // put posters in tableview
+    // cell.posterCellImage.image = image;
+    
+    //UIImage* placeHolderImage = [UIImage imageNamed:@"1422506351_Floopy.png"];
+    
+    cell.posterCellImage.image = [friendMoviePostersImage objectAtIndex:indexPath.row];
     
     ////NSLog(@"cell posters are %@", friendMoviePosters);
-   
-    return cell;
+   return cell;
+
     
 }
 
@@ -309,11 +323,15 @@
     else {
         if (apiJSON[@"poster_path"] == (id)[NSNull null]) {
             friendMoviePosters[posterCount] = @"https://d3a8mw37cqal2z.cloudfront.net/assets/f996aa2014d2ffddfda8463c479898a3/images/no-poster-w185.jpg"; // default poster
+            UIImage* tempI = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:@"https://d3a8mw37cqal2z.cloudfront.net/assets/f996aa2014d2ffddfda8463c479898a3/images/no-poster-w185.jpg"]]];
+            friendMoviePostersImage[posterCount] = tempI;
         }
         else {
             NSString* tempAddress = apiJSON[@"poster_path"];
             NSString* posterTemp = [NSString stringWithFormat:@"http://image.tmdb.org/t/p/w154%@",tempAddress];
             friendMoviePosters[posterCount] = posterTemp;
+            UIImage* tempI = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:posterTemp]]];
+            friendMoviePostersImage[posterCount] = tempI;
         }
         
         posterCount++;
