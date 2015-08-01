@@ -53,7 +53,10 @@
     self.lblVersion.text = [NSString stringWithFormat:@"Version: %@", version];
     
     self.loginButton.delegate = self;
-    self.loginButton.readPermissions = @[@"public_profile", @"email"];}
+    self.loginButton.readPermissions = @[@"public_profile", @"email"];
+   // self.loginButton.publishPermissions = @[@"publish_actions"];
+    
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -62,8 +65,9 @@
 
 - (void)loginButton:(FBSDKLoginButton *)loginButton didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result error:(NSError *)error;
 {
-    if (![result isCancelled]) {
     //NSLog(@"you logged in");
+    
+    if (![result isCancelled]) {
     [self performSegueWithIdentifier: @"toMain" sender: self]; // load main view controller
     }
 }

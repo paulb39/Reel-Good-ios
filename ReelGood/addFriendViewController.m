@@ -47,7 +47,8 @@
     
     [self getFriendInfo];
     
-    ////NSLog(@"friend friend is %@", arrayOfFriends);
+    //NSLog(@"friend friend is %@", arrayOfFriends);
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -129,8 +130,8 @@
         }
         else{
             friendExists = NO;
-           // //NSLog(@"NEED TO SEND EMAIL");
-            
+            //NSLog(@"NEED TO SEND EMAIL");
+           
             UIAlertView *alertDialog;
             alertDialog = [[UIAlertView alloc]
                            initWithTitle: @"Invite your friend"
@@ -163,7 +164,7 @@
 	otherFriendDetailURL=[[NSURL alloc] initWithString:otherFriendDetailURLString];
     
     
-    ////NSLog(@"fieldisempty and friend exists %d, %d", fieldIsEmpty, friendExists);
+    //NSLog(@"fieldisempty and friend exists %d, %d", fieldIsEmpty, friendExists);
    
     if (fieldIsEmpty == NO && friendExists == YES){ // if not empty and friend username exists, push to database
         NSUserDefaults* settings = [NSUserDefaults new];
@@ -175,7 +176,7 @@
         
         [self.otherFriendWebView loadRequest:[NSURLRequest requestWithURL:otherFriendDetailURL]]; // send website to view, which will send data and add friend - person 2 -> person 1
         self.otherFriendWebView.delegate = self;
-       // //NSLog(@"friend added");
+        //NSLog(@"friend added");
     }
 }
 
@@ -185,7 +186,9 @@
                          @"http://www.brennerbrothersbrewery.com/phpdata/reelgood/checkifuserexists.php?username=%@"
                          ,nameOfUser];
     
-   // //NSLog(@"urlString is %@", urlString);
+
+    //NSLog(@"urlString is %@", urlString);
+
     
     NSError *error;
     

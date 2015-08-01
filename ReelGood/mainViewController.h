@@ -19,6 +19,7 @@ NSMutableArray* friendMovieComments;
 NSMutableArray* friendMovieIDs;
 NSMutableArray* friendMoviePosters;
 
+
 NSString* firstUserLoad;
 NSString* userCurrent;
 
@@ -29,6 +30,7 @@ NSString *tempPosters;
 NSString* tempPosterTest;
 
 UIImage* image;
+NSMutableArray* friendMoviePostersImage;
 
 int posterCount;
 int mainCounter;

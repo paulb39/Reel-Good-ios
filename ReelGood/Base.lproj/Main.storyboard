@@ -429,12 +429,28 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dUo-lk-7mi">
+                                <rect key="frame" x="202" y="41" width="46" height="30"/>
+                                <state key="normal" backgroundImage="fbshare.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fbShareTap:" destination="eOZ-9p-zyN" eventType="touchUpInside" id="ImU-Zf-5QH"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Share" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gTz-Z9-cE5">
+                                <rect key="frame" x="206" y="66" width="39" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="fbShareOutlet" destination="dUo-lk-7mi" id="MsH-MC-Wbh"/>
                         <outlet property="friendInfoWebView" destination="h1a-Q2-y9l" id="op3-kf-YDW"/>
                         <outlet property="infoWebView" destination="qbA-11-Gnp" id="ZJb-gB-IDI"/>
+                        <outlet property="lblFBShare" destination="gTz-Z9-cE5" id="26U-Ci-IGw"/>
                         <outlet property="lblRating" destination="72L-s0-MVj" id="fs8-M5-g2R"/>
                         <outlet property="modifyWebView" destination="eXG-0Z-9kP" id="u6c-ID-2BA"/>
                         <outlet property="ratingCommentsBox" destination="kmD-2m-WDW" id="sHj-qL-eWp"/>
@@ -1210,6 +1226,7 @@ Begin by adding a friend to your account. Ask your friend for their username or 
         <image name="StarPressed.png" width="128" height="128"/>
         <image name="backGround.png" width="901" height="1207"/>
         <image name="backGround_Cover.png" width="901" height="1207"/>
+        <image name="fbshare.png" width="960" height="960"/>
         <image name="info_button.png" width="128" height="128"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
