@@ -334,7 +334,7 @@
 -(void)sendEmail{
     NSString* messageString =[NSString stringWithFormat:
                                 @"User %@ has requested you to create an account on reelGood"
-                                ,currentLoggedInUser];
+                                ,[WSHelper getCurrentUser]];
     
     if([MFMailComposeViewController canSendMail]) {
         MFMailComposeViewController *mailCont = [[MFMailComposeViewController alloc] init];
@@ -359,7 +359,7 @@
 }
 
 -(void)sendText {
-    NSString* messageString = [NSString stringWithFormat:@"User %@ has requested you to create an account on reelGood", currentLoggedInUser];
+    NSString* messageString = [NSString stringWithFormat:@"User %@ has requested you to create an account on reelGood", [WSHelper getCurrentUser]];
     
     if([MFMessageComposeViewController canSendText]) {
         MFMessageComposeViewController *messageController = [[MFMessageComposeViewController alloc] init];

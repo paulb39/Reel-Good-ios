@@ -371,7 +371,7 @@
     }
     
     modifyDetailedURLString=[NSString stringWithFormat:
-                             @"www.brennerbrothersbrewery.com/phpdata/reelgood/pushratingdatamodify.php?username=%@&movid=%@&rating=%@&comments=%@"
+                             @"http://www.brennerbrothersbrewery.com/phpdata/reelgood/pushratingdatamodify.php?username=%@&movid=%@&rating=%@&comments=%@"
                              ,[WSHelper getCurrentUser],ID_of_movie, userRating, usersComments];
     
     
