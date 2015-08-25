@@ -26,6 +26,8 @@
     [super viewDidAppear:animated];
     
     bool hasGoogleSignIn = [[GIDSignIn sharedInstance] hasAuthInKeychain];
+    [GIDSignIn sharedInstance].delegate = self; // google
+    [GIDSignIn sharedInstance].uiDelegate = self;
     
     if ([WSHelper hasNetworkConnection]) {
         if ([FBSDKAccessToken currentAccessToken]) {
@@ -56,8 +58,7 @@
     
     self.loginButton.delegate = self;
     self.loginButton.readPermissions = @[@"public_profile", @"email"];
-    [GIDSignIn sharedInstance].delegate = self; // google
-    [GIDSignIn sharedInstance].uiDelegate = self;
+
    // self.loginButton.publishPermissions = @[@"publish_actions"];
     
 }
@@ -92,6 +93,7 @@ didSignInForUser:(GIDGoogleUser *)user
     }
 
     NSLog(@"user ID is %@", user.userID);
+    NSLog(@"error is %@", error.localizedDescription);
     
 }
 
