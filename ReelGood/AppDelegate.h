@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import <GoogleSignIn/GoogleSignIn.h>
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 

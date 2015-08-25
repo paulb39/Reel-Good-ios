@@ -11,6 +11,7 @@
 #import "CustomCell.h"
 #import <ILMovieDBClient.h>
 #import "WSHelper.h"
+#import <GoogleSignIn/GoogleSignIn.h>
 
 @interface mainViewController ()
 - (IBAction)logOutButton:(id)sender;
@@ -55,9 +56,24 @@
     //if returned username is nil. do segue to create username
     // else facebook account has a username, set username in userdefaults
     
+    GIDGoogleUser* googleUser1 = [[GIDSignIn sharedInstance] currentUser]; // google userID
+    NSLog(@"user on main first is %@", googleUser1.userID);
+    
+    NSString* userNameForID1 = [WSHelper getUserNameFromServer:googleUser1.userID];
+    NSLog(@"usernameforid first is %@", userNameForID1);
+
+    
     if ([WSHelper getCurrentUser] == nil) {
-        NSString* userNameForID = [WSHelper getUserNameFromServer:[FBSDKAccessToken currentAccessToken].userID];
-        //NSLog(@"usernameforid is %@", userNameForID);
+        GIDGoogleUser* googleUser = [[GIDSignIn sharedInstance] currentUser]; // google userID
+        NSLog(@"user on main is %@", googleUser.userID);
+        
+        NSString* userNameForID = [WSHelper getUserNameFromServer:googleUser.userID];
+        
+        if ([FBSDKAccessToken currentAccessToken]) { // then user FBID
+            userNameForID = [WSHelper getUserNameFromServer:[FBSDKAccessToken currentAccessToken].userID];
+        }
+        
+        NSLog(@"usernameforid is %@", userNameForID);
         
         if (userNameForID == nil) {
             //NSLog(@"DOING THE SEGUE TO CREATE A USERNAME"); // will set userdefaults there
@@ -401,10 +417,16 @@
     [settings setObject:@"1" forKey:ksegueFromMain];
     [settings synchronize];
     
+    [[WSHelper getDefaults] setObject:nil forKey:PREFERENCE_KEY_USERNAME];
+    
+    if ([FBSDKAccessToken currentAccessToken]) {
     FBSDKLoginManager *loginManager = [[FBSDKLoginManager alloc] init];
     [loginManager logOut];
+    } else {
+        [[GIDSignIn sharedInstance] signOut];
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
     
-    [[WSHelper getDefaults] setObject:nil forKey:PREFERENCE_KEY_USERNAME];
     
     [self performSegueWithIdentifier:@"toLogOut" sender:self];
 }

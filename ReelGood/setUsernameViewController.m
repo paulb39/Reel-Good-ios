@@ -8,6 +8,7 @@
 
 #import "setUsernameViewController.h"
 #import "WSHelper.h"
+#import <GoogleSignIn/GoogleSignIn.h>
 
 @interface setUsernameViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
@@ -97,11 +98,19 @@
                                    
 - (void)saveUsernameToDB
 {
+    GIDGoogleUser* googleUserID = [[GIDSignIn sharedInstance] currentUser]; // google userID
+    
     NSString* strUsername = [self.usernameTextField.text lowercaseString];
     
     NSString* url=[NSString stringWithFormat:
                    @"http://www.brennerbrothersbrewery.com/phpdata/reelgood/pushdatagettest.php?fbid=%@&username=%@"
-                   ,[FBSDKAccessToken currentAccessToken].userID, strUsername];
+                   ,googleUserID.userID, strUsername];
+    
+    if ([FBSDKAccessToken currentAccessToken]) {
+        url=[NSString stringWithFormat:
+             @"http://www.brennerbrothersbrewery.com/phpdata/reelgood/pushdatagettest.php?fbid=%@&username=%@"
+             ,[FBSDKAccessToken currentAccessToken].userID, strUsername];
+    }
     
     
     // Create the request.
