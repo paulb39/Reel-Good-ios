@@ -665,8 +665,8 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1G5-sZ-NmU">
                                 <rect key="frame" x="9" y="118" width="303" height="325"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
-                                <mutableString key="text">Reel Good is a unique way to share your movie ratings and comments with friends and family. 
-Begin by adding a friend to your account. Ask your friend for their username or invite them to join you by pressing the "Add Friend" button on the main page  Then add movies as you watch them!  Use the "Search" button on the main page to find movies.  Once you have found the movie you were looking for choose either "View info" or "Rate Movie" to view a summary or to add your rating.   Once you submit your rating, all of the friends that you are connected to will see your rating and comments.  You will also be able to view your friends ratings right from the main page.  If you ever want to update something that you have previously rated visit the "Profile" page and press on the movie title.  If you would like to delete one of your ratings, swipe left on the title and tap the "delete" button that appears.  This app was created by Paul Brenner and Adam Salwocki.   Movie data was pulled from The Movie Database.</mutableString>
+                                <string key="text">Reel Good is a unique way to share your movie ratings and comments with friends and family. 
+Begin by adding a friend to your account. Ask your friend for their username or invite them to join you by pressing the "Add Friend" button on the main page  Then add movies as you watch them!  Use the "Search" button on the main page to find movies.  Once you have found the movie you were looking for choose either "View info" or "Rate Movie" to view a summary or to add your rating.   Once you submit your rating, all of the friends that you are connected to will see your rating and comments.  You will also be able to view your friends ratings right from the main page.  If you ever want to update something that you have previously rated visit the "Profile" page and press on the movie title.  If you would like to delete one of your ratings, swipe left on the title and tap the "delete" button that appears.  This app was created by Paul Brenner and Adam Salwocki.   Movie data was pulled from The Movie Database.</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -701,17 +701,21 @@ Begin by adding a friend to your account. Ask your friend for their username or 
                                 <rect key="frame" x="80" y="249" width="160" height="41"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zYR-a9-T8i" customClass="GIDSignInButton">
+                                <rect key="frame" x="80" y="305" width="160" height="41"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Reed Good Large.png" translatesAutoresizingMaskIntoConstraints="NO" id="kq2-Bc-yqX">
                                 <rect key="frame" x="40" y="76" width="240" height="128"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Version #" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9VE-ue-RIp">
-                                <rect key="frame" x="120" y="374" width="81" height="21"/>
+                                <rect key="frame" x="120" y="418" width="81" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" red="0.77647058820000003" green="0.7843137255" blue="0.79215686269999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xWq-uB-PEo">
-                                <rect key="frame" x="78" y="291" width="165" height="69"/>
+                                <rect key="frame" x="78" y="349" width="165" height="69"/>
                                 <state key="normal" title="About" backgroundImage="About BTN.png">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -726,6 +730,7 @@ Begin by adding a friend to your account. Ask your friend for their username or 
                     <connections>
                         <outlet property="lblVersion" destination="9VE-ue-RIp" id="3R9-fK-o09"/>
                         <outlet property="loginButton" destination="jgE-ew-ip1" id="7gF-sW-8ME"/>
+                        <outlet property="signInButton" destination="zYR-a9-T8i" id="eXU-RP-h0b"/>
                         <segue destination="6ai-4h-tGv" kind="modal" identifier="toMain" id="D8t-CC-3zg"/>
                         <segue destination="7OI-kJ-Gxe" kind="modal" identifier="goToAboutPage" id="VoW-5c-R75"/>
                     </connections>

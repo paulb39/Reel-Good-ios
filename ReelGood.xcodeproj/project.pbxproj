@@ -28,6 +28,14 @@
 		48A45DE91B2E37890051B428 /* loginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A45DE81B2E37890051B428 /* loginViewController.m */; };
 		48A45DF01B2E6CA60051B428 /* WSHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A45DEF1B2E6CA60051B428 /* WSHelper.m */; };
 		48A45DF31B2F38970051B428 /* setUsernameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A45DF21B2F38970051B428 /* setUsernameViewController.m */; };
+		48B8CBBA1B8D32DA002D5C4C /* GoogleSignIn.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 48B8CBB81B8D32DA002D5C4C /* GoogleSignIn.bundle */; };
+		48B8CBBB1B8D32DA002D5C4C /* GoogleSignIn.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 48B8CBB81B8D32DA002D5C4C /* GoogleSignIn.bundle */; };
+		48B8CBBC1B8D32DA002D5C4C /* GoogleSignIn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48B8CBB91B8D32DA002D5C4C /* GoogleSignIn.framework */; };
+		48B8CBBD1B8D32DA002D5C4C /* GoogleSignIn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48B8CBB91B8D32DA002D5C4C /* GoogleSignIn.framework */; };
+		48B8CBBF1B8D3427002D5C4C /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48B8CBBE1B8D3427002D5C4C /* AddressBook.framework */; };
+		48B8CBC11B8D342B002D5C4C /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48B8CBC01B8D342B002D5C4C /* StoreKit.framework */; };
+		48B8CBC31B8D40A2002D5C4C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 48B8CBC21B8D40A2002D5C4C /* GoogleService-Info.plist */; };
+		48B8CBC41B8D40A2002D5C4C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 48B8CBC21B8D40A2002D5C4C /* GoogleService-Info.plist */; };
 		48C32F281A1529E5003D5393 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48C32F271A1529E5003D5393 /* Foundation.framework */; };
 		48C32F2A1A1529E5003D5393 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48C32F291A1529E5003D5393 /* CoreGraphics.framework */; };
 		48C32F2C1A1529E5003D5393 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48C32F2B1A1529E5003D5393 /* UIKit.framework */; };
@@ -112,6 +120,11 @@
 		48A45DEF1B2E6CA60051B428 /* WSHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSHelper.m; sourceTree = "<group>"; };
 		48A45DF11B2F38970051B428 /* setUsernameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = setUsernameViewController.h; sourceTree = "<group>"; };
 		48A45DF21B2F38970051B428 /* setUsernameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = setUsernameViewController.m; sourceTree = "<group>"; };
+		48B8CBB81B8D32DA002D5C4C /* GoogleSignIn.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleSignIn.bundle; path = ../../../google_signin_sdk_2_2_0/GoogleSignIn.bundle; sourceTree = "<group>"; };
+		48B8CBB91B8D32DA002D5C4C /* GoogleSignIn.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleSignIn.framework; path = ../../../google_signin_sdk_2_2_0/GoogleSignIn.framework; sourceTree = "<group>"; };
+		48B8CBBE1B8D3427002D5C4C /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		48B8CBC01B8D342B002D5C4C /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		48B8CBC21B8D40A2002D5C4C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		48C32F241A1529E5003D5393 /* ReelGood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReelGood.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48C32F271A1529E5003D5393 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		48C32F291A1529E5003D5393 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -163,6 +176,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				489DEAD91ACDB8F800048129 /* SystemConfiguration.framework in Frameworks */,
+				48B8CBC11B8D342B002D5C4C /* StoreKit.framework in Frameworks */,
+				48B8CBBF1B8D3427002D5C4C /* AddressBook.framework in Frameworks */,
 				48582E601A73FCA400C0D300 /* MessageUI.framework in Frameworks */,
 				48C32F2A1A1529E5003D5393 /* CoreGraphics.framework in Frameworks */,
 				48C32F2C1A1529E5003D5393 /* UIKit.framework in Frameworks */,
@@ -171,6 +186,7 @@
 				48C32F281A1529E5003D5393 /* Foundation.framework in Frameworks */,
 				48D4BA6B1B38E0B400457E4E /* FBSDKLoginKit.framework in Frameworks */,
 				D5B1BDBD9899BE30A52FB7CD /* libPods.a in Frameworks */,
+				48B8CBBC1B8D32DA002D5C4C /* GoogleSignIn.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,6 +197,7 @@
 				48C32F471A1529E6003D5393 /* XCTest.framework in Frameworks */,
 				48C32F491A1529E6003D5393 /* UIKit.framework in Frameworks */,
 				48C32F481A1529E6003D5393 /* Foundation.framework in Frameworks */,
+				48B8CBBD1B8D32DA002D5C4C /* GoogleSignIn.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,6 +216,7 @@
 		48C32F1B1A1529E5003D5393 = {
 			isa = PBXGroup;
 			children = (
+				48B8CBC21B8D40A2002D5C4C /* GoogleService-Info.plist */,
 				66A4EBF51A79A0790041EA9B /* Image Assets */,
 				48C32F2D1A1529E5003D5393 /* ReelGood */,
 				48C32F4C1A1529E6003D5393 /* ReelGoodTests */,
@@ -220,6 +238,10 @@
 		48C32F261A1529E5003D5393 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				48B8CBC01B8D342B002D5C4C /* StoreKit.framework */,
+				48B8CBBE1B8D3427002D5C4C /* AddressBook.framework */,
+				48B8CBB81B8D32DA002D5C4C /* GoogleSignIn.bundle */,
+				48B8CBB91B8D32DA002D5C4C /* GoogleSignIn.framework */,
 				484D78551B6939BC00F33D2B /* FBSDKShareKit.framework */,
 				48D4BA681B38E0B400457E4E /* FBSDKCoreKit.framework */,
 				48D4BA691B38E0B400457E4E /* FBSDKLoginKit.framework */,
@@ -428,7 +450,9 @@
 				66A4EC071A79A0790041EA9B /* 1422506538_arrow-left-01-128.png in Resources */,
 				66A4EC081A79A0790041EA9B /* 1422506546_done-01-128.png in Resources */,
 				66A4EC551A79CADD0041EA9B /* Star.png in Resources */,
+				48B8CBBA1B8D32DA002D5C4C /* GoogleSignIn.bundle in Resources */,
 				66A4EC011A79A0790041EA9B /* 1421991787_close_window.png in Resources */,
+				48B8CBC31B8D40A2002D5C4C /* GoogleService-Info.plist in Resources */,
 				66A4EC061A79A0790041EA9B /* 1422506351_Floopy.png in Resources */,
 				48C32F3B1A1529E6003D5393 /* Main.storyboard in Resources */,
 				66A4EC021A79A0790041EA9B /* 1421991805_user.png in Resources */,
@@ -448,7 +472,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48B8CBBB1B8D32DA002D5C4C /* GoogleSignIn.bundle in Resources */,
 				48C32F511A1529E6003D5393 /* InfoPlist.strings in Resources */,
+				48B8CBC41B8D40A2002D5C4C /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -644,6 +670,7 @@
 					"$(PROJECT_DIR)",
 					/Users/paulbrenner/Documents/FacebookSDK,
 					/Users/Adam/Documents/FacebookSDK,
+					/Users/paulbrenner/Documents/google_signin_sdk_2_2_0,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ReelGood/ReelGood-Prefix.pch";
@@ -672,6 +699,7 @@
 					"$(PROJECT_DIR)",
 					/Users/paulbrenner/Documents/FacebookSDK,
 					/Users/Adam/Documents/FacebookSDK,
+					/Users/paulbrenner/Documents/google_signin_sdk_2_2_0,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ReelGood/ReelGood-Prefix.pch";
@@ -693,6 +721,7 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					/Users/paulbrenner/Documents/google_signin_sdk_2_2_0,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ReelGood/ReelGood-Prefix.pch";
@@ -715,6 +744,7 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					/Users/paulbrenner/Documents/google_signin_sdk_2_2_0,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ReelGood/ReelGood-Prefix.pch";

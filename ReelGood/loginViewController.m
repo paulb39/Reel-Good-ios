@@ -12,6 +12,7 @@
 @interface loginViewController ()
 
 @property (weak, nonatomic) IBOutlet FBSDKLoginButton *loginButton;
+@property(weak, nonatomic) IBOutlet GIDSignInButton *signInButton;
 @property (weak, nonatomic) IBOutlet UILabel *lblVersion;
 
 - (IBAction)toAboutPage:(id)sender;
@@ -24,6 +25,10 @@
 {
     [super viewDidAppear:animated];
     
+    bool hasGoogleSignIn = [[GIDSignIn sharedInstance] hasAuthInKeychain];
+    [GIDSignIn sharedInstance].delegate = self; // google
+    [GIDSignIn sharedInstance].uiDelegate = self;
+    
     if ([WSHelper hasNetworkConnection]) {
         if ([FBSDKAccessToken currentAccessToken]) {
             // spinner
@@ -35,6 +40,8 @@
                 [MBProgressHUD hideHUDForView:self.view animated:YES];
             });
             // spinner
+        } else if (hasGoogleSignIn) {
+            [[GIDSignIn sharedInstance] signInSilently];
         }
     } else { // No network!
         UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"No Network!" message:@"Please connect to a network before using the app!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil]; [alert show];
@@ -75,6 +82,33 @@
 - (void) loginButtonDidLogOut:(FBSDKLoginButton *)loginButton;
 {
     //NSLog(@"you loged out");
+}
+
+- (void)signIn:(GIDSignIn *)signIn
+didSignInForUser:(GIDGoogleUser *)user
+     withError:(NSError *)error {
+    // Perform any operations on signed in user here.
+   // NSLog(@"you are now signed in, do segue if did not cancel?");
+    
+    if (user.userID) {
+        [self performSegueWithIdentifier:@"toMain" sender:self];
+    }
+    
+    //NSLog(@"user ID is %@", user.userID);
+}
+
+
+// [END signin_handler]
+
+// This callback is triggered after the disconnect call that revokes data
+// access to the user's resources has completed.
+// [START disconnect_handler]
+- (void)signIn:(GIDSignIn *)signIn
+didDisconnectWithUser:(GIDGoogleUser *)user
+     withError:(NSError *)error {
+    // Perform any operations when the user disconnects from app here.
+    //NSLog(@"you are now logged out?");
+
 }
 
 
