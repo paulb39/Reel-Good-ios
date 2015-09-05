@@ -60,7 +60,7 @@
     self.lblVersion.text = [NSString stringWithFormat:@"Version: %@", version];
     
     self.loginButton.delegate = self;
-    self.loginButton.readPermissions = @[@"public_profile", @"email"];
+    self.loginButton.readPermissions = @[@"public_profile", @"email", @"user_friends"];
    // self.loginButton.publishPermissions = @[@"publish_actions"];
     
 }

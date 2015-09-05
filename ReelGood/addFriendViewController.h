@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FBUsersViewController.h"
 #import <MessageUI/MessageUI.h>
 #import <MessageUI/MFMailComposeViewController.h>
 #import <MessageUI/MFMessageComposeViewController.h>
@@ -20,5 +21,5 @@ bool friendExists;
 int friendCounter = 0;
 
 
-@interface addFriendViewController : UIViewController <UIWebViewDelegate, MFMailComposeViewControllerDelegate, UITableViewDataSource, UITableViewDelegate, MFMessageComposeViewControllerDelegate, UIAlertViewDelegate>
+@interface addFriendViewController : UIViewController <UIWebViewDelegate, MFMailComposeViewControllerDelegate, UITableViewDataSource, UITableViewDelegate, MFMessageComposeViewControllerDelegate, UIAlertViewDelegate, SecondDelegate>
 @end
