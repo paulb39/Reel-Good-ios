@@ -65,15 +65,12 @@
     
     if ([WSHelper getCurrentUser] == nil) {
         GIDGoogleUser* googleUser = [[GIDSignIn sharedInstance] currentUser]; // google userID
-        NSLog(@"user on main is %@", googleUser.userID);
         
         NSString* userNameForID = [WSHelper getUserNameFromServer:googleUser.userID];
         
         if ([FBSDKAccessToken currentAccessToken]) { // then user FBID
             userNameForID = [WSHelper getUserNameFromServer:[FBSDKAccessToken currentAccessToken].userID];
         }
-        
-        NSLog(@"usernameforid is %@", userNameForID);
         
         if (userNameForID == nil) {
             //NSLog(@"DOING THE SEGUE TO CREATE A USERNAME"); // will set userdefaults there
@@ -426,7 +423,6 @@
         [[GIDSignIn sharedInstance] signOut];
         [self dismissViewControllerAnimated:YES completion:nil];
     }
-    
     
     [self performSegueWithIdentifier:@"toLogOut" sender:self];
 }

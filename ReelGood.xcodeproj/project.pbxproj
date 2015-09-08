@@ -21,6 +21,7 @@
 		48582DFB1A6DBD1C00C0D300 /* mainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48582DFA1A6DBD1C00C0D300 /* mainViewController.m */; };
 		48582DFE1A70248700C0D300 /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 48582DFD1A70248700C0D300 /* CustomCell.m */; };
 		48582E601A73FCA400C0D300 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48582E5F1A73FCA400C0D300 /* MessageUI.framework */; };
+		486B37DB1B99FE7000327989 /* FBUsersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 486B37DA1B99FE7000327989 /* FBUsersViewController.m */; };
 		487A69E91AB0A972004A6412 /* searchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 487A69E81AB0A972004A6412 /* searchCell.m */; };
 		489DEAD71ACDB8BC00048129 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 489DEAD61ACDB8BC00048129 /* Reachability.m */; };
 		489DEAD91ACDB8F800048129 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 489DEAD81ACDB8F800048129 /* SystemConfiguration.framework */; };
@@ -108,6 +109,8 @@
 		48582DFC1A70248600C0D300 /* CustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCell.h; sourceTree = "<group>"; };
 		48582DFD1A70248700C0D300 /* CustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCell.m; sourceTree = "<group>"; };
 		48582E5F1A73FCA400C0D300 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		486B37D91B99FE7000327989 /* FBUsersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBUsersViewController.h; sourceTree = "<group>"; };
+		486B37DA1B99FE7000327989 /* FBUsersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBUsersViewController.m; sourceTree = "<group>"; };
 		487A69E71AB0A972004A6412 /* searchCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = searchCell.h; path = ReelGood/searchCell.h; sourceTree = SOURCE_ROOT; };
 		487A69E81AB0A972004A6412 /* searchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = searchCell.m; path = ReelGood/searchCell.m; sourceTree = SOURCE_ROOT; };
 		489DEAD51ACDB8BC00048129 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
@@ -191,6 +194,7 @@
 				48C32F281A1529E5003D5393 /* Foundation.framework in Frameworks */,
 				48D4BA6B1B38E0B400457E4E /* FBSDKLoginKit.framework in Frameworks */,
 				D5B1BDBD9899BE30A52FB7CD /* libPods.a in Frameworks */,
+				48B8CBBC1B8D32DA002D5C4C /* GoogleSignIn.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,6 +205,7 @@
 				48C32F471A1529E6003D5393 /* XCTest.framework in Frameworks */,
 				48C32F491A1529E6003D5393 /* UIKit.framework in Frameworks */,
 				48C32F481A1529E6003D5393 /* Foundation.framework in Frameworks */,
+				48B8CBBD1B8D32DA002D5C4C /* GoogleSignIn.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,6 +271,8 @@
 				48C32F361A1529E5003D5393 /* AppDelegate.h */,
 				48C32F371A1529E5003D5393 /* AppDelegate.m */,
 				48C32F391A1529E6003D5393 /* Main.storyboard */,
+				486B37D91B99FE7000327989 /* FBUsersViewController.h */,
+				486B37DA1B99FE7000327989 /* FBUsersViewController.m */,
 				48A45DF11B2F38970051B428 /* setUsernameViewController.h */,
 				48A45DF21B2F38970051B428 /* setUsernameViewController.m */,
 				48A45DE71B2E37890051B428 /* loginViewController.h */,
@@ -476,6 +483,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48B8CBBB1B8D32DA002D5C4C /* GoogleSignIn.bundle in Resources */,
 				48C32F511A1529E6003D5393 /* InfoPlist.strings in Resources */,
 				48B8CBB71B84EC82002D5C4C /* GoogleService-Info.plist in Resources */,
 			);
@@ -534,6 +542,7 @@
 				48582DFB1A6DBD1C00C0D300 /* mainViewController.m in Sources */,
 				48582DF51A66E4A000C0D300 /* profileViewController.m in Sources */,
 				487A69E91AB0A972004A6412 /* searchCell.m in Sources */,
+				486B37DB1B99FE7000327989 /* FBUsersViewController.m in Sources */,
 				48C32F5E1A152A87003D5393 /* searchViewController.m in Sources */,
 				48582DF21A61C7FC00C0D300 /* infoViewController.m in Sources */,
 				48A45DF01B2E6CA60051B428 /* WSHelper.m in Sources */,
@@ -724,6 +733,7 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					/Users/paulbrenner/Documents/google_signin_sdk_2_2_0,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ReelGood/ReelGood-Prefix.pch";
@@ -746,6 +756,7 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					/Users/paulbrenner/Documents/google_signin_sdk_2_2_0,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ReelGood/ReelGood-Prefix.pch";

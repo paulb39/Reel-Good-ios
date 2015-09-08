@@ -99,7 +99,7 @@
 - (void)saveUsernameToDB
 {
     GIDGoogleUser* googleUserID = [[GIDSignIn sharedInstance] currentUser]; // google userID
-    
+
     NSString* strUsername = [self.usernameTextField.text lowercaseString];
     
     NSString* url=[NSString stringWithFormat:

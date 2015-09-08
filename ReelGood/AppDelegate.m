@@ -56,8 +56,8 @@
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
     if ( [[FBSDKApplicationDelegate sharedInstance] application:application
-                                                          openURL:url
-                                                sourceApplication:sourceApplication
+                                                        openURL:url
+                                              sourceApplication:sourceApplication
                                                      annotation:annotation] ) {
         return [[FBSDKApplicationDelegate sharedInstance] application:application
                                                               openURL:url
@@ -68,6 +68,6 @@
     return [[GIDSignIn sharedInstance] handleURL:url
                                sourceApplication:sourceApplication
                                       annotation:annotation];
-    
 }
+
 @end

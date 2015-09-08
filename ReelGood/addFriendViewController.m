@@ -9,6 +9,7 @@
 #import "addFriendViewController.h"
 #import "ViewController.h"
 #import "WSHelper.h"
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
 
 @interface addFriendViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *friendTextField;
@@ -18,8 +19,10 @@
 @property (weak, nonatomic) IBOutlet UIWebView *otherFriendWebView;
 - (IBAction)hideKeyboard:(id)sender;
 - (IBAction)sendInvite:(id)sender;
+- (IBAction)FBChooseTap:(id)sender;
 @property (weak, nonatomic) IBOutlet UITableView *friendsTableView;
 @property (weak, nonatomic) IBOutlet UIWebView *removeFriendWebView;
+@property (weak, nonatomic) IBOutlet UIButton *btnAddOutlet;
 
 @end
 
@@ -40,6 +43,8 @@
     // Do any additional setup after loading the view.
     self.friendsTableView.allowsMultipleSelectionDuringEditing = NO; // for deleting from tableview
     
+    self.btnAddOutlet.hidden = [FBSDKAccessToken currentAccessToken] ? NO: YES;
+    
     arrayOfFriends = [[NSMutableArray alloc] init];
     
     NSUserDefaults *settings = [NSUserDefaults new]; // get info from userDefaults
@@ -49,6 +54,28 @@
     
     //NSLog(@"friend friend is %@", arrayOfFriends);
 
+}
+
+/*- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"present_secondviewcontroller]) {
+         SecondViewController *svc = (SecondViewController *)segue.destinationViewController;
+         svc.delegate = self;
+         }
+         }
+ */
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"toFBChoose"]) {
+        FBUsersViewController *svc = (FBUsersViewController*)segue.destinationViewController;
+        svc.myDelegate = self;
+    }
+}
+
+- (void)secondViewControllerDismissed:(NSString *)stringForFirst
+{
+    NSString *theString = stringForFirst;
+    NSLog(@"String received at FirstVC: %@",theString);
+    self.friendTextField.text = theString;
 }
 
 - (void)didReceiveMemoryWarning
@@ -407,6 +434,10 @@
                    cancelButtonTitle: @"Cancel"
                    otherButtonTitles: @"Email", @"Text", nil];
     [alertDialog show];
+}
+
+- (IBAction)FBChooseTap:(id)sender {
+    [self performSegueWithIdentifier:@"toFBChoose" sender:self];
 }
 
 

@@ -57,9 +57,9 @@
     self.lblVersion.text = [NSString stringWithFormat:@"Version: %@", version];
     
     self.loginButton.delegate = self;
-    self.loginButton.readPermissions = @[@"public_profile", @"email"];
 
-   // self.loginButton.publishPermissions = @[@"publish_actions"];
+    self.loginButton.readPermissions = @[@"public_profile", @"email", @"user_friends"];
+
     
 }
 
@@ -86,7 +86,6 @@
 didSignInForUser:(GIDGoogleUser *)user
      withError:(NSError *)error {
     // Perform any operations on signed in user here.
-    NSLog(@"you are now signed in, do segue if did not cancel?");
     
     if (user.userID) {
         [self performSegueWithIdentifier:@"toMain" sender:self];
@@ -94,7 +93,6 @@ didSignInForUser:(GIDGoogleUser *)user
 
     NSLog(@"user ID is %@", user.userID);
     NSLog(@"error is %@", error.localizedDescription);
-    
 }
 
 
@@ -108,7 +106,6 @@ didDisconnectWithUser:(GIDGoogleUser *)user
      withError:(NSError *)error {
     // Perform any operations when the user disconnects from app here.
     //NSLog(@"you are now logged out?");
-    
 }
 
 
