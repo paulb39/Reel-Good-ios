@@ -194,7 +194,6 @@
 				48C32F281A1529E5003D5393 /* Foundation.framework in Frameworks */,
 				48D4BA6B1B38E0B400457E4E /* FBSDKLoginKit.framework in Frameworks */,
 				D5B1BDBD9899BE30A52FB7CD /* libPods.a in Frameworks */,
-				48B8CBBC1B8D32DA002D5C4C /* GoogleSignIn.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,7 +204,6 @@
 				48C32F471A1529E6003D5393 /* XCTest.framework in Frameworks */,
 				48C32F491A1529E6003D5393 /* UIKit.framework in Frameworks */,
 				48C32F481A1529E6003D5393 /* Foundation.framework in Frameworks */,
-				48B8CBBD1B8D32DA002D5C4C /* GoogleSignIn.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -483,7 +481,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48B8CBBB1B8D32DA002D5C4C /* GoogleSignIn.bundle in Resources */,
 				48C32F511A1529E6003D5393 /* InfoPlist.strings in Resources */,
 				48B8CBB71B84EC82002D5C4C /* GoogleService-Info.plist in Resources */,
 			);
@@ -675,8 +672,8 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ENABLE_MODULES = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Adam Salwocki (9BM4HW3T77)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Adam Salwocki (9BM4HW3T77)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -689,7 +686,7 @@
 				INFOPLIST_FILE = "ReelGood/ReelGood-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "e37815be-41f4-46cc-b632-6d5f675ea6b2";
 				SDKROOT = iphoneos8.3;
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
@@ -704,8 +701,8 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ENABLE_MODULES = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Adam Salwocki (9BM4HW3T77)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Adam Salwocki (9BM4HW3T77)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -718,7 +715,7 @@
 				INFOPLIST_FILE = "ReelGood/ReelGood-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "e37815be-41f4-46cc-b632-6d5f675ea6b2";
 				SDKROOT = iphoneos8.3;
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
