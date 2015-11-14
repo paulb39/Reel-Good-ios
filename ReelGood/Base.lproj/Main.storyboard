@@ -1185,11 +1185,51 @@ Begin by adding a friend to your account. Ask your friend for their username or 
                         <segue destination="7OI-kJ-Gxe" kind="modal" identifier="toAboutFromMain" id="Xu7-ZC-4AG"/>
                         <segue destination="aCF-CW-cg9" kind="modal" identifier="toLogOut" id="Xsi-SF-6lC"/>
                         <segue destination="xuL-4G-feR" kind="modal" identifier="toCreateUsername" id="74W-lp-6VF"/>
+                        <segue destination="RX3-hF-PBd" kind="modal" identifier="ToChat" id="H0w-Wc-pow"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kkh-m3-FHf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="81" y="485"/>
+        </scene>
+        <!--Chat View Controller-->
+        <scene sceneID="HaI-Cv-hFK">
+            <objects>
+                <viewController id="RX3-hF-PBd" customClass="chatViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="EWd-8M-x19"/>
+                        <viewControllerLayoutGuide type="bottom" id="P19-at-xiX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QEv-US-2RA">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="bx6-Tq-1DC" kind="modal" identifier="ToChatAdd" id="ozM-Y7-7Rl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lgo-27-tlI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="81" y="1132"/>
+        </scene>
+        <!--Chat Add View Controller-->
+        <scene sceneID="XOo-op-knr">
+            <objects>
+                <viewController id="bx6-Tq-1DC" customClass="chatAddViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="11y-i7-7zd"/>
+                        <viewControllerLayoutGuide type="bottom" id="XM7-PW-8eP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nE7-yH-kyI">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Hn-i8-QBB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="482" y="1313"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="3OM-a0-mtK">

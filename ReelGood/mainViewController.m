@@ -280,7 +280,7 @@
                    message:tempComments
                    delegate: self
                    cancelButtonTitle: @"Cancel"
-                   otherButtonTitles: @"View Movie info", @"Rate Movie", nil];
+                   otherButtonTitles: @"View Movie info", @"Rate Movie", @"View/Start Chat", nil];
     [alertDialog show];
 }
 
@@ -298,8 +298,9 @@
         [self performSegueWithIdentifier:@"toMovieInfo" sender:self];
     } else if ([buttonTitle isEqualToString:@"Rate Movie"]) {
 		[self performSegueWithIdentifier:@"ToRateMovie" sender:self];
-    }
-    else {
+    } else if ([buttonTitle isEqualToString:@"View/Start Chat"]) {
+        [self performSegueWithIdentifier:@"ToChat" sender:self];
+    } else {
         //cancel was clicked
     }
 }

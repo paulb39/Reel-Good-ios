@@ -4,6 +4,7 @@ def import_pods
 	pod 'AFNetworking'
 	pod 'ILMovieDB', '~> 0.0'
 	pod 'MBProgressHUD', '~> 0.9.1'
+	pod 'JSQMessagesViewController'  
 end
 
 import_pods
