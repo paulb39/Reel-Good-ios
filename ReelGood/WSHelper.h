@@ -31,14 +31,23 @@ typedef void (^WSHelperDataBlock)(NSMutableArray* JSON); //make more generic?
 
 + (void) sendMessage:(NSString*) _username _chatID:(NSString*)_chatID _comment:(NSString*)_comment;
 
-+ (void) setReadState:(NSString*) _username _chatID:(NSString*)_chatID _readState:(int)_readState;
++ (void) setReadState:(NSString*) _username _chatID:(NSString*)_chatID _readState:(NSString*)_readState;
+
++ (void) setReadState:(NSMutableArray*) _friends _chatID:(NSString*)_chatID;
+
++ (NSString*) getReadState:(NSString*) _username _chatID:(NSString*)_chatID;
 
 //+ (NSMutableArray*) getMessagesForChat:(NSString*) _chatID; //not async
 + (void)getMessagesForChat:(NSString*) _chatID complete:(WSHelperDataBlock)complete; //async with completion block attemp
 
-+ (void) addFriendToChat:(NSString*) _username _friend:(NSString*)_friend _chatID:(NSString*)_chatID movieID:(NSString*)movieID;
++ (void)getFriendsAvailableForChat:(NSString*) _movieID complete:(WSHelperDataBlock)complete; //async with completion block
 
-//add friend - add message to chat as well. 
++ (void) AddFriendToChat:(NSString*) _friend _chatID:(NSString*)_chatID _movieID:(NSString*)_movieID;
+
+
++ (BOOL)isValidURL:(NSString*) Url;
+
+//add friend - set read state?
 
 
 

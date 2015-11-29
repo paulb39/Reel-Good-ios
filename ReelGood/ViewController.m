@@ -24,6 +24,8 @@
 - (void)viewDidAppear:(BOOL)animated {
     //[self performSegueWithIdentifier:@"toMain" sender:self];
     
+    [super viewDidAppear:animated];
+    
     NSUserDefaults *settings = [NSUserDefaults new]; // get info from userDefaults
     NSString* userCheck = [settings stringForKey:kcurrentUser];
     NSString* segueCheck = [settings stringForKey:ksegueFromMain];

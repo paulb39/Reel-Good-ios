@@ -7,13 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "JSQMessages.h"
 
 @interface chatMessageObj : NSObject
 
 @property NSNumber* ID; // needed?
 @property NSString* chat_ID; //string?
-@property NSString* message; // nsdictionary or array for list??
-@property NSString* sender; // needed?
-@property NSString* createdDate; // NSDATE for sort? // format?
+@property NSString* message;
+@property NSString* sender;
+@property NSDate* createdDate; //2015-11-14 08:08:03
 
 @end

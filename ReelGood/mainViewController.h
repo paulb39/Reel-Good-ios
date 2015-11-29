@@ -17,8 +17,10 @@ NSMutableArray* friendFriend;
 NSMutableArray* friendMovieComments;
 NSMutableArray* friendMovieIDs;
 NSMutableArray* friendMoviePosters;
+NSMutableArray* chatObjArray;
 
 
+NSString* chatButton;
 NSString* firstUserLoad;
 NSString* userCurrent;
 

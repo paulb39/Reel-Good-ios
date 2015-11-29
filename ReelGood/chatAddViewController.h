@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "chatMainObj.h"
 
-@interface chatAddViewController : UIViewController
+@interface chatAddViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UIAlertViewDelegate>
+
+@property (strong, nonatomic) NSMutableArray* lstFriends;
+
+@property (strong, nonatomic) chatMainObj* chatObjID;
+
+@property (strong, nonatomic) NSMutableArray* alreadyInChat;
 
 @end

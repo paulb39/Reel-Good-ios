@@ -57,6 +57,7 @@
 		48F1A8E91BAB29C700961B27 /* chatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F1A8E81BAB29C700961B27 /* chatViewController.m */; };
 		48F1A8EC1BBAFA6600961B27 /* chatMessageObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F1A8EB1BBAFA6600961B27 /* chatMessageObj.m */; };
 		48F1A8EF1BBC460200961B27 /* chatAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F1A8EE1BBC460200961B27 /* chatAddViewController.m */; };
+		48F831901BFCEDCD00245A9E /* chatMainObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F8318F1BFCEDCC00245A9E /* chatMainObj.m */; };
 		6631EA571A82CBCB002DF453 /* Reed Good Large.png in Resources */ = {isa = PBXBuildFile; fileRef = 6631EA561A82CBCB002DF453 /* Reed Good Large.png */; };
 		6631EA591A82CC1B002DF453 /* backGround.png in Resources */ = {isa = PBXBuildFile; fileRef = 6631EA581A82CC1B002DF453 /* backGround.png */; };
 		6631EA5B1A82CC27002DF453 /* barGradient.png in Resources */ = {isa = PBXBuildFile; fileRef = 6631EA5A1A82CC27002DF453 /* barGradient.png */; };
@@ -160,6 +161,8 @@
 		48F1A8EB1BBAFA6600961B27 /* chatMessageObj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = chatMessageObj.m; sourceTree = "<group>"; };
 		48F1A8ED1BBC460200961B27 /* chatAddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = chatAddViewController.h; sourceTree = "<group>"; };
 		48F1A8EE1BBC460200961B27 /* chatAddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = chatAddViewController.m; sourceTree = "<group>"; };
+		48F8318E1BFCEDCC00245A9E /* chatMainObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = chatMainObj.h; sourceTree = "<group>"; };
+		48F8318F1BFCEDCC00245A9E /* chatMainObj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = chatMainObj.m; sourceTree = "<group>"; };
 		6631EA561A82CBCB002DF453 /* Reed Good Large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Reed Good Large.png"; sourceTree = "<group>"; };
 		6631EA581A82CC1B002DF453 /* backGround.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backGround.png; sourceTree = "<group>"; };
 		6631EA5A1A82CC27002DF453 /* barGradient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = barGradient.png; sourceTree = "<group>"; };
@@ -312,6 +315,8 @@
 				487A69E81AB0A972004A6412 /* searchCell.m */,
 				48C32F3C1A1529E6003D5393 /* ViewController.h */,
 				48C32F3D1A1529E6003D5393 /* ViewController.m */,
+				48F8318E1BFCEDCC00245A9E /* chatMainObj.h */,
+				48F8318F1BFCEDCC00245A9E /* chatMainObj.m */,
 				48F1A8EA1BBAFA6600961B27 /* chatMessageObj.h */,
 				48F1A8EB1BBAFA6600961B27 /* chatMessageObj.m */,
 				483BDF0B1A45EB51003B45EA /* JSONDictionaryExtensions.h */,
@@ -554,6 +559,7 @@
 				48582DF51A66E4A000C0D300 /* profileViewController.m in Sources */,
 				487A69E91AB0A972004A6412 /* searchCell.m in Sources */,
 				486B37DB1B99FE7000327989 /* FBUsersViewController.m in Sources */,
+				48F831901BFCEDCD00245A9E /* chatMainObj.m in Sources */,
 				48C32F5E1A152A87003D5393 /* searchViewController.m in Sources */,
 				48582DF21A61C7FC00C0D300 /* infoViewController.m in Sources */,
 				48A45DF01B2E6CA60051B428 /* WSHelper.m in Sources */,

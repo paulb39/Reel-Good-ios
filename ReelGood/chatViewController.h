@@ -8,8 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "JSQMessages.h"
+#import "chatMainObj.h"
 
 
 @interface chatViewController : JSQMessagesViewController
+
+@property (strong, nonatomic) JSQMessagesBubbleImage *outgoingBubbleImageData;
+@property (strong, nonatomic) JSQMessagesBubbleImage *incomingBubbleImageData;
+@property (strong, nonatomic) chatMainObj* chatInfo;
+@property (strong, nonatomic) NSMutableArray* peopleInChat;
 
 @end
