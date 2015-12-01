@@ -26,12 +26,14 @@ PODS:
     - JSQSystemSoundPlayer (~> 2.0.1)
   - JSQSystemSoundPlayer (2.0.1)
   - MBProgressHUD (0.9.1)
+  - TDBadgedCell (3.0)
 
 DEPENDENCIES:
   - AFNetworking
   - ILMovieDB (~> 0.0)
   - JSQMessagesViewController
   - MBProgressHUD (~> 0.9.1)
+  - TDBadgedCell (~> 3.0)
 
 SPEC CHECKSUMS:
   AFNetworking: 79f7eb1a0fcfa7beb409332b2ca49afe9ce53b05
@@ -39,5 +41,6 @@ SPEC CHECKSUMS:
   JSQMessagesViewController: 73cab48aa92fc2d512f3b6724f3425cc47a19eb5
   JSQSystemSoundPlayer: c5850e77a4363ffd374cd851154b9af93264ed8d
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
+  TDBadgedCell: 8e5314066fd8c2d8b6e3fc5dec824f5ded78bdc5
 
 COCOAPODS: 0.36.3

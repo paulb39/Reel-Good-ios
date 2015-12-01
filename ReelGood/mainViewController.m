@@ -195,7 +195,24 @@
         cell = [[CustomCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"mainProto"];
     }
     
-    //cell.show banner = if chatObj.read == 0 && chatObj.chat_ID != 0
+    // if chat exists and message is unread <-- fix
+    if (![[[chatObjArray objectAtIndex:indexPath.row] chat_ID] isEqualToString:@"0"]) {
+        if ([[[chatObjArray objectAtIndex:indexPath.row] readOrNot] isEqualToString:@"1"]) {
+            cell.badgeString = @" ";
+            cell.badgeColor = [UIColor redColor];
+            cell.badgeRightOffset = 70;
+/* in case want to change position, it seems good now
+        UIFont *font = cell.badge.boldFont ? [UIFont boldSystemFontOfSize:cell.badge.fontSize] : [UIFont systemFontOfSize:cell.badge.fontSize];
+            CGSize badgeSize;
+            badgeSize = [cell.badgeString sizeWithAttributes:@{ NSFontAttributeName:font }];
+ CGRect badgeframe = CGRectMake(cell.contentView.frame.size.width - (badgeSize.width + 13 + cell.badgeRightOffset),
+                                           (CGFloat)round((cell.contentView.frame.size.height - (badgeSize.height + (50/badgeSize.height))) / 2),
+                                           badgeSize.width + 13,
+                                           badgeSize.height + (50/badgeSize.height));
+            cell.badge.frame = badgeframe;
+*/
+        }
+    }
     
     cell.backgroundColor =  [UIColor colorWithPatternImage:[UIImage imageNamed:@"Gradient.png"]];
     

@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TDBadgedCell.h"
 
-@interface CustomCell : UITableViewCell
+@interface CustomCell : TDBadgedCell
 @property (weak, nonatomic) IBOutlet UILabel *friendNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *friendMovieLabel;
 @property (weak, nonatomic) IBOutlet UILabel *friendScore;
