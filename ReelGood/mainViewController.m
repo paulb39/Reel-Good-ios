@@ -22,6 +22,7 @@
 - (IBAction)goToSearch:(id)sender;
 @property (weak, nonatomic) IBOutlet UITableView *mainWebView;
 - (IBAction)GoToAbout:(id)sender;
+@property (strong, nonatomic) NSIndexPath* currentPath;
 
 
 @end
@@ -197,7 +198,7 @@
     
     // if chat exists and message is unread <-- fix
     if (![[[chatObjArray objectAtIndex:indexPath.row] chat_ID] isEqualToString:@"0"]) {
-        if ([[[chatObjArray objectAtIndex:indexPath.row] readOrNot] isEqualToString:@"1"]) {
+        if ([[[chatObjArray objectAtIndex:indexPath.row] readOrNot] isEqualToString:@"0"]) {
             cell.badgeString = @" ";
             cell.badgeColor = [UIColor redColor];
             cell.badgeRightOffset = 70;
@@ -324,6 +325,7 @@
     tempPosters = [friendMoviePosters objectAtIndex:indexPath.row];
     tempMovie = [friendMovieTitles objectAtIndex:indexPath.row];
     tempID = [friendMovieIDs objectAtIndex:indexPath.row];
+    _currentPath = indexPath;
     
     if ([[[chatObjArray objectAtIndex:indexPath.row] chat_ID] isEqualToString:@"0"]) {
         chatButton = @"Start Chat"; //make it pretty
@@ -367,14 +369,19 @@
             NSString* newChatID = [WSHelper createChat:[WSHelper getCurrentUser] _friend:[friendFriend objectAtIndex:alertView.tag] _movieID:tempID];
             NSArray* chatIDSpacesnew = [newChatID componentsSeparatedByCharactersInSet :[NSCharacterSet whitespaceAndNewlineCharacterSet]];
             newChatID = [chatIDSpacesnew componentsJoinedByString:@""]; // need to remove newline from bad PHP code
+            [WSHelper setReadState:[friendFriend objectAtIndex:alertView.tag] _chatID:newChatID _readState:@"0"]; // set readstate to unread for new chat
             
             chatMainObj* tmpChat = [chatObjArray objectAtIndex:alertView.tag];
             tmpChat.chat_ID = newChatID;
             [chatObjArray replaceObjectAtIndex:alertView.tag withObject:tmpChat];
         }
         
+        
         chatViewController* vc = [chatViewController messagesViewController];
         [vc setChatInfo:[chatObjArray objectAtIndex:alertView.tag]]; // set chat info for chat message view
+        [vc setChatIndex:_currentPath]; // set chat index to update cell later
+        vc.chatDelegate = self;
+        
         UINavigationController* nc = [[UINavigationController alloc] initWithRootViewController:vc];
         [self presentViewController:nc animated:YES completion:nil];
         
@@ -429,8 +436,25 @@
     //[self.mainWebView reloadData]; //update tableview // needed?
 }
 
+/*- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"toFBChoose"]) {
+        FBUsersViewController *svc = (FBUsersViewController*)segue.destinationViewController;
+        svc.myDelegate = self;
+    }
+}*/
 
-
+- (void)chatViewControllerDismissed:(NSIndexPath*)cellPosition
+{
+    CustomCell* cell = (CustomCell*)[self.mainWebView cellForRowAtIndexPath:cellPosition];
+    
+    dispatch_async(dispatch_get_main_queue(),^
+    {
+         chatMainObj* tmpChat = [chatObjArray objectAtIndex:cellPosition.row];
+        tmpChat.readOrNot = @"0";
+        [chatObjArray replaceObjectAtIndex:cellPosition.row withObject:tmpChat];
+        cell.badgeString = nil; // set to no badge TODO NEED TO DO CHAT TESTS
+    });
+}
 
 - (IBAction)logOutButton:(id)sender {
     NSUserDefaults *settings = [NSUserDefaults new]; // get info from userDefaults

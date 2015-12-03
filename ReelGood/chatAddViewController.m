@@ -22,14 +22,18 @@
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemStop
         target:self
         action:@selector(closePressed:)];
+    
+    self.title =  [NSString stringWithFormat:@"Friends who rated %@",_chatObjID.movieTitle];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    _lstFriends = [[NSMutableArray alloc] init];
+   // self.tblView.backgroundColor = [UIColor lightGrayColor]; // doesnt look good?
     
+    _lstFriends = [[NSMutableArray alloc] init];
+
     [self getData];
 }
 
@@ -118,7 +122,7 @@
 }
 
 - (void)SetToUnreadForAll:(NSString*)_chatID{
-    [WSHelper getReadState:[WSHelper getCurrentUser] _chatID:_chatID];
+    //[WSHelper getReadState:[WSHelper getCurrentUser] _chatID:_chatID];
     [WSHelper setReadState:_alreadyInChat _chatID:_chatID];
 }
 

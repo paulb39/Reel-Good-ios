@@ -10,12 +10,22 @@
 #import "JSQMessages.h"
 #import "chatMainObj.h"
 
+@protocol ChatDelegate <NSObject>
+-(void) chatViewControllerDismissed:(NSIndexPath*)cellPosition;
+@end
+
 
 @interface chatViewController : JSQMessagesViewController
+{
+    __weak id chatDelegate;
+}
 
 @property (strong, nonatomic) JSQMessagesBubbleImage *outgoingBubbleImageData;
 @property (strong, nonatomic) JSQMessagesBubbleImage *incomingBubbleImageData;
 @property (strong, nonatomic) chatMainObj* chatInfo;
 @property (strong, nonatomic) NSMutableArray* peopleInChat;
+@property (strong, nonatomic) NSIndexPath* chatIndex; // prob could have put in chatMainObj?
+
+@property (nonatomic, weak) id<ChatDelegate> chatDelegate;
 
 @end

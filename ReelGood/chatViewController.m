@@ -17,10 +17,11 @@
 @property __block NSMutableArray* messageArray;
 @property __block NSMutableArray* JSQMessageArray;
 
-
 @end
 
 @implementation chatViewController
+
+@synthesize chatDelegate;
 
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
@@ -131,8 +132,9 @@
     
     [_JSQMessageArray addObject:message];
     
-    //TODO set read state for ALL participants 
-    [WSHelper sendMessage:senderId _chatID:_chatInfo.chat_ID _comment:text];
+    //TODO test set to unread for all
+    [WSHelper sendMessage:senderId _chatID:_chatInfo.chat_ID _comment:text]; // send message
+    [WSHelper setReadState:_peopleInChat _chatID:_chatInfo.chat_ID]; // set unread for all
     
     [self finishSendingMessageAnimated:YES];
 }
@@ -348,6 +350,10 @@
 }
 
 -(void)closePressed {
+        //do delegate to update cell
+        if ([self.chatDelegate respondsToSelector:@selector(chatViewControllerDismissed:)]) {
+            [self.chatDelegate chatViewControllerDismissed:_chatIndex]; // send chat position back
+        }
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

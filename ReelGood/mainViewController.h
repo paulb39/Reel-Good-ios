@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "MBProgressHUD.h"
+#import "chatViewController.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 
@@ -40,6 +41,6 @@ bool didFirstLoad = NO;
 #define kNewUserr @""
 
 
-@interface mainViewController : UIViewController <UIAlertViewDelegate, UITableViewDataSource, UITableViewDelegate, MBProgressHUDDelegate>
+@interface mainViewController : UIViewController <UIAlertViewDelegate, UITableViewDataSource, UITableViewDelegate, MBProgressHUDDelegate, ChatDelegate>
 
 @end

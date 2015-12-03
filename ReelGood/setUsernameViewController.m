@@ -193,7 +193,7 @@
          isEqualToString: @"Success!"]) {
         [self dismissViewControllerAnimated:YES completion:^{
         
-            NSString* firstLoadMessage = @"Welcome to reelGood! \nOnce you add a friend a list of movies your friend's rated will be shown here\nYou can rate moves by clicking the search button\nA list of movies you rated is listed in your profile\nAdd a friend to get started!";
+            NSString* firstLoadMessage = @"Welcome to Reel Good! \nStart by adding a friend. A list of movies your friends' rated will be shown here\nYou can rate movies by clicking the search button\nA list of movies you rated is listed in your profile.";
             
             UIAlertView *alertDialog;
             alertDialog = [[UIAlertView alloc]
