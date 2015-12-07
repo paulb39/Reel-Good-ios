@@ -37,6 +37,8 @@ typedef void (^WSHelperDataBlock)(NSMutableArray* JSON); //make more generic?
 
 + (NSString*) getReadState:(NSString*) _username _chatID:(NSString*)_chatID;
 
++ (NSString*) getOwnerOfChat:(NSString*) _chatID;
+
 //+ (NSMutableArray*) getMessagesForChat:(NSString*) _chatID; //not async
 + (void)getMessagesForChat:(NSString*) _chatID complete:(WSHelperDataBlock)complete; //async with completion block attemp
 

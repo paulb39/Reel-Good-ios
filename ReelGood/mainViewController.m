@@ -300,7 +300,7 @@
     NSString* _chatID = [WSHelper getChatID:[WSHelper getCurrentUser] _friend:friend _movieID:movID];
     //NSString* _chatID = @"fac21664-874e-11e5-ac84-848f69fbc154";
     
-    tmpChatObj.owner = [WSHelper getCurrentUser];
+    tmpChatObj.owner = [WSHelper getOwnerOfChat:_chatID];
     tmpChatObj.movieTitle = movTitle;
     tmpChatObj.movieID = movID;
     
@@ -373,6 +373,7 @@
             
             chatMainObj* tmpChat = [chatObjArray objectAtIndex:alertView.tag];
             tmpChat.chat_ID = newChatID;
+            tmpChat.owner = [WSHelper getCurrentUser];
             [chatObjArray replaceObjectAtIndex:alertView.tag withObject:tmpChat];
         }
         
@@ -450,7 +451,7 @@
     dispatch_async(dispatch_get_main_queue(),^
     {
          chatMainObj* tmpChat = [chatObjArray objectAtIndex:cellPosition.row];
-        tmpChat.readOrNot = @"0";
+        tmpChat.readOrNot = @"1"; // 0 OR 1???
         [chatObjArray replaceObjectAtIndex:cellPosition.row withObject:tmpChat];
         cell.badgeString = nil; // set to no badge TODO NEED TO DO CHAT TESTS
     });

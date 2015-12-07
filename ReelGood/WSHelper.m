@@ -70,6 +70,23 @@
     return userName;
 }
 
++ (NSString*) getOwnerOfChat:(NSString*) _chatID {
+    //TODO
+    
+    NSString* _url = [NSString stringWithFormat:@"http://www.brennerbrothersbrewery.com/phpdata/reelgood/getOwnerOfChat.php?chatid=%@", _chatID];
+    
+    NSData *data = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString:_url]];
+    
+    if (!data){
+        return nil;
+    }
+    
+    NSString* result = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    //NSLog(@"The result is %@", result); //error handleing?
+    
+    return result;
+}
+
 
 + (void) setUserName:(NSString*) userName
 {
