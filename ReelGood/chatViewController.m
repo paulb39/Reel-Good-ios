@@ -32,7 +32,7 @@
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addFriendPressed)];
     }
     
-    NSLog(@"chat object is %@", _chatInfo);
+    //NSLog(@"chat object is %@", _chatInfo);
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -81,7 +81,7 @@
     
     [WSHelper getMessagesForChat:_chatInfo.chat_ID complete:^(NSMutableArray* JSON) {
         _messageArray = JSON; //set local message array to callback info
-        NSLog(@"callback");
+        //NSLog(@"callback");
         _JSQMessageArray = [NSMutableArray new];
         _peopleInChat = [NSMutableArray new];
         
@@ -99,7 +99,7 @@
         //[self scrollToBottomAnimated:YES]; // needed?
     }];
     
-    NSLog(@"tick ");
+   // NSLog(@"tick ");
 }
 
 -(void)addFriendPressed { // goto add friend view controller
@@ -340,7 +340,6 @@
 #pragma mark - Responding to collection view tap events
 
 - (void) setupBubbles {
-    NSLog(@"asd");
     _messageArray = [[NSMutableArray alloc] init];
     
     JSQMessagesBubbleImageFactory *bubbleFactory = [[JSQMessagesBubbleImageFactory alloc] init]; // bubble setup

@@ -105,7 +105,7 @@
     NSString *buttonTitle=[alertView buttonTitleAtIndex:buttonIndex];
     
     if ([buttonTitle isEqualToString:@"Okay"]) {
-        NSLog(@"test");
+        //NSLog(@"test");
         @try {
             NSString* _friend = [_lstFriends objectAtIndex:alertView.tag];
             NSString* _chatid = _chatObjID.chat_ID;

@@ -194,7 +194,7 @@
     
     NSString* result = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     
-    NSLog(@"The result is %@", result); //error handleing?
+    //NSLog(@"The result is %@", result); //error handleing?
 }
 
 + (void) setReadState:(NSMutableArray*) _friends _chatID:(NSString*)_chatID{
@@ -223,7 +223,7 @@
     NSData* data = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:_url]];
     NSString* result = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     
-    NSLog(@"result is %@", result);
+    //NSLog(@"result is %@", result);
 }
 
 /*
