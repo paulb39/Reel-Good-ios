@@ -65,11 +65,11 @@
     if([self.myDelegate respondsToSelector:@selector(secondViewControllerDismissed:)])
     {
         [self.myDelegate secondViewControllerDismissed:[_friendsUsername objectAtIndex:indexPath.row]];
-        NSLog(@"string passed");
+        //NSLog(@"string passed");
     }
     
     [self dismissViewControllerAnimated:YES completion:nil];
-    NSLog(@"SecondViewController dismissed");
+    //NSLog(@"SecondViewController dismissed");
 }
 
 - (void)getFBData {

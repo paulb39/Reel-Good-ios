@@ -3,20 +3,93 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "-[mainViewController viewDidAppear:]:mainViewController.m">
+         contextName = "-[chatViewController didPressSendButton:withMessageText:senderId:senderDisplayName:date:]:chatViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "__41+[WSHelper sendMessage:_chatID:_comment:]_block_invoke:WSHelper.m">
          <PersistentStrings>
             <PersistentString
-               value = "friendMoviePostersImage">
+               value = "_utl">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "-[mainViewController tableView:cellForRowAtIndexPath:]:mainViewController.m">
+         contextName = "-[chatAddViewController alertView:clickedButtonAtIndex:]:chatAddViewController.m">
          <PersistentStrings>
             <PersistentString
-               value = "friendMoviePostersImage">
+               value = "_chatObjID">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[chatViewController collectionView:attributedTextForCellTopLabelAtIndexPath:]:chatViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "exception">
+            </PersistentString>
+            <PersistentString
+               value = "mesage">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[mainViewController alertView:clickedButtonAtIndex:]:mainViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[@(alertView.tag) stringValue ]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[chatViewController refreshMessages]:chatViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[chatViewController collectionView:messageBubbleImageDataForItemAtIndexPath:]:chatViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.outgoingBubbleImageData">
+            </PersistentString>
+            <PersistentString
+               value = "_outgoingBubbleImageData">
+            </PersistentString>
+            <PersistentString
+               value = "self.incomingBubbleImageData">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[chatViewController viewWillAppear:]:chatViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "__37-[chatViewController refreshMessages]_block_invoke:chatViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[mainViewController getMainChatInfo:movTitle:movID:]:mainViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "+[WSHelper getMessagesForChat:complete:]:WSHelper.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "_chatID">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "+[WSHelper getFriendsAvailableForChat:complete:]:WSHelper.m">
+      </ContextState>
+      <ContextState
+         contextName = "__Block_byref_object_copy_:WSHelper.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "_username">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[chatAddViewController viewWillAppear:]:chatAddViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "__32-[chatAddViewController getData]_block_invoke:chatAddViewController.m">
       </ContextState>
    </ContextStates>
 </VariablesViewState>

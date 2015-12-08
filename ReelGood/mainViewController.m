@@ -12,6 +12,8 @@
 #import <ILMovieDBClient.h>
 #import "WSHelper.h"
 #import <GoogleSignIn/GoogleSignIn.h>
+#import "chatViewController.h"
+#import "chatMainObj.h"
 
 @interface mainViewController ()
 - (IBAction)logOutButton:(id)sender;
@@ -20,6 +22,7 @@
 - (IBAction)goToSearch:(id)sender;
 @property (weak, nonatomic) IBOutlet UITableView *mainWebView;
 - (IBAction)GoToAbout:(id)sender;
+@property (strong, nonatomic) NSIndexPath* currentPath;
 
 @property BOOL bannerIsVisible;
 @property ADBannerView *adBanner;
@@ -40,7 +43,7 @@
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     
-    [ILMovieDBClient sharedClient].apiKey = @"beea29b97e50a0194d538ddace065f95";
+    [ILMovieDBClient sharedClient].apiKey = @"beea29b97e50a0194d538ddace065f9ƒ5";
     
     if (_adBanner == nil){
     _adBanner = [[ADBannerView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height, 320, 50)];
@@ -125,6 +128,8 @@
     
     friendMoviePosters = [[NSMutableArray alloc] init];
     friendMoviePostersImage = [[NSMutableArray alloc] init]; // uiimage
+    
+    chatObjArray = [[NSMutableArray alloc] init];
     
     image = [[UIImage alloc] initWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:@"https://d3a8mw37cqal2z.cloudfront.net/assets/f996aa2014d2ffddfda8463c479898a3/images/no-poster-w185.jpg"]]]; // default poster
     
@@ -223,8 +228,15 @@
 {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    
+    if ([[segue identifier] isEqualToString:@"toChat"]) {
+        chatViewController* vc = [chatViewController messagesViewController];
+        UINavigationController* nc = [[UINavigationController alloc] initWithRootViewController:vc];
+        [self presentViewController:nc animated:YES completion:nil];
+    }
 }
-*/
+ */
+
 
 - (NSInteger) tableView:(UITableView*) tableView numberOfRowsInSection:(NSInteger) section
 {
@@ -239,6 +251,24 @@
         cell = [[CustomCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"mainProto"];
     }
     
+    // if chat exists and message is unread <-- fix
+    if (![[[chatObjArray objectAtIndex:indexPath.row] chat_ID] isEqualToString:@"0"]) {
+        if ([[[chatObjArray objectAtIndex:indexPath.row] readOrNot] isEqualToString:@"0"]) {
+            cell.badgeString = @" ";
+            cell.badgeColor = [UIColor redColor];
+            cell.badgeRightOffset = 70;
+/* in case want to change position, it seems good now
+        UIFont *font = cell.badge.boldFont ? [UIFont boldSystemFontOfSize:cell.badge.fontSize] : [UIFont systemFontOfSize:cell.badge.fontSize];
+            CGSize badgeSize;
+            badgeSize = [cell.badgeString sizeWithAttributes:@{ NSFontAttributeName:font }];
+ CGRect badgeframe = CGRectMake(cell.contentView.frame.size.width - (badgeSize.width + 13 + cell.badgeRightOffset),
+                                           (CGFloat)round((cell.contentView.frame.size.height - (badgeSize.height + (50/badgeSize.height))) / 2),
+                                           badgeSize.width + 13,
+                                           badgeSize.height + (50/badgeSize.height));
+            cell.badge.frame = badgeframe;
+*/
+        }
+    }
     
     cell.backgroundColor =  [UIColor colorWithPatternImage:[UIImage imageNamed:@"Gradient.png"]];
     
@@ -280,6 +310,7 @@
     [friendMoviePosters removeAllObjects];
     [friendMovieIDs removeAllObjects]; // for updating table if deleting friends
     [friendMoviePostersImage removeAllObjects];
+    [chatObjArray removeAllObjects];
     
     ////NSLog(@"updated posters are %@", friendMoviePosters);
     
@@ -307,16 +338,41 @@
     else {
         for ( NSDictionary *theFriendInfo in friendDataJSON )
         {
-            friendMovieTitles[mainCounter] = theFriendInfo[@"title"];
+            friendMovieTitles[mainCounter] = theFriendInfo[@"title"]; // dont need counter- do [add object]
             friendFriend[mainCounter] = theFriendInfo[@"fr_acc"];
             friendMovieRating[mainCounter] = theFriendInfo[@"rating"];
             friendMovieComments[mainCounter] = theFriendInfo[@"comments"];
             friendMovieIDs[mainCounter] = theFriendInfo[@"movie_id"];
+            [self getMainChatInfo:friendFriend[mainCounter] movTitle:friendMovieTitles[mainCounter] movID:friendMovieIDs[mainCounter]];
             mainCounter++;
         }
     }
     
    // //NSLog(@"ID IS %@", friendMovieIDs);
+    
+}
+
+- (void) getMainChatInfo:(NSString*)friend  movTitle:(NSString*)movTitle movID:(NSString*)movID { //gets owner / read state / chat id
+    
+    chatMainObj* tmpChatObj = [chatMainObj new];
+    NSString* _chatID = [WSHelper getChatID:[WSHelper getCurrentUser] _friend:friend _movieID:movID];
+    //NSString* _chatID = @"fac21664-874e-11e5-ac84-848f69fbc154";
+    
+    tmpChatObj.owner = [WSHelper getOwnerOfChat:_chatID];
+    tmpChatObj.movieTitle = movTitle;
+    tmpChatObj.movieID = movID;
+    
+    if (_chatID == nil){ // chat does not exist
+        tmpChatObj.chat_ID = @"0";
+        tmpChatObj.readOrNot = @"0";
+        [chatObjArray addObject:tmpChatObj];
+        return;
+    }
+    
+    tmpChatObj.chat_ID = _chatID;
+    tmpChatObj.readOrNot = [WSHelper getReadState:[WSHelper getCurrentUser] _chatID:_chatID];
+   
+    [chatObjArray addObject:tmpChatObj];
     
 }
 
@@ -327,6 +383,13 @@
     tempPosters = [friendMoviePosters objectAtIndex:indexPath.row];
     tempMovie = [friendMovieTitles objectAtIndex:indexPath.row];
     tempID = [friendMovieIDs objectAtIndex:indexPath.row];
+    _currentPath = indexPath;
+    
+    if ([[[chatObjArray objectAtIndex:indexPath.row] chat_ID] isEqualToString:@"0"]) {
+        chatButton = @"Start Chat"; //make it pretty
+    } else {
+        chatButton = @"View Chat";
+    }
     
     NSString* alertString =[NSString stringWithFormat:
                               @"%@'s comments for the movie %@"
@@ -338,7 +401,8 @@
                    message:tempComments
                    delegate: self
                    cancelButtonTitle: @"Cancel"
-                   otherButtonTitles: @"View Movie info", @"Rate Movie", nil];
+                   otherButtonTitles: @"View Movie info", @"Rate Movie", chatButton, nil];
+    alertDialog.tag = indexPath.row; //pass cell index
     [alertDialog show];
 }
 
@@ -346,7 +410,7 @@
 	
     NSString *buttonTitle=[alertView buttonTitleAtIndex:buttonIndex];
    
-    NSUserDefaults *settings = [NSUserDefaults new];
+    NSUserDefaults *settings = [NSUserDefaults new]; //stupid stupid logic
     [settings setObject:tempID forKey:kmovieID];
     [settings setObject:tempMovie forKey:kmovieTitle];
     [settings setObject:tempPosters forKey:kmoviePoster];
@@ -356,8 +420,32 @@
         [self performSegueWithIdentifier:@"toMovieInfo" sender:self];
     } else if ([buttonTitle isEqualToString:@"Rate Movie"]) {
 		[self performSegueWithIdentifier:@"ToRateMovie" sender:self];
-    }
-    else {
+    } else if ([buttonTitle isEqualToString:chatButton]) {
+        
+        
+        if ([[[chatObjArray objectAtIndex:alertView.tag] chat_ID] isEqualToString:@"0"]) { // then need to create chat, and set chatID to object
+            NSString* newChatID = [WSHelper createChat:[WSHelper getCurrentUser] _friend:[friendFriend objectAtIndex:alertView.tag] _movieID:tempID];
+            NSArray* chatIDSpacesnew = [newChatID componentsSeparatedByCharactersInSet :[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+            newChatID = [chatIDSpacesnew componentsJoinedByString:@""]; // need to remove newline from bad PHP code
+            [WSHelper setReadState:[friendFriend objectAtIndex:alertView.tag] _chatID:newChatID _readState:@"0"]; // set readstate to unread for new chat
+            
+            chatMainObj* tmpChat = [chatObjArray objectAtIndex:alertView.tag];
+            tmpChat.chat_ID = newChatID;
+            tmpChat.owner = [WSHelper getCurrentUser];
+            [chatObjArray replaceObjectAtIndex:alertView.tag withObject:tmpChat];
+        }
+        
+        
+        chatViewController* vc = [chatViewController messagesViewController];
+        [vc setChatInfo:[chatObjArray objectAtIndex:alertView.tag]]; // set chat info for chat message view
+        [vc setChatIndex:_currentPath]; // set chat index to update cell later
+        vc.chatDelegate = self;
+        
+        UINavigationController* nc = [[UINavigationController alloc] initWithRootViewController:vc];
+        [self presentViewController:nc animated:YES completion:nil];
+        
+        //[self performSegueWithIdentifier:@"ToChat" sender:self];
+    } else {
         //cancel was clicked
     }
 }
@@ -407,6 +495,25 @@
     //[self.mainWebView reloadData]; //update tableview // needed?
 }
 
+/*- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"toFBChoose"]) {
+        FBUsersViewController *svc = (FBUsersViewController*)segue.destinationViewController;
+        svc.myDelegate = self;
+    }
+}*/
+
+- (void)chatViewControllerDismissed:(NSIndexPath*)cellPosition
+{
+    CustomCell* cell = (CustomCell*)[self.mainWebView cellForRowAtIndexPath:cellPosition];
+    
+    dispatch_async(dispatch_get_main_queue(),^
+    {
+         chatMainObj* tmpChat = [chatObjArray objectAtIndex:cellPosition.row];
+        tmpChat.readOrNot = @"1"; // 0 OR 1???
+        [chatObjArray replaceObjectAtIndex:cellPosition.row withObject:tmpChat];
+        cell.badgeString = nil; // set to no badge TODO NEED TO DO CHAT TESTS
+    });
+}
 
 - (IBAction)logOutButton:(id)sender {
     NSUserDefaults *settings = [NSUserDefaults new]; // get info from userDefaults
