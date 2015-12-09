@@ -60,10 +60,10 @@
     // else facebook account has a username, set username in userdefaults
     
     GIDGoogleUser* googleUser1 = [[GIDSignIn sharedInstance] currentUser]; // google userID
-    NSLog(@"user on main first is %@", googleUser1.userID);
+    //NSLog(@"user on main first is %@", googleUser1.userID);
     
     NSString* userNameForID1 = [WSHelper getUserNameFromServer:googleUser1.userID];
-    NSLog(@"usernameforid first is %@", userNameForID1);
+    //NSLog(@"usernameforid first is %@", userNameForID1);
 
     
     if ([WSHelper getCurrentUser] == nil) {

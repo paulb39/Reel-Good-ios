@@ -605,7 +605,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "317"
             endingLineNumber = "317"
-            landmarkName = "-getMainChatInfo:movTitle:movID:"
+            landmarkName = "-getFriendInfo"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -653,7 +653,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "368"
             endingLineNumber = "368"
-            landmarkName = "-alertView:clickedButtonAtIndex:"
+            landmarkName = "-getMainChatInfo:movTitle:movID:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -669,7 +669,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "369"
             endingLineNumber = "369"
-            landmarkName = "-alertView:clickedButtonAtIndex:"
+            landmarkName = "-getMainChatInfo:movTitle:movID:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -685,7 +685,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "377"
             endingLineNumber = "377"
-            landmarkName = "-alertView:clickedButtonAtIndex:"
+            landmarkName = "-getMainChatInfo:movTitle:movID:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -717,7 +717,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "336"
             endingLineNumber = "336"
-            landmarkName = "-tableView:didSelectRowAtIndexPath:"
+            landmarkName = "-getFriendInfo"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -749,7 +749,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "288"
             endingLineNumber = "288"
-            landmarkName = "-getFriendInfo"
+            landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -765,7 +765,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "300"
             endingLineNumber = "300"
-            landmarkName = "-getMainChatInfo:movTitle:movID:"
+            landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -813,7 +813,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "304"
             endingLineNumber = "304"
-            landmarkName = "-getMainChatInfo:movTitle:movID:"
+            landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -829,7 +829,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "359"
             endingLineNumber = "359"
-            landmarkName = "-alertView:clickedButtonAtIndex:"
+            landmarkName = "-getMainChatInfo:movTitle:movID:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1101,7 +1101,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "387"
             endingLineNumber = "387"
-            landmarkName = "-alertView:clickedButtonAtIndex:"
+            landmarkName = "-tableView:didSelectRowAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1117,7 +1117,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "314"
             endingLineNumber = "314"
-            landmarkName = "-getMainChatInfo:movTitle:movID:"
+            landmarkName = "-getFriendInfo"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1469,7 +1469,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "202"
             endingLineNumber = "202"
-            landmarkName = "-tableView:cellForRowAtIndexPath:"
+            landmarkName = "-bannerViewDidLoadAd:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1485,7 +1485,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "379"
             endingLineNumber = "379"
-            landmarkName = "-alertView:clickedButtonAtIndex:"
+            landmarkName = "-tableView:didSelectRowAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1501,7 +1501,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "450"
             endingLineNumber = "450"
-            landmarkName = "-chatViewControllerDismissed:"
+            landmarkName = "-alertView:clickedButtonAtIndex:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1517,7 +1517,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "454"
             endingLineNumber = "454"
-            landmarkName = "-chatViewControllerDismissed:"
+            landmarkName = "-getPosterPaths"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1533,7 +1533,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "456"
             endingLineNumber = "456"
-            landmarkName = "-chatViewControllerDismissed:"
+            landmarkName = "-getPosterPaths"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1565,7 +1565,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "200"
             endingLineNumber = "200"
-            landmarkName = "-tableView:cellForRowAtIndexPath:"
+            landmarkName = "-bannerViewDidLoadAd:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
