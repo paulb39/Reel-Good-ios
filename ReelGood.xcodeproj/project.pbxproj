@@ -25,7 +25,6 @@
 		487A69E91AB0A972004A6412 /* searchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 487A69E81AB0A972004A6412 /* searchCell.m */; };
 		489DEAD71ACDB8BC00048129 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 489DEAD61ACDB8BC00048129 /* Reachability.m */; };
 		489DEAD91ACDB8F800048129 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 489DEAD81ACDB8F800048129 /* SystemConfiguration.framework */; };
-		48A0216B1B6D3F2F002B0107 /* fbshare.png in Resources */ = {isa = PBXBuildFile; fileRef = 48A0216A1B6D3F2F002B0107 /* fbshare.png */; };
 		48A0216D1B6D3F71002B0107 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48A0216C1B6D3F71002B0107 /* FBSDKShareKit.framework */; };
 		48A45DE91B2E37890051B428 /* loginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A45DE81B2E37890051B428 /* loginViewController.m */; };
 		48A45DF01B2E6CA60051B428 /* WSHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A45DEF1B2E6CA60051B428 /* WSHelper.m */; };
@@ -76,6 +75,9 @@
 		66A4EC551A79CADD0041EA9B /* Star.png in Resources */ = {isa = PBXBuildFile; fileRef = 66A4EC541A79CADD0041EA9B /* Star.png */; };
 		66C39B891B409BC800630D60 /* About BTN.png in Resources */ = {isa = PBXBuildFile; fileRef = 66C39B881B409BC800630D60 /* About BTN.png */; };
 		D5B1BDBD9899BE30A52FB7CD /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 840CD6F527B3E43072951550 /* libPods.a */; };
+		DA2529601C28A31D00D14761 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DA25295F1C28A31D00D14761 /* Default-568h@2x.png */; };
+		DA2529621C28A33900D14761 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA2529611C28A33900D14761 /* Launch Screen.storyboard */; };
+		DA2529641C28A7ED00D14761 /* fbshare.png in Resources */ = {isa = PBXBuildFile; fileRef = DA2529631C28A7ED00D14761 /* fbshare.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,7 +122,6 @@
 		489DEAD51ACDB8BC00048129 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		489DEAD61ACDB8BC00048129 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = Reachability.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		489DEAD81ACDB8F800048129 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		48A0216A1B6D3F2F002B0107 /* fbshare.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fbshare.png; path = "../../../../../Dropbox/Senior Project/Project Iterations/bup before merge/master/Reel-Good-ios/Image Assets/fbshare.png"; sourceTree = "<group>"; };
 		48A0216C1B6D3F71002B0107 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = ../../../FacebookSDK/FBSDKShareKit.framework; sourceTree = "<group>"; };
 		48A45DE71B2E37890051B428 /* loginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = loginViewController.h; sourceTree = "<group>"; };
 		48A45DE81B2E37890051B428 /* loginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = loginViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
@@ -184,6 +185,9 @@
 		66C39B881B409BC800630D60 /* About BTN.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "About BTN.png"; sourceTree = "<group>"; };
 		840CD6F527B3E43072951550 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A369BE38E6017885873E60B1 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		DA25295F1C28A31D00D14761 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		DA2529611C28A33900D14761 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		DA2529631C28A7ED00D14761 /* fbshare.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fbshare.png; sourceTree = "<group>"; };
 		EA85E312E8656862DA3EE079 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -234,6 +238,8 @@
 		48C32F1B1A1529E5003D5393 = {
 			isa = PBXGroup;
 			children = (
+				DA2529611C28A33900D14761 /* Launch Screen.storyboard */,
+				DA25295F1C28A31D00D14761 /* Default-568h@2x.png */,
 				48B8CBB51B84EC82002D5C4C /* GoogleService-Info.plist */,
 				66A4EBF51A79A0790041EA9B /* Image Assets */,
 				48C32F2D1A1529E5003D5393 /* ReelGood */,
@@ -362,7 +368,7 @@
 		66A4EBF51A79A0790041EA9B /* Image Assets */ = {
 			isa = PBXGroup;
 			children = (
-				48A0216A1B6D3F2F002B0107 /* fbshare.png */,
+				DA2529631C28A7ED00D14761 /* fbshare.png */,
 				66C39B881B409BC800630D60 /* About BTN.png */,
 				484D9DF41AAA4BFF00786A6F /* info_button.png */,
 				6631EA5C1A82CC33002DF453 /* backGround_Cover.png */,
@@ -399,6 +405,7 @@
 				48C32F211A1529E5003D5393 /* Frameworks */,
 				48C32F221A1529E5003D5393 /* Resources */,
 				84A0F83BA0B0C544BE785FFC /* Copy Pods Resources */,
+				DD2F52F493CEB12A41FE353A /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -469,16 +476,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				6631EA5B1A82CC27002DF453 /* barGradient.png in Resources */,
-				48A0216B1B6D3F2F002B0107 /* fbshare.png in Resources */,
 				48C32F401A1529E6003D5393 /* Images.xcassets in Resources */,
 				6631EA571A82CBCB002DF453 /* Reed Good Large.png in Resources */,
 				66A4EC531A79CAD90041EA9B /* StarPressed.png in Resources */,
 				4840D5651A82D2F40002A699 /* Gradient.png in Resources */,
+				DA2529641C28A7ED00D14761 /* fbshare.png in Resources */,
+				DA2529621C28A33900D14761 /* Launch Screen.storyboard in Resources */,
 				6631EA591A82CC1B002DF453 /* backGround.png in Resources */,
 				48C32F321A1529E5003D5393 /* InfoPlist.strings in Resources */,
 				66A4EC071A79A0790041EA9B /* 1422506538_arrow-left-01-128.png in Resources */,
 				66A4EC081A79A0790041EA9B /* 1422506546_done-01-128.png in Resources */,
 				66A4EC551A79CADD0041EA9B /* Star.png in Resources */,
+				DA2529601C28A31D00D14761 /* Default-568h@2x.png in Resources */,
 				48B8CBAF1B84EAC5002D5C4C /* GoogleSignIn.bundle in Resources */,
 				66A4EC011A79A0790041EA9B /* 1421991787_close_window.png in Resources */,
 				48B8CBB61B84EC82002D5C4C /* GoogleService-Info.plist in Resources */,
@@ -522,6 +531,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DD2F52F493CEB12A41FE353A /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F9F248F8DFCE30D86481A316 /* Check Pods Manifest.lock */ = {
@@ -698,20 +722,21 @@
 				CLANG_ENABLE_MODULES = NO;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Adam Salwocki (9BM4HW3T77)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Adam Salwocki (9BM4HW3T77)";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					/Users/paulbrenner/Documents/FacebookSDK,
+					/Users/Paul/Documents/FacebookSDK,
 					/Users/Adam/Documents/FacebookSDK,
-					/Users/paulbrenner/Documents/google_signin_sdk_2_2_0,
+					/Users/Paul/Documents/google_signin_sdk_2_2_0,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ReelGood/ReelGood-Prefix.pch";
 				INFOPLIST_FILE = "ReelGood/ReelGood-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "e37815be-41f4-46cc-b632-6d5f675ea6b2";
-				SDKROOT = iphoneos8.3;
+				PROVISIONING_PROFILE = "fcfa87b5-78fb-486b-b7ab-59b6223d1fbb";
+				SDKROOT = iphoneos9.2;
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -727,20 +752,21 @@
 				CLANG_ENABLE_MODULES = NO;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Adam Salwocki (9BM4HW3T77)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Adam Salwocki (9BM4HW3T77)";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					/Users/paulbrenner/Documents/FacebookSDK,
+					/Users/Paul/Documents/FacebookSDK,
 					/Users/Adam/Documents/FacebookSDK,
-					/Users/paulbrenner/Documents/google_signin_sdk_2_2_0,
+					/Users/Paul/Documents/google_signin_sdk_2_2_0,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ReelGood/ReelGood-Prefix.pch";
 				INFOPLIST_FILE = "ReelGood/ReelGood-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "e37815be-41f4-46cc-b632-6d5f675ea6b2";
-				SDKROOT = iphoneos8.3;
+				PROVISIONING_PROFILE = "fcfa87b5-78fb-486b-b7ab-59b6223d1fbb";
+				SDKROOT = iphoneos9.2;
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
