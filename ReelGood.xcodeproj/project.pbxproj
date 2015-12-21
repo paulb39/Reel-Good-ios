@@ -76,6 +76,8 @@
 		66A4EC551A79CADD0041EA9B /* Star.png in Resources */ = {isa = PBXBuildFile; fileRef = 66A4EC541A79CADD0041EA9B /* Star.png */; };
 		66C39B891B409BC800630D60 /* About BTN.png in Resources */ = {isa = PBXBuildFile; fileRef = 66C39B881B409BC800630D60 /* About BTN.png */; };
 		D5B1BDBD9899BE30A52FB7CD /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 840CD6F527B3E43072951550 /* libPods.a */; };
+		DA1D65B71C2890A7002F3AFF /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DA1D65B61C2890A7002F3AFF /* Default-568h@2x.png */; };
+		DA1D65B91C2890E3002F3AFF /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA1D65B81C2890E3002F3AFF /* Launch Screen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -182,6 +184,8 @@
 		66C39B881B409BC800630D60 /* About BTN.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "About BTN.png"; sourceTree = "<group>"; };
 		840CD6F527B3E43072951550 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A369BE38E6017885873E60B1 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		DA1D65B61C2890A7002F3AFF /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		DA1D65B81C2890E3002F3AFF /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		EA85E312E8656862DA3EE079 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -231,6 +235,8 @@
 		48C32F1B1A1529E5003D5393 = {
 			isa = PBXGroup;
 			children = (
+				DA1D65B81C2890E3002F3AFF /* Launch Screen.storyboard */,
+				DA1D65B61C2890A7002F3AFF /* Default-568h@2x.png */,
 				48B8CBC21B8D40A2002D5C4C /* GoogleService-Info.plist */,
 				66A4EBF51A79A0790041EA9B /* Image Assets */,
 				48C32F2D1A1529E5003D5393 /* ReelGood */,
@@ -395,6 +401,7 @@
 				48C32F211A1529E5003D5393 /* Frameworks */,
 				48C32F221A1529E5003D5393 /* Resources */,
 				84A0F83BA0B0C544BE785FFC /* Copy Pods Resources */,
+				B98958A982C88C3451AD24E7 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -470,11 +477,13 @@
 				6631EA571A82CBCB002DF453 /* Reed Good Large.png in Resources */,
 				66A4EC531A79CAD90041EA9B /* StarPressed.png in Resources */,
 				4840D5651A82D2F40002A699 /* Gradient.png in Resources */,
+				DA1D65B91C2890E3002F3AFF /* Launch Screen.storyboard in Resources */,
 				6631EA591A82CC1B002DF453 /* backGround.png in Resources */,
 				48C32F321A1529E5003D5393 /* InfoPlist.strings in Resources */,
 				66A4EC071A79A0790041EA9B /* 1422506538_arrow-left-01-128.png in Resources */,
 				66A4EC081A79A0790041EA9B /* 1422506546_done-01-128.png in Resources */,
 				66A4EC551A79CADD0041EA9B /* Star.png in Resources */,
+				DA1D65B71C2890A7002F3AFF /* Default-568h@2x.png in Resources */,
 				48B8CBBA1B8D32DA002D5C4C /* GoogleSignIn.bundle in Resources */,
 				66A4EC011A79A0790041EA9B /* 1421991787_close_window.png in Resources */,
 				48B8CBC31B8D40A2002D5C4C /* GoogleService-Info.plist in Resources */,
@@ -519,6 +528,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B98958A982C88C3451AD24E7 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F9F248F8DFCE30D86481A316 /* Check Pods Manifest.lock */ = {
@@ -695,20 +719,21 @@
 				CLANG_ENABLE_MODULES = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					/Users/paulbrenner/Documents/FacebookSDK,
+					/Users/Paul/Documents/FacebookSDK,
 					/Users/Adam/Documents/FacebookSDK,
-					/Users/paulbrenner/Documents/google_signin_sdk_2_2_0,
+					/Users/Paul/Documents/google_signin_sdk_2_2_0,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ReelGood/ReelGood-Prefix.pch";
 				INFOPLIST_FILE = "ReelGood/ReelGood-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SDKROOT = iphoneos8.3;
+				SDKROOT = iphoneos9.2;
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -724,20 +749,21 @@
 				CLANG_ENABLE_MODULES = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					/Users/paulbrenner/Documents/FacebookSDK,
+					/Users/Paul/Documents/FacebookSDK,
 					/Users/Adam/Documents/FacebookSDK,
-					/Users/paulbrenner/Documents/google_signin_sdk_2_2_0,
+					/Users/Paul/Documents/google_signin_sdk_2_2_0,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ReelGood/ReelGood-Prefix.pch";
 				INFOPLIST_FILE = "ReelGood/ReelGood-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SDKROOT = iphoneos8.3;
+				SDKROOT = iphoneos9.2;
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
